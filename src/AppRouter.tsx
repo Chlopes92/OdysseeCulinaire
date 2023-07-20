@@ -1,11 +1,11 @@
 import App from "App"
-import Cart from "pages/Cart"
-import Error from "pages/Error"
-import Home from "pages/Home"
-import Order from "pages/Order"
-import Payment from "pages/Payment"
-import ProductDetail from "pages/ProductDetails"
-import Products from "pages/Products"
+import CartPage from "pages/CartPage"
+import ErrorPage from "pages/ErrorPage"
+import HomePage from "pages/HomePage"
+import OrderPage from "pages/OrderPage"
+import PaymentPage from "pages/PaymentPage"
+import ProductDetailPage from "pages/ProductDetailPage"
+import ProductsPage from "pages/ProductsPage"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
 const AppRouter = () => {
@@ -13,31 +13,31 @@ const AppRouter = () => {
         {
             path: "/",
             element: <App />,
-            errorElement: <Error />,
+            errorElement: <ErrorPage />,
             children:[
                 {
                     index: true,
-                    element: <Home />,
+                    element: <HomePage />,
                 },
                 {
                     path: "/products",
-                    element: <Products />,
+                    element: <ProductsPage />,
                 },
                 {
                     path: "/product/:id",
-                    element: <ProductDetail />,
+                    element: <ProductDetailPage />,
                 },
                 {
                     path:"/cart",
-                    element: <Cart />
+                    element: <CartPage />
                 },
                 {
                     path: "/payment",
-                    element: <Payment />,
+                    element: <PaymentPage />,
                 },
                 {
                     path: "/order",
-                    element: <Order />,
+                    element: <OrderPage />,
                 }
             ]
         }

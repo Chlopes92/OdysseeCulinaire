@@ -1,4 +1,4 @@
-const Order = () =>{
+const OrderPage = () =>{
     return (
         <main>
             <h1>Order</h1>
@@ -6,4 +6,4 @@ const Order = () =>{
     );
 }
 
-export default Order;
+export default OrderPage;
