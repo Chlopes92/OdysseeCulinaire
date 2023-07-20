@@ -1,4 +1,4 @@
-const Payment = () =>{
+const PaymentPage = () =>{
     return (
         <main>
             <h1>Payment</h1>
@@ -6,4 +6,4 @@ const Payment = () =>{
     );
 }
 
-export default Payment;
+export default PaymentPage;
