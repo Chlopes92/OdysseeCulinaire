@@ -183,7 +183,7 @@ isAddToCart: false,
     tags: ["vegetarien", "sans-gluten"],
     allergy: ["poisson"],
     img:{
-        src:"public/image/",
+        src:"public/image/tamara.png",
         alt: "Tarama"
     },
     includedIngredients:[
@@ -227,7 +227,7 @@ isAddToCart: false,
     category: ["entrees"],
     tags: ["vegan", "vegetarien", "sans-gluten"],
     img:{
-        src:"",
+        src:"public/image/fava.png",
         alt:"Fava"
     },
     includedIngredients:[
@@ -271,7 +271,7 @@ isAddToCart: false,
     tags: ["vegetarien","sans-gluten"],
     allergy: ["poisson"],
     img:{
-        src:"",
+        src:"public/image/psarosoupa.png",
         alt:"Psarosoupa"
     },
     includedIngredients:[
@@ -314,7 +314,7 @@ isAddToCart: false,
     category:["entrees"],
     tags: ["vegan", "vegetarien", "sans-gluten"],
     img: {
-        src:"",
+        src:"public/image/ezme.png",
         alt: "Ezme"
     },
     includedIngredients:[
@@ -356,7 +356,7 @@ isAddToCart: false,
     maxQuantity: 10,
     category: ["entrees"],
     img: {
-        src:"",
+        src:"public/image/meze-mixte.png",
         alt: "Meze Mixte"
     },
     includedIngredients:[
@@ -444,7 +444,7 @@ isAddToCart: false,
     tags: ["vegetarien", "vegan"],
     allergy: ["produits-laitiers"],
     img: {
-        src:"public/image/spanakopita",
+        src:"public/image/spanakopita.png",
         alt: "Spanakopita",
     }, 
     includedIngredients:[
@@ -488,7 +488,7 @@ isAddToCart: false,
     tags: ["viande", "vegan", "vegetarien"],
     allergy: ["produits-laitiers"],
     img: {
-        src:"public/image/",
+        src:"public/image/moussaka.png",
         alt: "Moussaka",
     },
     includedIngredients:[
@@ -532,7 +532,7 @@ isAddToCart: false,
     tags: ["viande", "vegan", "vegetarien", "sans-gluten"],
     allergy: ["produits-laitiers"],
     img: {
-        src:"public/image/",
+        src:"public/image/pastitsio.png",
         alt: "Pastitsio",
     },
     includedIngredients:[
@@ -576,7 +576,7 @@ isAddToCart: false,
     tags: ["viande", "vegan", "vegetarien", "sans-gluten"],
     allergy: ["produits-laitiers", "allium"],
     img: {
-        src:"public/image/",
+        src:"public/image/keftedes.png",
         alt: "Keftedes",
     },
     includedIngredients:[
@@ -620,7 +620,7 @@ isAddToCart: false,
     tags: ["viande", "vegan", "vegetarien", "sans-gluten"],
     allergy: ["produits-laitiers"],
     img: {
-        src:"public/image/",
+        src:"public/image/peynirli-kofte.png",
         alt: "Peynirli kofte",
     },
     includedIngredients:[
@@ -663,7 +663,7 @@ isAddToCart: false,
     category:["plats"],
     tags: ["viande", "sans-gluten"],
     img: {
-        src:"public/image/",
+        src:"public/image/grillades-mixtes.png",
         alt: "Grillades mixtes",
     },
     includedIngredients:[
@@ -705,50 +705,6 @@ isAddToCart: false,
     maxQuantity: 10,
     category:["desserts"],
     tags: ["vegetarien"],
-    allergy: ["arachide"],
-    img: {
-        src:"public/image/loukoumades.png",
-        alt: "Loukoumades",
-    },
-    includedIngredients:[
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },    
-    
-    ],
-       
-    extras:[
-        {
-            ingredient:{
-                id: 1,
-                title: "",
-            },
-            additionalPrice: 1.5,
-            isSelected: false,
-        }
-       
-    ],
-    isAddToCart: false,
-},
-{
-    id: 16,
-    title: "Loukoumades",
-    description: "Beignets frits en forme de boules, servis chauds et arrosés de miel et de noix.",
-    price: 5,
-    maxQuantity: 10,
-    category:["desserts"],
-    tags: ["vegetarien", "vegan", "sans-gluten"],
     allergy: ["arachide"],
     img: {
         src:"public/image/loukoumades.png",
@@ -882,7 +838,7 @@ isAddToCart: false,
     tags: ["vegetarien", "vegan"],
     allergy: ["arachide"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/kataifi.png",
         alt: "Kataifi",
     },
     includedIngredients:[
@@ -926,7 +882,7 @@ isAddToCart: false,
     tags: ["vegetarien", "vegan"],
     allergy: ["arachide"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/sokolatopita.png",
         alt: "Sokolatopita",
     },
     includedIngredients:[
@@ -1102,7 +1058,7 @@ isAddToCart: false,
     category:["boisson"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/calypso.png",
         alt: "La Tentation de Calypso",
     },
     includedIngredients:[
@@ -1146,7 +1102,7 @@ isAddToCart: false,
     category:["boisson"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/the.png",
         alt: "Thé à la Camomille",
     },
     includedIngredients:[
@@ -1190,7 +1146,7 @@ isAddToCart: false,
     category:["boisson"],
     tags: ["vegetarien", "vegan", "avec-alcool"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/chant-sirene.png",
         alt: "Chant des Sirènes",
     },
     includedIngredients:[
@@ -1234,7 +1190,7 @@ isAddToCart: false,
     category:["boisson"],
     tags: ["vegetarien", "vegan", "avec-alcool"],
     img: {
-        src:"public/image/.png",
+        src:"public/image/poseidon.png",
         alt: "Tempête de Poséidon",
     },
     includedIngredients:[
