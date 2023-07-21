@@ -1,0 +1,21 @@
+section{
+    display: flex;
+    justify-content: space-around;
+}
+
+.background {
+    
+    background: linear-gradient(180deg, rgba(255, 174, 10, 0.65) 0.01%, rgba(245, 122, 41, 0.602054) 0.02%, rgba(223, 0, 113, 0.48) 0.03%, rgba(223, 0, 113, 0.36) 33.8541%, rgba(255, 179, 26, 0.47) 72.3958%, rgba(255, 179, 26, 0) 100%);
+    opacity: 0.8;
+}
+
+.logo{
+    padding-top: 7px;
+}
+
+.panier{
+    padding-top: 32px ;
+}
+
+
+  

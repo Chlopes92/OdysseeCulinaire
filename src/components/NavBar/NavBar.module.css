@@ -1,0 +1,14 @@
+.list {
+    display: flex;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    gap: 63px;
+    font-size: 30px;
+    font-weight: 466;
+    padding-top: 46px;
+    
+}
+
+.list :active{
+    color: var(--pink);
+}
