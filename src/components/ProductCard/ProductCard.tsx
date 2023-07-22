@@ -8,10 +8,10 @@ const ProductCard = () => {
     const { products, removeProduct, removeOne, addOne } = useCartContext();
     return (
         <main>
-            <ul>
+            <ul className={style.sizecard}>
                 {products.map((p) =>
                     <li className={style.flex} key={p.id}>
-                        <div >
+                        <div>
                             <img className={style.img} src= {p.product.img.src} alt={p.product.title} />
                         </div>
                         <div>

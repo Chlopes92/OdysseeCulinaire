@@ -1,7 +1,7 @@
 import ProductItem from "components/ProductItem/ProductItem";
 import { PRODUCTS } from "mocks/products";
 
-const ProductsPage = () =>{
+const ProductsPage = () => {
     return (
         <ul>
             {PRODUCTS.map((product) =>

@@ -1,8 +1,18 @@
 .flex{
     display: flex;
-   
+    justify-content: space-between;
+}   
 .img {
  width: 10vw;
+}
+
+.sizecard{
+    width:60vw;
+    margin: 0 auto;
     height: 15vh;
 }
+.sizecard li{
+    border-left: black solid 2px;
+    margin-bottom: 20px;
 }
+

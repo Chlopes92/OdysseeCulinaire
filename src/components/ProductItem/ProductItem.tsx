@@ -7,20 +7,20 @@ interface ProductItemProps {
     product: IProduct;
 }
 
-const ProductItem = (props:ProductItemProps) => {
-    const {product } = props;
-    const { title, img, price} = product;
+const ProductItem = (props: ProductItemProps) => {
+    const { product } = props;
+    const { title, img, price } = product;
     const { addOne } = useCartContext();
-   
-    
-    return(
+
+
+    return (
         <main>
-            
-                <img  className={style.size} src={img.src} alt={img.alt}/>
-                <p>{title}</p>
-                <p>{price}€</p>
-                <button onClick={() => addOne(product, 1)}>+</button>
-            
+            <img className={style.size} src={img.src} alt={img.alt} />
+            <p>{title}</p>
+            <p>{price}€</p>
+            <button onClick={() => addOne(product, 1)}>
+                <img src="image/icons/toselect.png" alt="ajouter un produit au panier" />
+            </button>
         </main>
     )
 }
