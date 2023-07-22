@@ -26,3 +26,6 @@ p{
   color : var(--blue);
   font-family: 'Roboto', sans-serif;
 }
+button {
+  border : none;
+}
