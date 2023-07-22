@@ -1,6 +1,7 @@
 import Counter from "components/Counter/Counter";
 import { useCartContext } from "contexts/Cart.context";
 import { Link } from "react-router-dom";
+import style from "./ProductCard.module.css";
 
 
 const ProductCard = () => {
@@ -9,9 +10,9 @@ const ProductCard = () => {
         <main>
             <ul>
                 {products.map((p) =>
-                    <li key={p.id}>
-                        <div>
-                            <img src="p.product.img" alt="p.product.title" />
+                    <li className={style.flex} key={p.id}>
+                        <div >
+                            <img className={style.img} src= {p.product.img.src} alt={p.product.title} />
                         </div>
                         <div>
                             <p>{p.product.title}</p>
@@ -21,8 +22,8 @@ const ProductCard = () => {
                         </div>
                         <div>
                             <Counter quantity={p.quantity} add={() => addOne(p.product, p.quantity)} remove={() => removeOne(p.product)} />
-                            <Link to="/product/{p.id}"><img src="public/image/icons/delete.png" alt="supprimer le produit" /></Link>
-                            <button onClick={() => removeProduct(p.product)}><img src="public/image/icons/delete.png" alt="supprimer le produit" /></button>
+                            <Link to="/product/{p.id}"><img src="image/icons/edit.png" alt="modifier le produit" /></Link>
+                            <button onClick={() => removeProduct(p.product)}><img src="image/icons/delete.png" alt="supprimer le produit" /></button>
                         </div>
                     </li>
                 )}

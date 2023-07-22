@@ -9,7 +9,7 @@ const CartPage = () => {
     const reset = () => resetCart();
     return(
         <main>
-            <h1>L'odyssée Culianire</h1>
+            <h1>L'odyssée Culinaire</h1>
             <div>
             <p>Panier</p>
             <button onClick={reset} >Vider le panier</button>
