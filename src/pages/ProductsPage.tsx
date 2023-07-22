@@ -1,9 +1,15 @@
-const ProductsPage = () =>{
+import ProductItem from "components/ProductItem/ProductItem";
+import { PRODUCTS } from "mocks/products";
+
+const ProductsPage = () => {
     return (
-        <main>
-            <h1>Products</h1>
-        </main>
-    );
+        <ul>
+            {PRODUCTS.map((product) =>
+                <li key={product.id}>
+                    <ProductItem product={product} />
+                </li>)}
+        </ul>
+    )
 }
 
 export default ProductsPage;
