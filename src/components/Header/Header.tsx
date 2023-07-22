@@ -10,7 +10,7 @@ const Header = () => {
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
       <NavBar />
-      <Link to="/">
+      <Link to="/cart">
         <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
       </Link>
     </section>

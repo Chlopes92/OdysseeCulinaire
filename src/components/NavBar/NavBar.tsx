@@ -7,7 +7,7 @@ const NavBar = () => {
         {
             id: 1,
             text: "La Carte",
-            url: "/la-carte"
+            url: "/products"
         },
         {
             id: 2,
