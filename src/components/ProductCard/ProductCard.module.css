@@ -1,18 +1,41 @@
-.flex{
+.flex {
     display: flex;
     justify-content: space-between;
-}   
+}
+
+.flex section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+}
+
+.icons img {
+    width: 3.5vw;
+    margin-right:0.3vw;
+}
+
+.flex h3 {
+    font-weight: normal;
+}
+
 .img {
- width: 10vw;
+    width: 25%;
+    box-shadow: .3vw .3vw .5vw 0px rgba(0, 27, 180, 0.47);
 }
 
-.sizecard{
-    width:60vw;
-    margin: 0 auto;
-    height: 15vh;
-}
-.sizecard li{
-    border-left: black solid 2px;
-    margin-bottom: 20px;
-}
 
+.sizecard li {
+    padding: 2vw 0 2vw 2vw;
+    margin-bottom: 3vw;
+    border-left: var(--gold) solid 5px;
+   
+}

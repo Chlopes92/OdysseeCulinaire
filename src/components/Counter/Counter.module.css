@@ -1,4 +1,13 @@
 .flex {
     display: flex;
-    margin: 20px;
+}
+
+.flex button img{
+    width:25px;
+}
+
+.flex p {
+    font-family: "Cinzel", sans-serif;
+    font-weight: bold;
+    margin: 0 1vw;
 }

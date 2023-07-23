@@ -1,9 +1,39 @@
-
-h1 {
-    text-align :center;
+.cartPage{
+    width:85vw;
+    margin: 0 auto;
 }
-.flex{
+
+/* h1 */
+.title {
+    text-align: center;
+    margin: 11vh 0 5vh;
+    font-weight: normal;
+
+}
+
+.flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 5vh;
-}   
+}
+
+/* p => panier*/
+.flex p {
+    color: var(--blue);
+    font-family: Roboto;
+    font-size: clamp(18px, 10px, 2vw);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+/*Button vider le panier */
+.flex button {
+    color: var(--pink);
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(16px, 10px, 2vw);
+    font-style: normal;
+    font-weight: 400;
+    background: none;
+}
