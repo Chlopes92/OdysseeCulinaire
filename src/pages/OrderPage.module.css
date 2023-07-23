@@ -1,0 +1,25 @@
+.orderPage{
+    width:80vw;
+    margin: 0 auto;
+}
+
+.orderPage div {
+    margin-bottom: 5vh;
+}
+
+/* h1 */
+.title {
+    text-align: center;
+    margin: 11vh 0 8vh;
+    font-weight: normal;
+
+}
+/* total */
+.total{
+    font-weight: bold;
+    text-align: right;
+    margin:1vh 0 5vh;
+    font-size: clamp(20px, 2vw, 10px);
+    display: flex;
+    justify-content: space-between;
+}

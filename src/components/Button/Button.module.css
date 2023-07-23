@@ -1,0 +1,11 @@
+.button{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--pink);
+    border-radius : 11px;
+    min-width: 30vw;
+    padding: 20px;
+    display: block;
+    margin: 0 auto 3vh;
+}
