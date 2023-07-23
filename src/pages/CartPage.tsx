@@ -18,7 +18,7 @@ const CartPage = () => {
             </div>
             <ProductCard />
 
-            <p>Total: {totalPrice}€ </p>
+            <p className={style.total}>Total: {totalPrice}€ </p>
 
 <Button title="Payer la commande"/>
         </main>

@@ -1,10 +1,16 @@
+.productCard{
+    width:85vw;
+    margin: 0 auto;
+}
+
+
 .flex {
     display: flex;
     justify-content: space-between;
 }
 
 .flex section {
-    width: 50%;
+    min-width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,6 +29,16 @@
     margin-right:0.3vw;
 }
 
+.icons button {
+    background-color: white;
+}
+
+.icons svg {
+    width: 2.5vw;
+    height: 2.5vh;
+    margin-left: .3vw;
+}
+
 .flex h3 {
     font-weight: normal;
 }
@@ -35,7 +51,9 @@
 
 .sizecard li {
     padding: 2vw 0 2vw 2vw;
-    margin-bottom: 3vw;
+    margin-bottom: 5vw;
     border-left: var(--gold) solid 5px;
+    border : blue solid 2px;
+    width: 80vw;
    
 }

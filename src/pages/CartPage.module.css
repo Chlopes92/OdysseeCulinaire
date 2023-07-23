@@ -37,3 +37,10 @@
     font-weight: 400;
     background: none;
 }
+
+.total{
+    font-weight: bold;
+    text-align: right;
+    margin:1vh 0 5vh;
+    font-size: clamp(20px, 2vw, 10px);
+}
