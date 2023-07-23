@@ -1,8 +1,8 @@
 import ProductCard from "components/ProductCard/ProductCard";
 import { useCartContext } from "contexts/Cart.context";
-import { Link } from "react-router-dom";
 import style from "./CartPage.module.css";
 import Button from "components/Button/Button";
+import { Link, NavLink } from "react-router-dom";
 
 const CartPage = () => {
     const {getTotalPrice, resetCart} = useCartContext();
@@ -20,7 +20,7 @@ const CartPage = () => {
 
             <p className={style.total}>Total: {totalPrice}€ </p>
 
-<Button title="Payer la commande"/>
+<NavLink to="/order"> <Button title="Payer la commande"/></NavLink>
         </main>
     )
 }

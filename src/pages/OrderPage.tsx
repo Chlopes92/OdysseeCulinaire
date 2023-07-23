@@ -1,9 +1,29 @@
-const OrderPage = () =>{
+import ProductCard from "components/ProductCard/ProductCard";
+import { useCartContext } from "contexts/Cart.context";
+import style from "./OrderPage.module.css";
+
+const OrderPage = () => {
+    const { getTotalPrice, getTotalProduct } = useCartContext();
+    const totalPrice = getTotalPrice();
+    const totalQuantity = getTotalProduct();
     return (
-        <main>
-            <h1>Order</h1>
+        <main className={style.orderPage}>
+            <h1 className={style.title}>Votre commande est en cours de préparation</h1>
+
+            <div>
+                <p>Table n°15</p>
+                <p>Commande n°10</p>
+            </div>
+            <ProductCard />
+
+            <div className={style.total}>
+
+                <p>Articles({totalQuantity})</p>
+                <p>Total: {totalPrice}€ </p>
+            </div>
+
         </main>
-    );
+    )
 }
 
 export default OrderPage;
