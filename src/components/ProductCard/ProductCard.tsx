@@ -13,11 +13,11 @@ const ProductCard = () => {
                     <li className={style.flex} key={p.id}>
                         <img className={style.img} src={p.product.img.src} alt={p.product.title} />
                         <section>
-                            <div>
+                            <div className={style.title}>
                                 <h3>{p.product.title}</h3>
                                 <p>{p.product.price}€</p>
                             </div>
-                            <div>
+                            <div className={style.custom}>
                                 <p>Inclus</p>
                                 <p>Extras</p>
                             </div>
@@ -25,7 +25,9 @@ const ProductCard = () => {
                         <div className={style.icons}>
                             <Counter quantity={p.quantity} add={() => addOne(p.product, p.quantity)} remove={() => removeOne(p.product)} />
                             <div>
-                                <Link to="/product/{p.id}"><img src="image/icons/edit.png" alt="modifier le produit" /></Link>
+                                <Link to="/product/{p.id}"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+                                    <path d="M59.4844 0C57.9491 0 56.4137 0.586312 55.2422 1.75781L48 9L63 24L70.2422 16.7578C72.5852 14.4148 72.5852 10.6164 70.2422 8.27344L63.7266 1.75781C62.5551 0.586312 61.0196 0 59.4844 0ZM42 15L6.7793 50.2207C6.7793 50.2207 9.53259 49.974 10.5586 51C11.5846 52.026 10.74 58.74 12 60C13.26 61.26 19.9317 60.3731 20.8887 61.3301C21.8457 62.2871 21.7793 65.2207 21.7793 65.2207L57 30L42 15ZM3 60L0.169922 68.0156C0.0586662 68.3319 0.00122951 68.6647 0 69C0 69.7956 0.31607 70.5587 0.878679 71.1213C1.44129 71.6839 2.20435 72 3 72C3.33532 71.9988 3.66805 71.9413 3.98437 71.8301C3.99416 71.8262 4.00393 71.8223 4.01367 71.8184L4.08984 71.7949C4.09572 71.791 4.10158 71.7871 4.10742 71.7832L12 69L7.5 64.5L3 60Z" fill="#001BB4" />
+                                </svg></Link>
                                 {/* <button onClick={() => removeProduct(p.product)}><img src="image/icons/Delete.svg" alt="supprimer le produit" /></button> */}
                                 <button onClick={() => removeProduct(p.product)}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="61" height="71" viewBox="0 0 61 71" fill="none">

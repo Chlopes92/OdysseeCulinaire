@@ -1,8 +1,9 @@
-.productCard{
-    width:85vw;
+/* .productCard{
     margin: 0 auto;
+} */
+.title{
+    font-size: clamp(22px, 2vw, 14px);
 }
-
 
 .flex {
     display: flex;
@@ -23,20 +24,21 @@
     align-items: end;
 
 }
-
+/* icone edit */ 
 .icons img {
-    width: 3.5vw;
+    width: 1.5vw;
     margin-right:0.3vw;
 }
 
+/*icone delete */
 .icons button {
     background-color: white;
 }
-
+/*icone delete */
 .icons svg {
     width: 2.5vw;
     height: 2.5vh;
-    margin-left: .3vw;
+    margin-left: 1.5vw;
 }
 
 .flex h3 {
@@ -45,6 +47,7 @@
 
 .img {
     width: 25%;
+    min-height: 80%;
     box-shadow: .3vw .3vw .5vw 0px rgba(0, 27, 180, 0.47);
 }
 
@@ -53,7 +56,7 @@
     padding: 2vw 0 2vw 2vw;
     margin-bottom: 5vw;
     border-left: var(--gold) solid 5px;
-    border : blue solid 2px;
-    width: 80vw;
-   
+}
+.custom {
+    font-size: clamp(12px, 2vw, 10px);
 }
