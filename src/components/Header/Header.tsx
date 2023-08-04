@@ -9,7 +9,7 @@ const Header = () => {
   const totalQuantity = getTotalProduct();
 
   return (
-    <section className={style.background}>
+    <section className={style.header}>
       <Link to="/">
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
