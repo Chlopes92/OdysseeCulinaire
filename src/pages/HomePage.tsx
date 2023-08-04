@@ -1,7 +1,9 @@
+import Carousel from "components/Carousel/Carousel";
+
 const HomePage = () =>{
     return (
         <main>
-            <h1>Home</h1>
+            <Carousel />
         </main>
     );
 }
