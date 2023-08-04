@@ -16,7 +16,6 @@ const ProductItem = (props: ProductItemProps) => {
 
     return (
         <main>
-            <Carousel />
             <img className={style.size} src={img.src} alt={img.alt} />
             <p>{title}</p>
             <p>{price}€</p>
