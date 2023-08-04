@@ -2,6 +2,7 @@ import { IProduct, PRODUCTS } from "mocks/products";
 import style from './ProductItem.module.css';
 import { useCartContext } from "contexts/Cart.context";
 import { useState } from "react";
+import Carousel from "components/Carousel/Carousel";
 
 interface ProductItemProps {
     product: IProduct;
@@ -15,6 +16,7 @@ const ProductItem = (props: ProductItemProps) => {
 
     return (
         <main>
+            <Carousel />
             <img className={style.size} src={img.src} alt={img.alt} />
             <p>{title}</p>
             <p>{price}€</p>
