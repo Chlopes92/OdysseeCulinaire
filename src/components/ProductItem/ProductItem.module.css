@@ -1,3 +1,25 @@
+.buttonToSelected{
+    background-color: var(--pink);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttonAddToCart{
+    background-color: var(--gold);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .size{
-    width: 200px;
+    width: 336.944px;
+    height: 297.8px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 4px solid var(--gold);
+    border: 4px solid var(--gold);
+    filter: drop-shadow(4px 4px 7px rgba(0, 27, 180, 0.47));
 }
