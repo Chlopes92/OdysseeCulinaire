@@ -19,7 +19,7 @@ export interface IExtraIngredient {
     isSelected: boolean;
 }
 
-export type ProductCategoryType = "entrees" | "plats" | "desserts" | "boisson";
+export type ProductCategoryType = "entrees" | "plats" | "desserts" | "boissons";
 
 export type TagType = "vegan" | "vegetarien" | "viande" | "sans-gluten" | "avec-alcool" | "sans-alcool" ;
 
@@ -918,12 +918,12 @@ isAddToCart: false,
 },
 {
     id: 21,
-    title: "Le Nectar de Circé *",
+    title: "Le Nectar de Circé",
     description: "Café fort et sucré, préparé dans une cafetière en cuivre appelée briki.",
     mythologie: "* Circé était une puissante sorcière rencontrée par Ulysse lors de son périple. Ce nom évoque une boisson divine et envoûtante.",
     price: 6.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
         src:"/image/cafe.png",
@@ -962,12 +962,12 @@ isAddToCart: false,
 },
 {
     id: 22,
-    title: "Cascade Bleue d'Ithaque *",
+    title: "Cascade Bleue d'Ithaque",
     description: "Cocktail à base de liqueur Skinos Mastiha, soda pétillant, jus de citron frais, myrtilles fraîches et de la glace pilée",
     mythologie: "* Ce nom évoque les magnifiques cascades d'Ithaque, l'île natale d'Ulysse, et fait référence à la couleur bleue vive de la boisson.",
     price: 6.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "avec-alcool"],
     img: {
         src:"/image/cascade-bleue.png",
@@ -1006,12 +1006,12 @@ isAddToCart: false,
 },
 {
     id: 23,
-    title: "Le Souffle d'Éole *",
+    title: "Le Souffle d'Éole",
     description: "Boisson à base de jus de citron frais, d'eau pétillante, de sirop de sucre et d'une touche de menthe fraîche",
     mythologie: "* Éole est le dieu grec des vents, que Ulysse a rencontré lors de son voyage. Il évoque l'idée d'une boisson rafraîchissante et vivifiante, semblable à une brise fraîche apportée par les vents divins.",
     price: 5.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
         src:"/image/souffle-deole.png",
@@ -1050,12 +1050,12 @@ isAddToCart: false,
 },
 {
     id: 24,
-    title: "La Tentation de Calypso *",
+    title: "La Tentation de Calypso",
     description: "Boisson mélangeant de la pastèque avec des touches d'agrumes et de basilic",
     mythologie: "*  Calypso était une nymphe qui a retenu Ulysse sur son île pendant plusieurs années. Ce nom suggère une boisson rafraichissante et captivante.",
     price: 5.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
         src:"/image/calypso.png",
@@ -1094,12 +1094,12 @@ isAddToCart: false,
 },
 {
     id: 25,
-    title: "L'Élixir d'Apollon *",
+    title: "L'Élixir d'Apollon",
     description: "Infusion de thé grec à la camomille, associée à du miel doux, du jus de citron et du romarin",
     mythologie: "* Inspiré du dieu grec Apollon, associé à la lumière, à la guérison et aux arts. Ce thé à la camomille apaisant et réconfortant évoque la tranquillité et la sagesse d'Apollon",
     price: 5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "sans-alcool"],
     img: {
         src:"/image/the.png",
@@ -1138,12 +1138,12 @@ isAddToCart: false,
 },
 {
     id: 26,
-    title: "Chant des Sirènes *",
+    title: "Chant des Sirènes",
     description: "Cocktail mariant l'anisée de l'ouzo grec avec de la liqueur de grenade, du sirop de grenadine et de la glace pilée",
     mythologie: "* Ce nom évoque le célèbre épisode de l'Odyssée où Ulysse et son équipage sont tentés par le chant envoûtant des sirènes.",
     price: 7.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "avec-alcool"],
     img: {
         src:"/image/chant-sirene.png",
@@ -1182,12 +1182,12 @@ isAddToCart: false,
 },
 {
     id: 27,
-    title: "Tempête de Poséidon *",
+    title: "Tempête de Poséidon",
     description: "Cocktail à base de tequila, jus de pamplemousse, sirop de gingembre et une pointe de Tabasco.",
     mythologie: "*  Ce nom évoque la puissance et la fureur du dieu des mers, Poseidon. Ce cocktail offre une expérience gustative puissante et enivrante.",
     price: 7.5,
     maxQuantity: 10,
-    category:["boisson"],
+    category:["boissons"],
     tags: ["vegetarien", "vegan", "avec-alcool"],
     img: {
         src:"/image/poseidon.png",
