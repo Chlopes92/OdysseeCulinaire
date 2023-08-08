@@ -19,10 +19,10 @@ const ProductItem = (props: ProductItemProps) => {
             <p>{title}</p>
             <p>{price}€</p>
             <button className={style.buttonToSelected} onClick={() => addOne(product, 1)}> 
-                <img src="image/icons/plus.png" alt="ajouter un produit au panier" />
+                <img src="/image/icons/plus.png" alt="ajouter un produit au panier" />
             </button>
             <button className={style.buttonAddToCart} onClick={() => addOne(product, 1)}> 
-                <img src="image/icons/check.png" alt="ajouter un produit au panier" />
+                <img src="/image/icons/check.png" alt="ajouter un produit au panier" />
             </button>
             
         </main>
