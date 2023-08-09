@@ -15,8 +15,11 @@ const Header = () => {
       </Link>
       <NavBar />
       <Link to="/cart">
+        <div className={style.flex}>
         <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
-        <p>{totalQuantity}</p>
+        <div className={style.borderQuantity} ><p className={style.quantity}>{totalQuantity}</p></div>
+
+        </div>
       </Link>
     </section>
   );
