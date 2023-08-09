@@ -12,22 +12,22 @@ const NavBar = () => {
         {
             id: 2,
             text: "Entrées",
-            url: "/products/entrees"
+            url: "/products/category/entrees"
         },
         {
             id: 3,
             text: "Plats",
-            url: "/products/plats"
+            url: "/products/category/plats"
         },
         {
             id: 4,
             text: "Desserts",
-            url: "/products/desserts"
+            url: "/products/category/desserts"
         },
         {
             id: 5,
             text: "Boissons",
-            url: "/products/boissons"
+            url: "/products/category/boissons"
         },
     ];
 

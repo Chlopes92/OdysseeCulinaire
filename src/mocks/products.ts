@@ -32,7 +32,7 @@ description: string;
 mythologie?: string | null;
 price: number;
 maxQuantity: number;
-category: ProductCategoryType[];
+category: string[];
 tags?: TagType[];
 allergy?: ProductAllergyType[];
 img: IProductImg;
