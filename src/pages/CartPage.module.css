@@ -44,3 +44,7 @@
     margin:1vh 0 5vh;
     font-size: clamp(20px, 2vw, 10px);
 }
+
+.emptyCart{
+    margin-bottom: 5vh;
+}

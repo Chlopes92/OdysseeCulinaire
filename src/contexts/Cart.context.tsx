@@ -68,21 +68,16 @@ export const CartProvider = (props: CartProviderProps) => {
     const removeOne = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => p.product.id === product.id);
 
-        // console.log("found", foundProduct);
         if (!foundProduct) {
             return;
         } else {
             if (foundProduct.quantity > 1) {
                 foundProduct.quantity -= 1;
                 setCartProducts([...cartProducts]);
-            } else {
-                removeProduct(product);
-                setCartProducts([...cartProducts]);
-            }
+             }
 
         }
-        const index = cartProducts.indexOf(foundProduct);
-        // console.log("index", index);
+       // const index = cartProducts.indexOf(foundProduct);
     }
 
     /*  Function to remove a product from the cart */

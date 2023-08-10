@@ -16,9 +16,14 @@ const CartPage = () => {
             <p>Panier</p>
             <button onClick={reset} >Vider le panier</button>
             </div>
-            <ProductCard />
+            {/* Condition pour afficher votre panier est vide */}
+            {totalPrice == 0 ? <p  className={style.emptyCart}>Votre panier est vide !</p> : <div>
+                <ProductCard /> <p className={style.total}>Total: {totalPrice}€ </p>
+                </div>
 
-            <p className={style.total}>Total: {totalPrice}€ </p>
+
+ }
+            
 
 <NavLink to="/order"> <Button title="Payer la commande"/></NavLink>
         </main>
