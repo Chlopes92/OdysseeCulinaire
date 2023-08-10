@@ -11,20 +11,19 @@
     z-index:-1;
 }
 .modalContent{
-    width: 40vw;
+    width: 30vw;
     height: 60vh;
     border: var(--gold) solid 5px;
     text-align: center;
-    display: block;
     margin: auto;
     background-color: white;
     z-index:99;
-}
-.modalContent  {
-    margin-top: 3vh;
     display: flex;
     flex-direction: column;
+    gap: 3vh;
 }
+
+
 
 .modalContent .link button {
     border : var(--gold) solid 2px;
@@ -35,7 +34,11 @@
     font-family: cinzel;
     background-color: white;
     color: var(--blue);
-       
+    cursor: pointer;
+}
+.modalContent .link img{
+    width: 2vw;
+    margin: 0 1vw;
 }
 
 .modalContent .btnClose{
@@ -46,10 +49,14 @@ font-weight: bold;
 display:block;
 width: 95%;
 text-align: end;
-border: red solid 1px;
+margin:2vh 0 .5vh;
 }
 
 
-.list li{
-    list-style:disc;
+.modalContent .list {
+ 
+    width: 75%;
+    text-align: start;
+    margin: 0 auto;
+    list-style: disc;
 }

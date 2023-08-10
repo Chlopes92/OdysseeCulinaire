@@ -20,17 +20,17 @@ return (
             <h3>Choisissez votre mode de commande</h3>
             <p>Paris - 18eme - 33 rue du Simplon</p>
             <ul className={style.list}>
-                <li>Click & Collect</li>
-                <li>Service en salle</li>
-                <li>Livraison possible</li>
+                <li>Click & Collect (jusqu'à 23h30)</li>
+                <li>Service en salle (jusqu'à 00h00)</li>
+                <li>Livraison (jusqu'à 23h30)</li>
             </ul>
 
 
 
             <div className={style.link}>
-                <button>Emporté</button>
-                <button>Sur place</button>
-                <button><NavLink to='/form'>Livraison</NavLink></button>
+                <button><img src="image\icons\emporter.png" alt="emporter"/>Emporté</button>
+                <button><img src="image\icons\sur-place.png" alt="sur-place"/>Sur place</button>
+                <button><img src="image\icons\livraison.png" alt="livraison"/><NavLink to='/form'>Livraison</NavLink></button>
             </div>
         </div>
         </section>)
