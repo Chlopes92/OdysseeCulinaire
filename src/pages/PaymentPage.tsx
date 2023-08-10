@@ -27,8 +27,8 @@ const PaymentPage = () => {
 
     return (
         <main>
-
-            {/* Modal pour choisir le mode de commande */}
+       
+            {/* Modale pour choisir le mode de commande */}
             {isOpen &&
                 <Modal>
                     <button className={style.btnClose} onClick={closeModal}>X</button>
@@ -49,7 +49,7 @@ const PaymentPage = () => {
                 </Modal>
             }
 
-            {/* Modal pour choisir le mode de paiement */}
+            {/* Modale pour choisir le mode de paiement */}
             {paymentModal &&
                 <Modal>
                     <button className={style.btnClose} onClick={togglePaymentModal}>X</button>

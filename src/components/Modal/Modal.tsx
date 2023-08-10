@@ -8,8 +8,7 @@ const Modal = (props: IModalProps) => {
     const { children } = props;
 
     return (
-        (<section>
-            <div className={style.overlay}></div>
+        (<section className={style.overlay}>
             <div className={style.modalContent}>
                 {children}
             </div>
