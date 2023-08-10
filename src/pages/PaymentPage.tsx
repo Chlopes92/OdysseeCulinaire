@@ -1,8 +1,21 @@
-const PaymentPage = () =>{
+import Modal from "components/Modal/Modal";
+import { useState } from "react";
+
+const PaymentPage = () => {
+
+    const [isOpen, setModal] = useState(true);
+    const toggleModal = () => {
+        setModal(!isOpen);
+    }
+
     return (
         <main>
-            <h1>Payment</h1>
+            {isOpen && <Modal />
+
+            }
+
         </main>
+
     );
 }
 
