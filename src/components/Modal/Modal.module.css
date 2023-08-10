@@ -1,0 +1,55 @@
+.overlay{
+    background-color : var(--blue);
+    opacity: 34%;
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:-1;
+}
+.modalContent{
+    width: 40vw;
+    height: 60vh;
+    border: var(--gold) solid 5px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: white;
+    z-index:99;
+}
+.modalContent  {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalContent .link button {
+    border : var(--gold) solid 2px;
+    width: 80%;
+    margin-top: 2vh;
+    padding:1vh;
+    text-align: left;
+    font-family: cinzel;
+    background-color: white;
+    color: var(--blue);
+       
+}
+
+.modalContent .btnClose{
+color: var(--pink);
+background-color: white;
+font-size: 30px;
+font-weight: bold;
+display:block;
+width: 95%;
+text-align: end;
+border: red solid 1px;
+}
+
+
+.list li{
+    list-style:disc;
+}

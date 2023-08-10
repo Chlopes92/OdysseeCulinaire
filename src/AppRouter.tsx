@@ -1,6 +1,7 @@
 import App from "App"
 import CartPage from "pages/CartPage"
 import ErrorPage from "pages/ErrorPage"
+import FormPage from "pages/FormPage"
 import HomePage from "pages/HomePage"
 import OrderPage from "pages/OrderPage"
 import PaymentPage from "pages/PaymentPage"
@@ -39,6 +40,10 @@ const AppRouter = () => {
                 {
                     path: "/payment",
                     element: <PaymentPage />,
+                },
+                {
+                    path: "/form",
+                    element: <FormPage />,
                 },
                 {
                     path: "/order",

@@ -2,6 +2,7 @@ import style from './Button.module.css';
 
 interface ButtonProps  {
     title: string;
+    onclick? : () => void;
 }
 
 const Button = (props: ButtonProps) => {
