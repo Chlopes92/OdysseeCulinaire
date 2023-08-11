@@ -17,7 +17,8 @@ const ProductCategoryPage = () =>{
     let { category } = useParams();
     console.log(category)
     let product_displayed = PRODUCTS.filter(product => product.category.includes(category ?? ''));
-    
+   // let product_displayed = PRODUCTS.filter(product => !product.category.includes(category ?? '')); //Exemple
+
     return (
         <section>
             <Carousel />

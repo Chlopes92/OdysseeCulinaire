@@ -1,7 +1,8 @@
-import { IProduct, PRODUCTS } from "mocks/products";
+import { IProduct, PRODUCTS, ProductAllergyType, TagType } from "mocks/products";
 import style from './ProductItem.module.css';
 import { useCartContext } from "contexts/Cart.context";
 import { useState } from "react";
+
 
 interface ProductItemProps {
     product: IProduct;
