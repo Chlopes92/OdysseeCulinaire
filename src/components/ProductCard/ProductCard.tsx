@@ -2,13 +2,15 @@ import Counter from "components/Counter/Counter";
 import { useCartContext } from "contexts/Cart.context";
 import { Link, useLocation } from "react-router-dom";
 import style from "./ProductCard.module.css";
+import { IIngredient } from "mocks/products";
 
 
 const ProductCard = () => {
     const { products, removeProduct, removeOne, addOne } = useCartContext();
     const location = useLocation();
-    console.log("location", location);
-
+ 
+      
+    
     return (
         <main className={style.productCard}>
             <ul className={style.sizecard}>
@@ -21,8 +23,20 @@ const ProductCard = () => {
                                 <p>{p.product.price}€</p>
                             </div>
                             <div className={style.custom}>
-                                <p>Inclus</p>
-                                <p>Extras</p>
+                          
+                          {/* Affiche les ingrédients inclus */}
+                                <div className={style.ingredient}>
+                                    <p><strong>Inclus :</strong></p> {p.product.includedIngredients.map((ii)=>
+                                    <p> {ii.isSelected &&  `${ii.ingredient.title} `} </p>
+                                    )} 
+                                </div>
+
+                        {/* Affiche les extras choisis */}
+                                <div className={style.ingredient}>
+                                    <p><strong>Extras :</strong></p> {p.product.extras.map((extra)=>
+                                    <p> {extra.isSelected &&  `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`}</p>
+                                    )} 
+                                </div>
                             </div>
                         </section>
                         <div >
