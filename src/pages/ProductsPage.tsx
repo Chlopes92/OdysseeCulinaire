@@ -16,7 +16,9 @@ const navigate = useNavigate();
 const [query] = useSearchParams()
 let tagArray = query.get('filter')?.split(",") as TagType[]
 console.log(tagArray)
-if(tagArray.length && tagArray[0].length === 0){
+if(tagArray === undefined){
+    tagArray=[]
+}else if (tagArray.length && tagArray[0].length === 0){
     tagArray.pop()
 }
 // console.log("test", test.getAll('filter') )
@@ -70,8 +72,8 @@ const ProductsPage = () => {
     let product_filtered = PRODUCTS
     const [query] = useSearchParams()
     const tagArray = query.get('filter')?.split(",") as TagType[]
-    // console.log("Tag Array: ", tagArray);
-        if(tagArray.length && tagArray[0].length){
+    console.log("Tag Array: ", tagArray);
+        if(tagArray?.length && tagArray[0].length){
             product_filtered = PRODUCTS.filter(product => {
             let tmp = true
                 tagArray.forEach(tag => {
