@@ -1,0 +1,70 @@
+.list {
+
+    width: 75%;
+    text-align: start;
+    margin: 0 auto;
+    list-style: disc;
+}
+
+.link button {
+    border: var(--gold) solid 2px;
+    width: 80%;
+    margin-top: 2vh;
+    padding: 1vh;
+    text-align: left;
+    font-family: cinzel;
+    background-color: white;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.link img {
+    width: 2vw;
+    margin: 0 1vw;
+}
+
+.btnClose {
+    color: var(--pink);
+    background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    width: 95%;
+    text-align: end;
+    margin: 2vh 0 .5vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+.content .logo {
+    width: 5vw;
+}
+.content .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    height:100%;
+}
+
+.icons button {
+    border: var(--gold) solid 2px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 20vh;
+    text-align: left;
+    font-family: 'cinzel';
+    background-color: white;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.icons img {
+    width: 4.5vw;
+}
+.butonn {
+    cursor: pointer;
+}

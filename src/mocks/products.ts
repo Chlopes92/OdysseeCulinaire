@@ -59,28 +59,20 @@ includedIngredients:[
     {
         ingredient:{
             id: 1,
-            title: "avec pita"
+            title: "Pita"
         },
-        isSelected: false,
-    },
-    {
-        ingredient:{
-            id: 1,
-            title: "sans pita"
-        },
-        isSelected: false,
-    },    
-
+        isSelected: true,
+    }
 ],
    
 extras:[
     {
         ingredient:{
             id: 1,
-            title: "légumes crus",
+            title: "Légumes crus",
         },
         additionalPrice: 1.5,
-        isSelected: false,
+        isSelected: true,
     }
    
 ],
@@ -102,16 +94,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Oignons"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Tomates"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -120,7 +112,7 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "viande hachée",
+                title: "Viande hachée",
             },
             additionalPrice: 3.5,
             isSelected: false,
@@ -146,17 +138,31 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Feta"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Tomates"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Concombre"
+            },
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 4,
+                title: "Olives noires"
+            },
+            isSelected: true,
+        },
     
     ],
        
@@ -164,7 +170,7 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Feta",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -190,34 +196,33 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Pain grillé"
             },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },    
-    
+            isSelected: true,
+        }  
     ],
        
     extras:[
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Citron",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 1,
+                title: "Pain grillé",
+            },
+            additionalPrice: 1,
             isSelected: false,
         }
        
     ],
     isAddToCart: false,
 },
-
 {
     id: 5,
     title: "Fava",
@@ -234,16 +239,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Huile d'olive"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Jus de citron"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -252,7 +257,7 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Feta",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -264,7 +269,7 @@ isAddToCart: false,
 {
     id: 6,
     title: "Psarosoupa",
-    description: "Soupe  grecque traditionnelle à base de poisson, de légumes frais et d'épices.",
+    description: "Soupe grecque traditionnelle à base de poisson, de légumes frais et d'épices.",
     price: 5.5,
     maxQuantity: 10,
     category: ['entrees'],
@@ -278,16 +283,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Herbes aromatiques"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Carottes"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -296,7 +301,15 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Pommes de terres",
+            },
+            additionalPrice: 1,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 2,
+                title: "Carottes",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -321,17 +334,24 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Tomates"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Poivrons"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Oignons"
+            },
+            isSelected: true,
+        },   
     
     ],
        
@@ -339,9 +359,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Epices",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1,
             isSelected: false,
         }
        
@@ -363,17 +383,31 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Olives noires"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Olives vertes"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Tzatziki"
+            },
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 4,
+                title: "Salade feta"
+            },
+            isSelected: true,
+        },
     
     ],
        
@@ -381,9 +415,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "salade verte",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1,
             isSelected: false,
         }
        
@@ -407,16 +441,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Frites"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Tzatziki"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -425,9 +459,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Frites",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 2.5,
             isSelected: false,
         }
        
@@ -451,25 +485,17 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sauce Tzatziki"
             },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },    
-    
+            isSelected: true,
+        }   
     ],
        
     extras:[
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Salade verte",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -495,16 +521,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Piment"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Basilic"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -513,9 +539,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Béchamel",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1.25,
             isSelected: false,
         }
        
@@ -539,16 +565,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Béchamel"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Herbes aromatiques"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -557,9 +583,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Béchamel",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1.25,
             isSelected: false,
         }
        
@@ -583,17 +609,24 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sauce Tzatiki"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Olives noires"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Pain pita"
+            },
+            isSelected: true,
+        },   
     
     ],
        
@@ -601,7 +634,15 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Boulettes de viande",
+            },
+            additionalPrice: 2.5,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 2,
+                title: "Sauce Tzatiki",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -627,16 +668,23 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Frites"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Salade verte"
             },
-            isSelected: false,
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Galette de blé"
+            },
+            isSelected: true,
         },    
     
     ],
@@ -645,11 +693,28 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Frites",
             },
             additionalPrice: 1.5,
             isSelected: false,
-        }
+        },
+        {
+            ingredient:{
+                id: 2,
+                title: "Salade",
+            },
+            additionalPrice: 1.25,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Sauce",
+            },
+            additionalPrice: 1.5,
+            isSelected: false,
+        },
+        
        
     ],
     isAddToCart: false,
@@ -670,16 +735,30 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Boeuf"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Agneaux"
             },
-            isSelected: false,
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Poulet"
+            },
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 4,
+                title: "Légumes grillés"
+            },
+            isSelected: true,
         },    
     
     ],
@@ -688,7 +767,7 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Légumes grillés",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -714,17 +793,17 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Miel"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Noix"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        } 
     
     ],
        
@@ -732,12 +811,11 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Noix",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 2,
             isSelected: false,
         }
-       
     ],
     isAddToCart: false,
 },
@@ -757,16 +835,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sauce à l'orange"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Miel"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -775,9 +853,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Noix",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 2,
             isSelected: false,
         }
        
@@ -801,27 +879,19 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Noix"
             },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },    
-    
+            isSelected: true,
+        }  
     ],
        
     extras:[
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Sirop",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
             isSelected: false,
         }
        
@@ -845,16 +915,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Crème fouettée"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Noix"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -863,7 +933,7 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Crème de noix",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -889,16 +959,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sirop de chocolat"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Noix"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -907,9 +977,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Sirop de chocolat",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1,
             isSelected: false,
         }
        
@@ -933,16 +1003,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sucre"
             },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -951,9 +1014,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Chantilly",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
             isSelected: false,
         }
        
@@ -977,16 +1040,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Myrtilles"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Feuilles de menthe"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -995,9 +1058,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Glaçons",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
             isSelected: false,
         }
        
@@ -1021,27 +1084,19 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Feuilles de menthe"
             },
-            isSelected: false,
-        },
-        {
-            ingredient:{
-                id: 1,
-                title: ""
-            },
-            isSelected: false,
-        },    
-    
+            isSelected: true,
+        }    
     ],
        
     extras:[
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Glaçons",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
             isSelected: false,
         }
        
@@ -1065,16 +1120,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Basilic"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Citron"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -1083,9 +1138,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Glaçons",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.5,
             isSelected: false,
         }
        
@@ -1109,17 +1164,24 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Romarin"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Miel"
             },
-            isSelected: false,
-        },    
+            isSelected: true,
+        },
+        {
+            ingredient:{
+                id: 3,
+                title: "Jus de citron"
+            },
+            isSelected: true,
+        },   
     
     ],
        
@@ -1127,7 +1189,15 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Romarin",
+            },
+            additionalPrice: 0.5,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 2,
+                title: "Miel",
             },
             additionalPrice: 1.5,
             isSelected: false,
@@ -1153,16 +1223,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Sirop de grenadine"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Romarin"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -1171,9 +1241,9 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Graines de grenade",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 1.25,
             isSelected: false,
         }
        
@@ -1197,16 +1267,16 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: ""
+                title: "Tabasco"
             },
-            isSelected: false,
+            isSelected: true,
         },
         {
             ingredient:{
-                id: 1,
-                title: ""
+                id: 2,
+                title: "Feuilles de menthe"
             },
-            isSelected: false,
+            isSelected: true,
         },    
     
     ],
@@ -1215,9 +1285,17 @@ isAddToCart: false,
         {
             ingredient:{
                 id: 1,
-                title: "",
+                title: "Pamplemousse",
             },
-            additionalPrice: 1.5,
+            additionalPrice: 0.75,
+            isSelected: false,
+        },
+        {
+            ingredient:{
+                id: 2,
+                title: "Tabasco",
+            },
+            additionalPrice: 0.5,
             isSelected: false,
         }
        

@@ -2,11 +2,12 @@
 import style from "./Header.module.css";
 import NavBar from "components/NavBar/NavBar";
 import { useCartContext } from "contexts/Cart.context";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const { getTotalProduct } = useCartContext();
   const totalQuantity = getTotalProduct();
+  const location = useLocation();
 
   return (
     <section className={style.header}>
@@ -14,10 +15,14 @@ const Header = () => {
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
       <NavBar />
-      <Link to="/cart">
+      {location.pathname != "/order" && 
+      (<Link to="/cart">
+        <div className={style.flex}>
         <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
-        <p>{totalQuantity}</p>
-      </Link>
+        <div className={style.borderQuantity} ><p className={style.quantity}>{totalQuantity}</p></div>
+
+        </div>
+      </Link>)}
     </section>
   );
 };

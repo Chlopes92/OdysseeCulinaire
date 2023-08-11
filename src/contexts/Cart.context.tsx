@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 interface ICartProduct {
     id: string;
     product: IProduct;
-    quantity: number
+    quantity: number;
 }
 
 /* Interface panier */
@@ -67,27 +67,26 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove quantity from a product */
     const removeOne = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => p.product.id === product.id);
+         // pour le produit customisé ?
+       // const foundProductCustom = cartProducts.find((p) => p.product === product);
 
-        // console.log("found", foundProduct);
         if (!foundProduct) {
             return;
         } else {
             if (foundProduct.quantity > 1) {
                 foundProduct.quantity -= 1;
                 setCartProducts([...cartProducts]);
-            } else {
-                removeProduct(product);
-                setCartProducts([...cartProducts]);
-            }
+             }
 
         }
-        const index = cartProducts.indexOf(foundProduct);
-        // console.log("index", index);
+       // const index = cartProducts.indexOf(foundProduct);
     }
 
     /*  Function to remove a product from the cart */
     const removeProduct = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => p.product.id === product.id);
+        // pour le produit customisé ?
+       // const foundProductCustom = cartProducts.find((p) => p.product === product);
         if (foundProduct) {
             const index = cartProducts.indexOf(foundProduct);
             cartProducts.splice(index, 1);
@@ -118,6 +117,23 @@ export const CartProvider = (props: CartProviderProps) => {
     const resetCart = () => {
         setCartProducts([]);
     }
+
+    // /* Function to get the included ingredients */
+
+    // const getIncludedIngredients = (product: IProduct) => {
+    //     const isIncluded = cartProducts.map((p) => p.product.includedIngredients.filter((inclus)=> inclus.isSelected === true));
+    //     if (isIncluded) return isIncluded;
+    // }
+
+    // const getExtrasIngredients = (product: IProduct) => {
+    //     const isExtra = cartProducts
+    //     .map((p) => p.product.extras
+    //     .map((extra)=> extra.isSelected === true)
+    
+        
+    //     );
+        
+    // }
 
     const cart: ICart = {
         products: cartProducts,

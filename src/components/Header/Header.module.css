@@ -12,6 +12,23 @@
 .panier{
     padding-top: 32px ;
 }
+.flex{
+    display :flex;
+    align-items: end;
+    width:5vw;
+}
 
+.borderQuantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
 
+.quantity{
+    color: white;
+}
   
