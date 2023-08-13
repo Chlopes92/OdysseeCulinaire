@@ -6,7 +6,7 @@ import HomePage from "pages/HomePage"
 import OrderPage from "pages/OrderPage"
 import PaymentPage from "pages/PaymentPage"
 import ProductCategoryPage from "pages/ProductCategoryPage"
-import ProductDetailPage from "pages/ProductDetailPage/ProductDetailPage"
+import ProductDetailPage from "pages/ProductDetailPage"
 import ProductsPage from "pages/ProductsPage"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 

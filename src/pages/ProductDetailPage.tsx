@@ -3,10 +3,22 @@ import Customisation from 'components/Customisation/Customisation';
 import style from './ProductDetailsPage.module.css';
 import { useParams } from 'react-router-dom';
 import { PRODUCTS } from 'mocks/products';
-import Counter from '../../components/Counter/Counter'; 
+import { useState } from 'react';
+import Counter from 'components/Counter/Counter';
 
 
 const ProductDetailPage = () => {
+ 
+  const [quantity, setQuantity] = useState(1);
+
+  const add = () => {
+    setQuantity(quantity+1);
+  }
+  const remove = () => {
+    if(quantity > 0)
+    setQuantity(quantity-1);
+  }
+ 
   const { id } = useParams();
   
   // Gérer le cas où l'ID n'est pas un nombre valide
@@ -23,13 +35,7 @@ const ProductDetailPage = () => {
   if (!product) {
     return <div>Produit introuvable</div>;
   }
-  const quantity = 1; 
-  const add = () => {
-    // logic
-  };
-  const remove = () => {
-    //logic 
-  };
+  
 
  return (
     <section>
@@ -37,8 +43,17 @@ const ProductDetailPage = () => {
         <img className={style.productImage} src={product.img.src} alt={product.img.alt} />
          <Customisation product={product} /> 
       </div> 
-      <Counter quantity={quantity} add={add} remove={remove} />
-     
+      <div className={style.containeurBas}>
+      
+      <Counter quantity= {quantity}
+      add = {() => add()}
+      remove = {() => remove()}
+       />
+       
+      
+       
+              
+        </div> 
     </section>
   );
 };
