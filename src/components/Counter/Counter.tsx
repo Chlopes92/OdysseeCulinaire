@@ -19,4 +19,4 @@ const Counter = (props: QuantityPickerProps) => {
     )
 }
 
-export default Counter;
+export default Counter; 
