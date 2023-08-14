@@ -1,4 +1,3 @@
-
 import Customisation from 'components/Customisation/Customisation';
 import style from './ProductDetailsPage.module.css';
 import { useParams } from 'react-router-dom';
