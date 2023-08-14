@@ -8,7 +8,7 @@ import PaymentPage from "pages/PaymentPage"
 import ProductCategoryPage from "pages/ProductCategoryPage"
 import ProductDetailPage from "pages/ProductDetailPage"
 import ProductsPage from "pages/ProductsPage"
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const AppRouter = () => {
     const router =createBrowserRouter([

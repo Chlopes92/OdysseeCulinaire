@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+.productImage {
+    width: 50vw;
+    height: 33.3333vh;
+    object-fit: contain;
+}
