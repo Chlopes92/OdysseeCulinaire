@@ -1,6 +1,7 @@
 import PaymentForm from "components/PaymentForm/PaymentForm";
 import { useForm } from "react-hook-form"; // npm i react-hook-form
 import style from "./FormPage.module.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -23,9 +24,11 @@ type FormValues = {
 const FormPage = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
-    console.log('errors', errors);
 
     return (
+
+<>
+        <a><Link to='/products' >Revenir à la carte </Link> </a>
         <div className={style.formulaire}>
             {/* Coordonnées */}
             <h2>1.Coordonnées</h2>
@@ -145,6 +148,7 @@ const FormPage = () => {
 
             <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.</p>
         </div>
+        </>
     )
 }
 export default FormPage;

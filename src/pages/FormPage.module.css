@@ -16,6 +16,7 @@
 .formulaire label{
     color: var(--blue);
     margin-top: 2vh;
+  
 }
 .formulaire input{
     border: none;
