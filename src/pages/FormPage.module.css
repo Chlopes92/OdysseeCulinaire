@@ -1,0 +1,44 @@
+.formulaire {
+    width: 60%;
+    margin: 2vw;
+}
+.formulaire .small{
+    font-size: 12px;
+    margin-bottom: 3vh;
+    text-align: justify;
+}
+
+.formulaire hr{
+    border :var(--gold) 2px solid;  
+}
+
+
+.formulaire label{
+    color: var(--blue);
+    margin-top: 2vh;
+}
+.formulaire input{
+    border: none;
+    border-bottom: var(--gold) 2px solid;
+    margin-right:15px;
+    color: var(--blue);
+    width: 100%;
+}
+
+.formulaire button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--pink);
+    border-radius : 11px;
+    width: 80%;
+    padding: 2vh;
+    display: block;
+    margin:5vh auto;
+
+}
+
+.formulaire .errorMessage {
+    font-size: 12px;
+    color : var(--pink);
+}
