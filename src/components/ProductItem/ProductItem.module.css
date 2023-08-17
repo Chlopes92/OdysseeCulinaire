@@ -1,4 +1,4 @@
-.buttonToSelected{
+.buttonAddToCart{
     background-color: var(--pink);
     height: 70px;
     width: 70px;
@@ -6,7 +6,7 @@
     cursor: pointer;
 }
 
-.buttonAddToCart{
+.buttonToSelected{
     background-color: var(--gold);
     height: 70px;
     width: 70px;
