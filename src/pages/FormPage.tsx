@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form"; // npm i react-hook-form
 import style from "./FormPage.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "contexts/Cart.context";
-import ProductCard from "components/ProductCard/ProductCard";
 import Button from "components/Button/Button";
 
 
