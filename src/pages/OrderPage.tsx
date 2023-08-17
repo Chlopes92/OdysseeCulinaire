@@ -10,12 +10,15 @@ const OrderPage = () => {
         <main className={style.orderPage}>
             <h1 className={style.title}>Votre commande est en cours de préparation</h1>
 
-            <div>
+            <div className={style.infos}>
                 <p>Table n°{totalQuantity + 2} </p>
                 <p>Commande n°{totalQuantity * 3} </p>
             </div>
-            <ProductCard />
 
+          
+
+            <ProductCard  />
+        
             <div className={style.total}>
 
                 <p>Articles ({totalQuantity})</p>

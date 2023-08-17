@@ -27,7 +27,7 @@ const ProductCard = () => {
                           {/* Affiche les ingrédients inclus */}
                                 <div className={style.ingredient}>
                                     <p><strong>Inclus :</strong></p> {p.product.includedIngredients.map((ii)=>
-                                    <p> {ii.isSelected &&  `${ii.ingredient.title} `} </p>
+                                    <p> {ii.isSelected &&  `${ii.ingredient.title} `} / </p>
                                     )} 
                                 </div>
 

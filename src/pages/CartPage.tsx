@@ -21,19 +21,28 @@ const CartPage = () => {
 
             <div className={style.flex}>
                 <p>Panier</p>
-                <button onClick={reset} >Vider le panier</button>
+                {totalPrice !== 0 &&
+                <button onClick={reset} >Vider le panier</button>}
             </div>
 
             {/* Condition pour afficher votre panier est vide */}
             {totalPrice == 0
-                ? <p className={style.emptyCart}>Votre panier est vide !</p>
-                : <div><ProductCard /> <p className={style.total}>Total: {totalPrice}€ </p></div>
+                ? <div>
+                   <p className={style.emptyCart}>Votre panier est vide !</p>
+                   <NavLink to="/products">
+                    <Button title="Retour à la carte"/>
+                    </NavLink> 
+                   </div>
+                : <div>
+                    <ProductCard />
+                    <p className={style.total}>Total: {totalPrice}€ </p>
+                    <NavLink to="/payment">
+                    <Button title="Payer la commande"/>
+                    </NavLink>
+                    </div>
             }
 
-            <NavLink to="/payment">
-                <Button title="Payer la commande"/>
             
-            </NavLink>
             
                 
         </main>
