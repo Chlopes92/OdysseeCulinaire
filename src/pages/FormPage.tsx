@@ -35,7 +35,7 @@ const FormPage = () => {
     return (
 
         <>
-            <a><Link to='/products' >Revenir à la carte </Link> </a>
+            <a className={style.retour}><Link to='/products' > <span>&lsaquo;</span> Revenir à la carte </Link> </a>
 
             <div className={style.page} >
 
@@ -48,7 +48,7 @@ const FormPage = () => {
                     <PaymentForm onSubmit={handleSubmit((data) => {
                         console.log("data", data)
                     })}>
-                        <div>
+                        <div className={style.flex}>
                             <label htmlFor="email">*Email:</label>
                             {/* {required : "Ce champ est obligatoire"} permet d'avoir le focus sur l'input et rend le champ obligatoire */}
                             <input {...register("email", {
@@ -73,46 +73,60 @@ const FormPage = () => {
                         console.log("data", data)
                     })}>
                         <div>
-                            {/* Nom */}
-                            <label htmlFor="nom">* Nom:</label>
-                            <input {...register("nom", { required: "Ce champ est obligatoire" })} id="nom" />
-                            {errors.nom && <p className={style.errorMessage}>{errors.nom.message}</p>}
+                            <div className={style.flex}>
 
-                            {/* Prenom */}
-                            <label htmlFor="prenom">* Prénom:</label>
-                            <input {...register("prenom", { required: "Ce champ est obligatoire" })} id="prenom" />
-                            {errors.prenom && <p className={style.errorMessage}>{errors.prenom.message}</p>}
+                                {/* Nom */}
+                                <label htmlFor="nom">* Nom:</label>
+                                <input {...register("nom", { required: "Ce champ est obligatoire" })} id="nom" />
+                                {errors.nom && <p className={style.errorMessage}>{errors.nom.message}</p>}
+
+                                {/* Prenom */}
+                                <label htmlFor="prenom">* Prénom:</label>
+                                <input {...register("prenom", { required: "Ce champ est obligatoire" })} id="prenom" />
+                                {errors.prenom && <p className={style.errorMessage}>{errors.prenom.message}</p>}
+                            </div>
 
                             {/* Pays */}
-                            <label htmlFor="pays">* Pays / Région :</label>
-                            <input {...register("pays", { required: "Ce champ est obligatoire" })} id="pays" />
-                            {errors.pays && <p className={style.errorMessage}>{errors.pays.message}</p>}
+                            <div className={style.flex}>
+                                <label htmlFor="pays">* Pays / Région :</label>
+                                <input {...register("pays", { required: "Ce champ est obligatoire" })} id="pays" />
+                                {errors.pays && <p className={style.errorMessage}>{errors.pays.message}</p>}
+                            </div>
 
                             {/* Adresse */}
-                            <label htmlFor="adresse">* Adresse :</label>
-                            <input {...register("adresse", { required: "Ce champ est obligatoire" })} id="adresse" />
-                            {errors.adresse && <p className={style.errorMessage}>{errors.adresse.message}</p>}
+                            <div className={style.flex}>
+                                <label htmlFor="adresse">* Adresse :</label>
+                                <input {...register("adresse", { required: "Ce champ est obligatoire" })} id="adresse" />
+                                {errors.adresse && <p className={style.errorMessage}>{errors.adresse.message}</p>}
+                            </div>
 
 
                             {/* Compléments d'adresse */}
-                            <label htmlFor="etage">Etage,esc,bat :</label>
-                            <input {...register("etage")} id="etage" />
+                            <div className={style.flex}>
+                                <label htmlFor="etage">Etage,esc,bat :</label>
+                                <input {...register("etage")} id="etage" />
+                            </div>
 
-                            {/* Code Postal */}
-                            <label htmlFor="codePostal">* Code postal:</label>
-                            <input {...register("codePostal", { required: "Ce champ est obligatoire", minLength: { value: 5, message: "Vous avez renseigné moins de 5 caractères pour le code postal" } })} id="codePostal" />
-                            {errors.codePostal && <p className={style.errorMessage}>{errors.codePostal.message}</p>}
+                            <div className={style.flex}>
+                                {/* Code Postal */}
+                                <label htmlFor="codePostal">* Code postal:</label>
+                                <input {...register("codePostal", { required: "Ce champ est obligatoire", minLength: { value: 5, message: "Vous avez renseigné moins de 5 caractères pour le code postal" } })} id="codePostal" />
+                                {errors.codePostal && <p className={style.errorMessage}>{errors.codePostal.message}</p>}
 
-                            {/* Ville */}
-                            <label htmlFor="ville">* Ville:</label>
-                            <input {...register("ville", { required: "Ce champ est obligatoire" })} id="ville" />
-                            {errors.ville && <p className={style.errorMessage}>{errors.ville.message}</p>}
+                                {/* Ville */}
+                                <label htmlFor="ville">* Ville:</label>
+                                <input {...register("ville", { required: "Ce champ est obligatoire" })} id="ville" />
+                                {errors.ville && <p className={style.errorMessage}>{errors.ville.message}</p>}
+
+                            </div>
 
 
                             {/* Téléphone */}
-                            <label htmlFor="telephone">* Téléphone :</label>
-                            <input {...register("telephone", { required: "Ce champ est obligatoire" })} id="telephone" />
-                            {errors.telephone && <p className={style.errorMessage}>{errors.telephone.message}</p>}
+                            <div className={style.flex}>
+                                <label htmlFor="telephone">* Téléphone :</label>
+                                <input {...register("telephone", { required: "Ce champ est obligatoire" })} id="telephone" />
+                                {errors.telephone && <p className={style.errorMessage}>{errors.telephone.message}</p>}
+                            </div>
                         </div>
 
                         <button type="submit">Livraison</button>
@@ -168,39 +182,50 @@ const FormPage = () => {
                         <div>
 
                             {/* Numéro de carte */}
-                            <label htmlFor="cartNumber">* Numéro de la carte:</label>
-                            <input {...register("cartNumber", {
-                                required: "Ce champ est obligatoire", pattern: {
-                                    value: /^[0-9]{16}$/,
-                                    message: "Veuillez renseigner les 16 chiffres figurant au recto de votre carte",
-                                }
-                            })} id="cartNumber" />
-                            {errors.cartNumber && <p className={style.errorMessage}>{errors.cartNumber.message}</p>}
+                            <div className={style.flex}>
+                                <label htmlFor="cartNumber">* Numéro de la carte:</label>
+                                <input {...register("cartNumber", {
+                                    required: "Ce champ est obligatoire", pattern: {
+                                        value: /^[0-9]{16}$/,
+                                        message: "Veuillez renseigner les 16 chiffres figurant au recto de votre carte",
+                                    }
+                                })} id="cartNumber" />
+                                {errors.cartNumber && <p className={style.errorMessage}>{errors.cartNumber.message}</p>}
+                            </div>
 
                             {/* Titulaire de la carte */}
-                            <label htmlFor="titulaire">* Titulaire de la carte:</label>
-                            <input {...register("titulaire", { required: "Ce champ est obligatoire" })} id="titulaire" />
-                            {errors.titulaire && <p className={style.errorMessage}>{errors.titulaire.message}</p>}
+                            <div className={style.flex}>
+                                <label htmlFor="titulaire">* Titulaire de la carte:</label>
+                                <input {...register("titulaire", { required: "Ce champ est obligatoire" })} id="titulaire" />
+                                {errors.titulaire && <p className={style.errorMessage}>{errors.titulaire.message}</p>}
+                            </div>
 
-                            {/* Date d'expiration de la carte */}
-                            <label htmlFor="expirationDate">* Date d'expiration:</label>
-                            <input {...register("expirationDate", {
-                                required: "Ce champ est obligatoire",
-                                pattern: {
-                                    value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
-                                    message: "Veuillez renseigner une date au format 01/01"
-                                }
-                            })} id="expirationDate" />
-                            {errors.expirationDate && <p className={style.errorMessage}>{errors.expirationDate.message}</p>}
 
-                            {/* Cryptogramme */}
-                            <label htmlFor="cryptogramme">* Cryptogramme:</label>
-                            <input {...register("cryptogramme", {
-                                required: "Ce champ est obligatoire", pattern: {
-                                    value: /^[0-9]{3}$/,
-                                    message: "Veuillez renseigner les 3 chiffres figurant au verso de votre carte",
-                                }
-                            })} id="cryptogramme" />
+
+                            <div className={style.flex}>
+
+                                {/* Date d'expiration de la carte */}
+                                <label htmlFor="expirationDate">* Date d'expiration:</label>
+                                <input {...register("expirationDate", {
+                                    required: "Ce champ est obligatoire",
+                                    pattern: {
+                                        value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
+                                        message: "Veuillez renseigner une date au format 01/01"
+                                    }
+                                })} id="expirationDate" />
+                                {errors.expirationDate && <p className={style.errorMessage}>{errors.expirationDate.message}</p>}
+
+                                {/* Cryptogramme */}
+                                <label htmlFor="cryptogramme">* Cryptogramme:</label>
+                                <input {...register("cryptogramme", {
+                                    required: "Ce champ est obligatoire", pattern: {
+                                        value: /^[0-9]{3}$/,
+                                        message: "Veuillez renseigner les 3 chiffres figurant au verso de votre carte",
+                                    }
+                                })} id="cryptogramme" />
+                               
+
+                            </div>
 
 
                             {errors.cryptogramme && <p className={style.errorMessage}>{errors.cryptogramme.message}</p>}
@@ -211,9 +236,10 @@ const FormPage = () => {
                             : <button type="submit">Payer et passer commande</button>
                         }
 
-                    </PaymentForm>
 
-                    <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.</p>
+                    </PaymentForm>
+                    <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.
+                    </p>
                 </section>
 
 
@@ -284,10 +310,11 @@ const FormPage = () => {
                         </p>
 
                     </article>
+                    <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
                 </section>
             </div>
 
-            <img src="image\icons\dionysos.png" alt="Dyonisos" width="150px" />
+
         </>
     )
 }

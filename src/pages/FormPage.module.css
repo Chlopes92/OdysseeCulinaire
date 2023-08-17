@@ -2,9 +2,26 @@
 
 .page {
     display: flex;
+    margin-top: 8vh;
 }
+
 .page h3 {
     margin: 2vh;
+}
+.retour {
+   position: absolute;
+   padding: 2vw;
+}
+.retour span {
+    font-size: 1.3em;
+}
+
+.flex {
+    display: flex;
+}
+.flex label {
+    margin-bottom: 15px;
+    min-width: fit-content;
 }
 
 /* Recap comprend cart et totalPrice*/
@@ -12,7 +29,11 @@
 .recap{
     width: 30%;
     margin: 2vw;
-    height: 90vh;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }
 
  /*Cart */ 
@@ -112,7 +133,7 @@ border: var(--gold) solid 0.2px;
 
 .formulaire label{
     color: var(--blue);
-    margin-top: 5vh;
+    
   
 }
 .formulaire input{
@@ -253,3 +274,10 @@ border: var(--gold) solid 0.2px;
     object-fit: contain;
 }
 
+/* Dyonisos */
+
+.dyonisos{
+    width: 15vw;
+    margin: 30vh;
+    object-fit: contain;
+}
