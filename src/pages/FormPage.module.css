@@ -24,6 +24,11 @@
     margin-right:15px;
     color: var(--blue);
     width: 100%;
+    margin-bottom: 2vh;
+}
+
+.formulaire input[type="text"]{
+    color: var(--blue);
 }
 
 .formulaire button {
@@ -43,3 +48,100 @@
     font-size: 12px;
     color : var(--pink);
 }
+.infosPayment{
+    margin: 2vh 0;
+}
+.infosPayment>p{
+    padding: 1vh 0;
+    font-family: roboto, serif;
+}
+
+.modePaiement{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.modePaiement label{
+    color: var(--pink);
+    font-weight: bold;
+    margin-left: 1vw;
+}
+
+.modePaiement .cb, .modePaiement .paypal{
+    display: flex;
+    border: var(--pink) solid 2px;
+    width: 45%;
+    margin-bottom: 2vh;
+}
+
+.modePaiement .paypal img{
+   width: 4vw;
+   margin-bottom: 2vh;
+}
+
+.trait{
+    margin-bottom: 2vh;
+}
+
+
+
+/*CSS checkbox */
+ .boxcontainer {
+    display: block;
+    position: relative;
+    padding-left: 5vw;
+    margin-bottom: 0.2em;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+}
+
+/* enlever la checkbox initiale */
+ .boxcontainer input {
+    position: absolute;
+    left: 0px;
+    opacity: 0; 
+    cursor: pointer;
+    height:100%;
+    width: 100%;
+    z-index :99;
+} 
+
+
+/* checkbox style  */
+.boxcontainer .box {
+    position: absolute;
+    top: 0;
+    left: 0.5em;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: var(--pink) solid 2px;
+}
+
+
+.boxcontainer input:checked~.box {
+    background-color: var(--pink);
+   
+}
+
+/*faire apparaitre l'icone "✓" */
+.boxcontainer .box::after {
+    content: "✓";
+    color :white;
+    position: absolute;
+    font-size: 20px;
+    left: 0.2em;
+    bottom: -0.1em;
+    display: none;
+}
+/*faire apparaitre l'icone "✓" */
+.boxcontainer input:checked ~ .box:after {
+    display: block;
+  } 
+
