@@ -1,0 +1,14 @@
+.container {
+    width: 80vw;
+    max-height: 100vh;
+    background-color: rgb(220, 219, 219);
+    overflow: auto; 
+}
+
+.customHr {
+    width: 70vw; 
+    height: 3px;
+    background-color:  var(--gold);
+    border: none;
+    margin: 16px auto; 
+  }
