@@ -15,12 +15,18 @@ const TagList = () => {
 const navigate = useNavigate();
 const [query] = useSearchParams()
 let tagArray = query.get('filter')?.split(",") as TagType[]
+let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[]
 console.log(tagArray)
 if(tagArray === undefined){
     tagArray=[]
 }else if (tagArray.length && tagArray[0].length === 0){
     tagArray.pop()
 }
+if(allergyArray === undefined){
+        allergyArray=[]
+    } else if (allergyArray.length && allergyArray[0].length === 0){
+        allergyArray.pop()
+    }
 // console.log("test", test.getAll('filter') )
     const toggleTag = (tag: TagType) =>{
         if(tagArray.includes(tag)){
@@ -37,14 +43,14 @@ if(tagArray === undefined){
         }
         navigate({
             pathname: "/products",
-            search:`?filter=${tagArray}`
+            search:`?filter=${tagArray}&excludeAllergy=${allergyArray}`
         })
     }
 
     return (
         <ul>
             {tagValues.map(tag => (
-                <li key={tag}>
+                <li key={tag} className={`${tagArray.includes(tag)? 'selected' : ""}`}>
                     <button onClick={() => toggleTag(tag)}>
                         {tag}
                     </button>
@@ -55,11 +61,46 @@ if(tagArray === undefined){
 }
 
 const AllergyList = () => {
+    const navigate = useNavigate();
+    const [query] = useSearchParams();
+    let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[];
+    let filterArray = query.get('filter')?.split(",") as TagType[]
+    // console.log(allergyArray)
+    if(allergyArray === undefined){
+        allergyArray=[]
+    } else if (allergyArray.length && allergyArray[0].length === 0){
+        allergyArray.pop()
+    }
+    if(filterArray === undefined){
+        filterArray=[]
+    } else if (filterArray.length && filterArray[0].length === 0){
+        filterArray.pop()
+    }
+   
+        const toggleAllergy = (allergy: ProductAllergyType) =>{
+            // console.log(allergy)
+            if(allergyArray.includes(allergy)){
+                allergyArray = allergyArray.filter(allergyValue => {
+                    if(allergy === allergyValue){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                })
+            } else{
+                allergyArray.push(allergy)
+                console.log(allergyArray);
+            }
+            navigate({
+                pathname: "/products",
+                search:`?filter=${filterArray}&excludeAllergy=${allergyArray}`
+            })
+        }
     return (
         <ul>
-            {allergyValues.map(allergy => (
-                <li key={allergy}>
-                    <button>
+            {allergyValues.map((allergy) => (
+                <li key={allergy} className={`${allergyArray.includes(allergy)? 'selected' : ""}`}>
+                    <button onClick={() => toggleAllergy(allergy)}>
                         {allergy}
                     </button>
                 </li>
@@ -73,6 +114,8 @@ const ProductsPage = () => {
     const [query] = useSearchParams()
     const tagArray = query.get('filter')?.split(",") as TagType[]
     console.log("Tag Array: ", tagArray);
+    let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[]
+    // console.log("Allergy Array: ", allergyArray);
         if(tagArray?.length && tagArray[0].length){
             product_filtered = PRODUCTS.filter(product => {
             let tmp = true
@@ -83,12 +126,21 @@ const ProductsPage = () => {
                 return tmp;
                 // return product.tags?.includes(tagValues ?? '')
             });
-        } else {
-            product_filtered = PRODUCTS;
+        }
+        if(allergyArray?.length && allergyArray[0].length){
+            console.log(allergyArray)
+            product_filtered = product_filtered.filter(product => {
+                let tmp = true
+                    allergyArray.forEach(allergy =>{
+                        if(product.allergy?.includes(allergy)){
+                            tmp = false
+                    }})
+                    return tmp;
+            });
         }
 
 
-    //let product_excluded = PRODUCTS.filter(product => !product.allergy?.includes(allergyValues ?? ''));
+    // let product_excluded = PRODUCTS.filter(product => !product.allergy?.includes(allergyValues ?? ''));
     const product_displayed = product_filtered.map((product) =>
         <li key={product.id}>
             <ProductItem product={product} />
