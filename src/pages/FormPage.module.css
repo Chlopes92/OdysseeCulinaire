@@ -1,5 +1,77 @@
+/* Page */
+
+.page {
+    display: flex;
+}
+.page h3 {
+    margin: 2vh;
+}
+
+/* Recap comprend cart et totalPrice*/
+
+.recap{
+    width: 30%;
+    margin: 2vw;
+    height: 90vh;
+}
+
+ /*Cart */ 
+
+ .cart {
+    border : var(--gold) solid 5px;
+ }
+
+
+
+ .productCard article {
+    /* border: red solid 2px; */
+    margin: 2vh auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 95%;
+ }
+
+ .productCard article img {
+    box-sizing: border-box;
+    max-width:10vw;
+    height: 10vh;
+    object-fit:fill;
+
+}
+
+
+ .productCard article .infosProductCard{
+    /* border :green solid 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 2vh;
+    width: 80%;
+    font-size: clamp(10px, 2vh, 15px);
+    
+ }
+
+ .productCard article button {
+    background-color :white;
+    color: var(--pink);
+    text-decoration: underline;
+    height: 50%;
+    align-self: end;
+    font-size: clamp(8px, 1em, 12px);
+ }
+
+
+/* Total */
+
+
+.totalPrice {
+    border : var(--gold) solid 5px;
+}
+
+/* Partie Formulaire*/
 .formulaire {
-    width: 60%;
+    width: 70%;
     margin: 2vw;
 }
 .formulaire .small{
@@ -15,7 +87,7 @@
 
 .formulaire label{
     color: var(--blue);
-    margin-top: 2vh;
+    margin-top: 5vh;
   
 }
 .formulaire input{
@@ -47,6 +119,7 @@
 .formulaire .errorMessage {
     font-size: 12px;
     color : var(--pink);
+    margin-bottom: 2vh;;
 }
 .infosPayment{
     margin: 2vh 0;
@@ -65,19 +138,22 @@
 .modePaiement label{
     color: var(--pink);
     font-weight: bold;
-    margin-left: 1vw;
+    margin: 1.5vh 1vw 0;
+    /* border: var(--blue) solid 2px; */
 }
 
 .modePaiement .cb, .modePaiement .paypal{
     display: flex;
     border: var(--pink) solid 2px;
     width: 45%;
+    height: 7vh;
     margin-bottom: 2vh;
 }
 
 .modePaiement .paypal img{
-   width: 4vw;
-   margin-bottom: 2vh;
+   width: 6vw;
+   position: absolute;
+   bottom: 1.2vh;
 }
 
 .trait{
@@ -143,5 +219,12 @@
 /*faire apparaitre l'icone "✓" */
 .boxcontainer input:checked ~ .box:after {
     display: block;
-  } 
+  }
+
+.iconsCard img {
+    margin: 1vh 1vh 3vh;
+    width: 5vw;
+    height: 4vh;
+    object-fit: contain;
+}
 

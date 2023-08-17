@@ -2,7 +2,6 @@ import Counter from "components/Counter/Counter";
 import { useCartContext } from "contexts/Cart.context";
 import { Link, useLocation } from "react-router-dom";
 import style from "./ProductCard.module.css";
-import { IIngredient } from "mocks/products";
 
 
 const ProductCard = () => {
