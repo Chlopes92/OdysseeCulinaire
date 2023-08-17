@@ -19,6 +19,7 @@
 
  .cart {
     border : var(--gold) solid 5px;
+    margin-bottom: 15vh;
  }
 
 
@@ -67,6 +68,30 @@
 
 .totalPrice {
     border : var(--gold) solid 5px;
+    height: 50vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1vw;
+}
+
+.totalPrice hr{
+border: var(--gold) solid 0.2px;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalPrice Button{
+    min-width: 2vw;
+    display: block;
+    /* margin: 0 auto; */
+}
+
+.small {
+    font-size: clamp(8px, 2vw, 12px);
 }
 
 /* Partie Formulaire*/
@@ -117,7 +142,7 @@
 }
 
 .formulaire .errorMessage {
-    font-size: 12px;
+    font-size: clamp(8px, 2vw, 12px);
     color : var(--pink);
     margin-bottom: 2vh;;
 }

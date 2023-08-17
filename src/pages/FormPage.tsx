@@ -4,6 +4,7 @@ import style from "./FormPage.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "contexts/Cart.context";
 import ProductCard from "components/ProductCard/ProductCard";
+import Button from "components/Button/Button";
 
 
 
@@ -25,8 +26,11 @@ type FormValues = {
 
 const FormPage = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
-    const { products, removeProduct } = useCartContext();
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm<FormValues>();
+    const { products, removeProduct, getTotalPrice } = useCartContext();
+    const total = getTotalPrice();
+    console.log("isValid", isValid);
+
 
     return (
 
@@ -165,7 +169,12 @@ const FormPage = () => {
 
                             {/* Numéro de carte */}
                             <label htmlFor="cartNumber">* Numéro de la carte:</label>
-                            <input {...register("cartNumber", { required: "Ce champ est obligatoire", maxLength: { value: 17, message: "Veuillez renseigner les 16 chiffres figurant sur votre carte" } })} id="cartNumber" />
+                            <input {...register("cartNumber", {
+                                required: "Ce champ est obligatoire", pattern: {
+                                    value: /^[0-9]{16}$/,
+                                    message: "Veuillez renseigner les 16 chiffres figurant au recto de votre carte",
+                                }
+                            })} id="cartNumber" />
                             {errors.cartNumber && <p className={style.errorMessage}>{errors.cartNumber.message}</p>}
 
                             {/* Titulaire de la carte */}
@@ -175,25 +184,40 @@ const FormPage = () => {
 
                             {/* Date d'expiration de la carte */}
                             <label htmlFor="expirationDate">* Date d'expiration:</label>
-                            <input {...register("expirationDate", { valueAsDate: true, required: "Ce champ est obligatoire" })} id="expirationDate" />
+                            <input {...register("expirationDate", {
+                                required: "Ce champ est obligatoire",
+                                pattern: {
+                                    value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
+                                    message: "Veuillez renseigner une date au format 01/01"
+                                }
+                            })} id="expirationDate" />
                             {errors.expirationDate && <p className={style.errorMessage}>{errors.expirationDate.message}</p>}
 
                             {/* Cryptogramme */}
                             <label htmlFor="cryptogramme">* Cryptogramme:</label>
-                            <input {...register("cryptogramme", { required: "Ce champ est obligatoire", minLength: { value: 3, message: "Veuillez renseigner les 3 chiffres figurant au verso de votre carte" } })} id="cryptogramme" />
+                            <input {...register("cryptogramme", {
+                                required: "Ce champ est obligatoire", pattern: {
+                                    value: /^[0-9]{3}$/,
+                                    message: "Veuillez renseigner les 3 chiffres figurant au verso de votre carte",
+                                }
+                            })} id="cryptogramme" />
+
+
                             {errors.cryptogramme && <p className={style.errorMessage}>{errors.cryptogramme.message}</p>}
 
                         </div>
-                    <NavLink to="/order">
+                        {isValid
+                            ? (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>)
+                            : <button type="submit">Payer et passer commande</button>
+                        }
 
-
-                        <button type="submit">Payer et passer commande</button>
-                    </NavLink>
                     </PaymentForm>
 
                     <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.</p>
                 </section>
 
+
+                {/* Section recap et prix total */}
                 <section className={style.recap}>
 
                     <article className={style.cart}>
@@ -206,8 +230,8 @@ const FormPage = () => {
                                         <h4>{p.product.title}</h4>
                                         <div>
 
-                                        <p>{p.product.price}€</p>
-                                        <p>QTE : {p.quantity}</p>
+                                            <p>{p.product.price}€</p>
+                                            <p>QTE : {p.quantity}</p>
                                         </div>
 
                                     </div>
@@ -221,7 +245,44 @@ const FormPage = () => {
                     </article>
 
                     <article className={style.totalPrice}>
-                        <p>Total</p>
+                        <div className={style.total}>
+
+                            {/* Total correspond au prix du panier + livraison */}
+                            <h4>Total</h4>
+                            <p><strong>{total + 3}  €</strong></p>
+                        </div>
+                        <hr />
+
+                        {/* Sous-total correspond au prix du panier */}
+                        <div className={style.total}>
+                            <p>Sous-total</p>
+                            <p>{total} €</p>
+                        </div>
+                        <hr />
+
+                        {/* Livraison 2€ */}
+                        <div className={style.total}>
+                            <p>Livraison</p>
+                            <p>3 €</p>
+                        </div>
+                        <hr />
+
+                        {/* Taxes 1,20€ */}
+                        <div className={style.total}>
+                            <p>Taxes incluses</p>
+                            <p>1.50 €</p>
+                        </div>
+
+                        {isValid
+                            ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
+                            : <Button title="Payer et passer votre commande" />
+                        }
+
+
+
+                        <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
+                        </p>
+
                     </article>
                 </section>
             </div>
