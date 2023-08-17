@@ -2,14 +2,15 @@ import style from './Button.module.css';
 
 interface ButtonProps  {
     title: string;
-    onclick? : () => void;
+    callBack?: () => void;
+
 }
 
 const Button = (props: ButtonProps) => {
-    const {title} = props;
+    const {title, callBack} = props;
 
     return (
-        <button className={style.button}>{title}</button>
+        <button onClick={callBack} className={style.button}>{title}</button>
     )
 }
 

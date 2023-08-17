@@ -1,0 +1,283 @@
+/* Page */
+
+.page {
+    display: flex;
+    margin-top: 8vh;
+}
+
+.page h3 {
+    margin: 2vh;
+}
+.retour {
+   position: absolute;
+   padding: 2vw;
+}
+.retour span {
+    font-size: 1.3em;
+}
+
+.flex {
+    display: flex;
+}
+.flex label {
+    margin-bottom: 15px;
+    min-width: fit-content;
+}
+
+/* Recap comprend cart et totalPrice*/
+
+.recap{
+    width: 30%;
+    margin: 2vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+ /*Cart */ 
+
+ .cart {
+    border : var(--gold) solid 5px;
+    margin-bottom: 15vh;
+ }
+
+
+
+ .productCard article {
+    /* border: red solid 2px; */
+    margin: 2vh auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 95%;
+ }
+
+ .productCard article img {
+    box-sizing: border-box;
+    max-width:10vw;
+    height: 10vh;
+    object-fit:fill;
+
+}
+
+
+ .productCard article .infosProductCard{
+    /* border :green solid 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 2vh;
+    width: 80%;
+    font-size: clamp(10px, 2vh, 15px);
+    
+ }
+
+ .productCard article button {
+    background-color :white;
+    color: var(--pink);
+    text-decoration: underline;
+    height: 50%;
+    align-self: end;
+    font-size: clamp(8px, 1em, 12px);
+ }
+
+
+/* Total */
+
+
+.totalPrice {
+    border : var(--gold) solid 5px;
+    height: 50vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1vw;
+}
+
+.totalPrice hr{
+border: var(--gold) solid 0.2px;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalPrice Button{
+    min-width: 2vw;
+    display: block;
+    /* margin: 0 auto; */
+}
+
+.small {
+    font-size: clamp(8px, 2vw, 12px);
+}
+
+/* Partie Formulaire*/
+.formulaire {
+    width: 70%;
+    margin: 2vw;
+}
+.formulaire .small{
+    font-size: 12px;
+    margin-bottom: 3vh;
+    text-align: justify;
+}
+
+.formulaire hr{
+    border :var(--gold) 2px solid;  
+}
+
+
+.formulaire label{
+    color: var(--blue);
+    
+  
+}
+.formulaire input{
+    border: none;
+    border-bottom: var(--gold) 2px solid;
+    margin-right:15px;
+    color: var(--blue);
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.formulaire input[type="text"]{
+    color: var(--blue);
+}
+
+.formulaire button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--pink);
+    border-radius : 11px;
+    width: 80%;
+    padding: 2vh;
+    display: block;
+    margin:5vh auto;
+
+}
+
+.formulaire .errorMessage {
+    font-size: clamp(8px, 2vw, 12px);
+    color : var(--pink);
+    margin-bottom: 2vh;;
+}
+.infosPayment{
+    margin: 2vh 0;
+}
+.infosPayment>p{
+    padding: 1vh 0;
+    font-family: roboto, serif;
+}
+
+.modePaiement{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.modePaiement label{
+    color: var(--pink);
+    font-weight: bold;
+    margin: 1.5vh 1vw 0;
+    /* border: var(--blue) solid 2px; */
+}
+
+.modePaiement .cb, .modePaiement .paypal{
+    display: flex;
+    border: var(--pink) solid 2px;
+    width: 45%;
+    height: 7vh;
+    margin-bottom: 2vh;
+}
+
+.modePaiement .paypal img{
+   width: 6vw;
+   position: absolute;
+   bottom: 1.2vh;
+}
+
+.trait{
+    margin-bottom: 2vh;
+}
+
+
+
+/*CSS checkbox */
+ .boxcontainer {
+    display: block;
+    position: relative;
+    padding-left: 5vw;
+    margin-bottom: 0.2em;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+}
+
+/* enlever la checkbox initiale */
+ .boxcontainer input {
+    position: absolute;
+    left: 0px;
+    opacity: 0; 
+    cursor: pointer;
+    height:100%;
+    width: 100%;
+    z-index :99;
+} 
+
+
+/* checkbox style  */
+.boxcontainer .box {
+    position: absolute;
+    top: 0;
+    left: 0.5em;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: var(--pink) solid 2px;
+}
+
+
+.boxcontainer input:checked~.box {
+    background-color: var(--pink);
+   
+}
+
+/*faire apparaitre l'icone "✓" */
+.boxcontainer .box::after {
+    content: "✓";
+    color :white;
+    position: absolute;
+    font-size: 20px;
+    left: 0.2em;
+    bottom: -0.1em;
+    display: none;
+}
+/*faire apparaitre l'icone "✓" */
+.boxcontainer input:checked ~ .box:after {
+    display: block;
+  }
+
+.iconsCard img {
+    margin: 1vh 1vh 3vh;
+    width: 5vw;
+    height: 4vh;
+    object-fit: contain;
+}
+
+/* Dyonisos */
+
+.dyonisos{
+    width: 15vw;
+    margin: 30vh;
+    object-fit: contain;
+}
