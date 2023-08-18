@@ -42,6 +42,11 @@ const FormPage = () => {
         setDelivery(true);
     }
 
+    /* Condition pour afficher le formulaire de CB si paiement par carte */
+    const [statusChecked, setStatusChecked] = useState(true);
+    const isCheckedCard = () => setStatusChecked(true);
+    const isCheckedPaypal = () => setStatusChecked(false);
+
 
     return (
 
@@ -195,7 +200,7 @@ const FormPage = () => {
 
                                     <label htmlFor="carte de paiement" className={style.boxcontainer}> Carte de paiement
 
-                                        <input type="radio" id="CB" className={style.check} name="card" />
+                                        <input type="radio" id="CB" className={style.check} name="card" checked={statusChecked} onClick={(e) => isCheckedCard()} />
                                         <span className={style.box}></span></label>
 
                                 </div>
@@ -203,7 +208,7 @@ const FormPage = () => {
                                 <div className={style.paypal}>
 
                                     <label htmlFor="paypal" className={style.boxcontainer}><img src="image\icons\paypal.png" alt="paypal" />
-                                        <input type="radio" id="CB" className={style.check} name="card" />
+                                        <input type="radio" id="CB" className={style.check} name="card" onClick={(e) => isCheckedPaypal()} />
                                         <span className={style.box}></span>
 
                                     </label>
@@ -211,14 +216,16 @@ const FormPage = () => {
 
                             </div>
 
-
-                            <hr className={style.trait} />
+                            { statusChecked && 
+                             <div>
+                            <hr className={style.trait} /> 
 
                             <div className={style.iconsCard}>
                                 <img src="image\icons\visa.png" alt="visa" />
                                 <img src="image\icons\mastercard.png" alt="mastercard" />
                                 <img src="image\icons\amex.png" alt="amex" />
                             </div>
+
 
                             {/* Formulaire de Facturation et paiement */}
                             <PaymentForm onSubmit={handleSubmit((data) => {
@@ -263,8 +270,8 @@ const FormPage = () => {
                                         <label htmlFor="cryptogramme">* Cryptogramme:</label>
                                         <input {...register("cryptogramme", {
                                             required: "Le Cryptogramme est obligatoire", pattern: {
-                                                value: /^[0-9]{3}$/,
-                                                message: "Veuillez renseigner les 3 chiffres figurant au verso de votre carte",
+                                                value: /^[0-9]{3,4}$/,
+                                                message: "Veuillez renseigner les 3 ou 4 chiffres figurant au verso de votre carte",
                                             }
                                         })} id="cryptogramme" />
 
@@ -274,6 +281,8 @@ const FormPage = () => {
                                     {errors.cryptogramme && <p className={style.errorMessage}>{errors.cryptogramme.message}</p>}
 
                                 </div>
+
+                                
                                 {isValid
                                     ? (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>)
                                     : <button type="submit">Payer et passer commande</button>
@@ -281,16 +290,22 @@ const FormPage = () => {
 
 
                             </PaymentForm>
+
+                            </div>}
+
+                            { !statusChecked && (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>) }
+                            <br />
                             <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.
                             </p>
+                        
                         </div>
                     }
 
-                </section>
+        </section >
 
 
-                {/* Section recap et prix total */}
-                <section className={style.recap}>
+            {/* Section recap et prix total */ }
+            < section className = { style.recap } >
 
                     <article className={style.cart}>
                         <h3>Votre commande</h3>
@@ -345,7 +360,7 @@ const FormPage = () => {
                         </div>
 
                         {/* Bouton ne fonctionne que si tout le formulaire est valide */}
-                        {(isValid && deliveryValid)
+                        {(isValid && deliveryValid) || !statusChecked
                             ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
                             : <Button title="Payer et passer votre commande" />
                         }
@@ -355,8 +370,8 @@ const FormPage = () => {
 
                     </article>
                     <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
-                </section>
-            </div>
+                </section >
+            </div >
 
 
         </>
