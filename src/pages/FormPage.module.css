@@ -277,7 +277,12 @@ border: var(--gold) solid 0.2px;
 /* Dyonisos */
 
 .dyonisos{
-    width: 15vw;
+    width: 12vw;
     margin: 30vh;
     object-fit: contain;
+}
+
+/*Button */
+.buttonClicked {
+    opacity: 40%;
 }
