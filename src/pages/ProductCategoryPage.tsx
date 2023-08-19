@@ -129,7 +129,7 @@ const ProductCategoryPage = () =>{
    let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[]
    // console.log("Allergy Array: ", allergyArray);
        if(tagArray?.length && tagArray[0].length){
-        product_displayed = PRODUCTS.filter(product => {
+        product_displayed = product_displayed.filter(product => {
            let tmp = true
                tagArray.forEach(tag => {
                    if (! product.tags?.includes(tag ?? ''))
