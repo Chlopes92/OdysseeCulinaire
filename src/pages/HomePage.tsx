@@ -4,6 +4,7 @@ const HomePage = () =>{
     return (
         <main>
             <Carousel />
+            <img src="/image/icons/zeus.png" alt="" />
         </main>
     );
 }

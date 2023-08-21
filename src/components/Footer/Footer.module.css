@@ -1,7 +1,11 @@
 .footer{
-    height: 141px;
+    margin: 72px;
 }
 
 .center{
     text-align: center;
+}
+
+.width{
+    width: 13vw;
 }

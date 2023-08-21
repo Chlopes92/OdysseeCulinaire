@@ -81,11 +81,11 @@ const FormPage = () => {
                         </div>
 
                         {!emailValid
-                            ? <button type="button" onClick={async () => {
+                            ? <button type="button" className={`${style.btn} ${style.custom_btn}`} onClick={async () => {
                                 const output = await trigger("email")
                                 if (output) emailIsValid()
                             }}>Envoyer</button>
-                            : <button disabled type="button" className={style.buttonClicked}>Envoyer</button>
+                            : <button disabled type="button" className={`${style.custom_btn} ${style.buttonClicked}`}>Envoyer</button>
                         }
 
 
@@ -166,13 +166,13 @@ const FormPage = () => {
 
 
                         {!deliveryValid
-                            ? <button type="button" onClick={async () => {
+                            ? <button type="button" className={`${style.btn} ${style.custom_btn}`} onClick={async () => {
                                 const output = await trigger(["nom", "prenom", "pays", "adresse", "etage", "codePostal", "ville", "telephone"]);
                                 if (output) {
                                     deliveryIsValid()
                                 }
                             }}>Livraison</button>
-                            : <button disabled type="button" className={style.buttonClicked}>Livraison</button>}
+                            : <button disabled type="button" className={`${style.buttonClicked} ${style.custom_btn}`}>Livraison</button>}
 
 
                     </PaymentForm>
@@ -285,7 +285,7 @@ const FormPage = () => {
                                 
                                 {isValid
                                     ? (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>)
-                                    : <button type="submit">Payer et passer commande</button>
+                                    : <button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button>
                                 }
 
 
@@ -293,7 +293,7 @@ const FormPage = () => {
 
                             </div>}
 
-                            { !statusChecked && (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>) }
+                            { !statusChecked && (<NavLink to="/order"><button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button></NavLink>) }
                             <br />
                             <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.
                             </p>
