@@ -1,6 +1,8 @@
-.menu{
-    display: flex;
-    grid-gap: 20px;
-    flex-wrap: wrap;
+.menu {
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(5, 1fr); /* Utilisation d'auto-fit */
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }

@@ -21,14 +21,14 @@ const { products, addOne } = useCartContext();
   })) {
     return (
       <button
-        className={style.buttonAddToCart}
+        className={`${style.buttonAddToCart} ${style.position_button}`}
         onClick={() => addOne(product, 1)}>
         <img src="/image/icons/plus.png" alt="ajouter un produit au panier" />
       </button>
     );
   } else {
     return (
-      <button className={style.buttonToSelected}>
+      <button className={`${style.buttonToSelected} ${style.position_button}`}>
         <img src="/image/icons/check.png" alt="ajouter un produit au panier" />
       </button>
     );
@@ -40,7 +40,7 @@ const ProductItem = (props: ProductItemProps) => {
   const { title, img, price } = product;
 
   return (
-    <main>
+    <div>
       <Link to={`/products/${product.id}`}>
         <img className={style.size} src={img.src} alt={img.alt} />
       </Link>
@@ -49,7 +49,7 @@ const ProductItem = (props: ProductItemProps) => {
         <p>{price}€</p>
       </article>
       <ButtonCart product={product} />
-    </main>
+    </div>
   );
 };
 
