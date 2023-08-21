@@ -34,4 +34,9 @@ button {
 
 body {
   overflow-x : hidden;
+  
 }
+
+/* main, article, section, div{
+  border: solid 2px black;
+} */

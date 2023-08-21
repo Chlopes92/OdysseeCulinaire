@@ -1,4 +1,13 @@
-.custom_btn {
+.background_image {
+    background-image: url('/public/image/errorPage.png');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
+    
+  }
+
+  .custom_btn {
     display: block;
     font-family: 'Roboto', sans-serif;
     min-width: 30vw;

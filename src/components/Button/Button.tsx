@@ -1,4 +1,5 @@
 import style from './Button.module.css';
+import stylish from 'index.css'
 
 interface ButtonProps  {
     title: string;
@@ -10,7 +11,7 @@ const Button = (props: ButtonProps) => {
     const {title, callBack} = props;
 
     return (
-        <button onClick={callBack} className={style.button}>{title}</button>
+        <button onClick={callBack} className={`${style.btn} ${style.custom_btn}`}>{title}</button>
     )
 }
 
