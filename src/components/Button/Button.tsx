@@ -1,5 +1,5 @@
 import style from './Button.module.css';
-import stylish from 'index.css'
+
 
 interface ButtonProps  {
     title: string;

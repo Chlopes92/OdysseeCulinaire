@@ -37,6 +37,11 @@ body {
   
 }
 
+main{
+  width: 1232px;
+  margin: auto;
+}
+
 /* main, article, section, div{
   border: solid 2px black;
 } */
