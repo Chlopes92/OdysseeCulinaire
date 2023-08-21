@@ -149,19 +149,6 @@ border: var(--gold) solid 0.2px;
     color: var(--blue);
 }
 
-.formulaire button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    background-color: var(--pink);
-    border-radius : 11px;
-    width: 80%;
-    padding: 2vh;
-    display: block;
-    margin:5vh auto;
-
-}
-
 .formulaire .errorMessage {
     font-size: clamp(8px, 2vw, 12px);
     color : var(--pink);
@@ -288,7 +275,8 @@ border: var(--gold) solid 0.2px;
 }
 
 .custom_btn {
-    display: block;
+    width: 80%;
+    margin:5vh auto;
     font-family: 'Roboto', sans-serif;
     min-width: 30vw;
     height: 40px;
@@ -300,7 +288,7 @@ border: var(--gold) solid 0.2px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    display: inline-block;
+    display: block;
      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);

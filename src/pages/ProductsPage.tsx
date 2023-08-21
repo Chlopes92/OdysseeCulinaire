@@ -4,6 +4,7 @@ import { IProduct, PRODUCTS, ProductAllergyType, TagType } from "mocks/products"
 import style from './ProductsPage.module.css'
 // import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import NavBar from "components/NavBar/NavBar";
 
 
 const tagValues: TagType[] = ["vegan", "vegetarien", "viande", "sans-gluten", "avec-alcool", "sans-alcool"];
@@ -147,7 +148,7 @@ const ProductsPage = () => {
         </li>)
 
     return (
-        <section>
+        <main>
             <Carousel />
             <section>
                 <h2>Filtrage :</h2>
@@ -156,10 +157,13 @@ const ProductsPage = () => {
                 <h2>Allergènes :</h2>
                 <AllergyList />
             </section>
-        <ul className={style.menu}>
-            {product_displayed}
-        </ul>
-        </section>
+            <NavBar  />
+            <section>
+             <ul className={style.menu}>
+                {product_displayed}
+             </ul>
+            </section>
+        </main>
     )
 }
 

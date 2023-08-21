@@ -1,8 +1,11 @@
 .menu {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(5, 1fr); /* Utilisation d'auto-fit */
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(3, 1fr); /* Utilisation d'auto-fit */
+    grid-column-gap: 15px;
+    grid-row-gap: 70px;
+}
+
+.selected{
+    /* background-color: var(--pink); */
 }

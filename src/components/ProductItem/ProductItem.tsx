@@ -40,6 +40,7 @@ const ProductItem = (props: ProductItemProps) => {
   const { title, img, price } = product;
 
   return (
+    // <main>
     <div>
       <Link to={`/products/${product.id}`}>
         <img className={style.size} src={img.src} alt={img.alt} />
@@ -50,6 +51,7 @@ const ProductItem = (props: ProductItemProps) => {
       </article>
       <ButtonCart product={product} />
     </div>
+    // </main>
   );
 };
 

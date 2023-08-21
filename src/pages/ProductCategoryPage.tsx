@@ -153,7 +153,7 @@ const ProductCategoryPage = () =>{
 
 
     return (
-        <section>
+        <main>
             <Carousel />
             <div>
                 <h2>Filtrage :</h2>
@@ -169,7 +169,7 @@ const ProductCategoryPage = () =>{
                     </li>
                 ))}
             </ul>
-        </section>
+        </main>
     );
 }
 
