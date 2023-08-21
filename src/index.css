@@ -29,11 +29,9 @@ p{
 
 button {
   border : none;
-}
-body {
-  overflow-x : hidden;
+  cursor: pointer;
 }
 
-button{
-  cursor: pointer;
+body {
+  overflow-x : hidden;
 }
