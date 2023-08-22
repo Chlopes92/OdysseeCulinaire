@@ -30,6 +30,7 @@ p{
 button {
   border : none;
   cursor: pointer;
+  /* background-color: white; */
 }
 
 body {

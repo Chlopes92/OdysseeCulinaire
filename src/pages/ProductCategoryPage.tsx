@@ -8,6 +8,7 @@ import {
 import Carousel from "components/Carousel/Carousel";
 import ProductItem from "components/ProductItem/ProductItem";
 import style from './ProductsPage.module.css'
+import { useState } from "react";
 
 
 const tagValues: TagType[] = ["vegan", "vegetarien", "viande", "sans-gluten", "avec-alcool", "sans-alcool"];
@@ -113,6 +114,32 @@ const AllergyList = () => {
     );
 }
 
+const FilterSection = () => {
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+  
+    const toggleFilter = () => {
+      setIsFilterOpen(prevState => !prevState);
+    };
+  
+    return (
+      <section>
+        <button className={style.filterButton} onClick={toggleFilter}>
+          {isFilterOpen ? (
+            <img src="/image/icons/close.png" alt="Close" />
+          ) : (
+            <img src="/image/icons/filter.png" alt="Filter" />
+          )}
+        </button>
+        <div className={`${style.filterContent} ${isFilterOpen ? style.open : style.closed}`}>
+          <h2>Filtrage :</h2>
+          <TagList />
+          <h2>Allergènes :</h2>
+          <AllergyList />
+        </div>
+      </section>
+    );
+  };
+
 
 const ProductCategoryPage = () =>{
     // If si pas category envoi page error 
@@ -155,13 +182,7 @@ const ProductCategoryPage = () =>{
     return (
         <main>
             <Carousel />
-            <div>
-                <h2>Filtrage :</h2>
-                <TagList />
-
-                <h2>Allergènes :</h2>
-                <AllergyList />
-            </div>
+            <FilterSection />
             <ul className={style.menu}>
                 {product_displayed.map((product) => (
                     <li key={product.id}>
