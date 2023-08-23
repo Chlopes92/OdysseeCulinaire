@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     font-family: 'Cinzel', serif;
-    gap: 63px;
-    font-size: 30px;
+    gap: clamp(10px, 2vw, 63px); 
+    font-size: clamp(5px, 2vw, 30px);
     font-weight: 466;
     padding-top: 46px;
     

@@ -1,12 +1,17 @@
 import Customisation from 'components/Customisation/Customisation';
-import style from './ProductDetailsPage.module.css';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { PRODUCTS } from 'mocks/products';
 import { useState } from 'react';
 import Counter from 'components/Counter/Counter';
+import style from '../pages/ProductDetailPage.module.css'
+import { Link } from 'react-router-dom';
+import Button from 'components/Button/Button';
+
+
 
 
 const ProductDetailPage = () => {
+  const AphroditeImage = '/image/icons/aphrodite.png';
  
   const [quantity, setQuantity] = useState(1);
 
@@ -35,25 +40,40 @@ const ProductDetailPage = () => {
     return <div>Produit introuvable</div>;
   }
   
+  
 
  return (
     <section>
+      <div className={style.containerText}>
+      <Link to="/products">
+        <p>&lt; Revenir à la carte</p>
+      </Link>
       <div className={style.container}>
-        <img className={style.productImage} src={product.img.src} alt={product.img.alt} />
-         <Customisation product={product} /> 
-      </div> 
-      <div className={style.containeurBas}>
+      <div className={style.containerImg}>
+        <img className={style.imageResponsive} src={product.img.src} alt={product.img.alt} />
+        
+         <img className={style.aphroditeImage} src={AphroditeImage} alt={AphroditeImage} />
+      </div>
       
+      <Customisation  product={product} /> 
+     
+      </div>
+      </div>
+      
+      <div className={style.containeurBas}>
+     
       <Counter quantity= {quantity}
       add = {() => add()}
       remove = {() => remove()}
        />
-       
-      
-       
-              
-        </div> 
-    </section>
+       <div className={style.buttonAdd}>
+      <NavLink to="/cart">
+        <Button title="Ajouter au Panie - €" />
+      </NavLink>
+      </div>
+    </div>
+   
+ </section>
   );
 };
 
