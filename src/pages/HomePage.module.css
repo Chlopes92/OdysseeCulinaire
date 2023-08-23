@@ -73,6 +73,8 @@
   
   .image {
     position: relative;
-    margin-top: -53vh;
-    margin-left: 53vw;
+    margin-top: -60vh;
+    margin-left: 65vw;
+    max-height: 68vh;
+    max-width: 24vw;
   }

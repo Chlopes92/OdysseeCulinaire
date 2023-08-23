@@ -13,7 +13,7 @@
     color: var(--pink);
 }
 
-@media(max-width: 1200px){
+@media(max-width: 900px){
     .list{
         display: none;
     }
