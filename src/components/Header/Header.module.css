@@ -12,15 +12,13 @@
 }
 
 .panier{
-    margin-top: 5vh;
-    width: 8vw;
-    min-width: 4vw; 
+    width: 4vw;
     height: auto;
 }
 .flex{
     display: flex;
-   
-    align-items: center;
+   align-items: center;
+   margin-top: 2vw;
 }
 
 .borderQuantity{
@@ -28,15 +26,14 @@
     justify-content: center;
     align-items: center;
     background-color: var(--pink);
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     min-width: 20px;
     min-height: 20px;
-   
     border-radius: 50%;
     box-sizing: border-box; 
     margin-left:20px;
-    margin-top: 5vh; 
+    
 }
 
 .quantity{
@@ -48,8 +45,9 @@
     margin: 0;
 }
   
-@media(max-width: 1200px){
-    .panier{
+@media (max-width: 414px) {
+    /* 414px pour cibler la largeur de l'iPhone */
+    .panier {
         display: none;
     }
 }
