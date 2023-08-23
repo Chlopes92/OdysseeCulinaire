@@ -7,5 +7,29 @@
 }
 
 .selected{
-    /* background-color: var(--pink); */
+    /* border: solid var(--pink); */
+    color: var(--pink);
+    /* background-color: var(--pink);
+    color: white; */
 }
+
+.open {
+    display: block;
+}
+
+.closed {
+    display: none;
+}
+
+.filterButton{
+    background-color: white;
+}
+
+.filterButton img {
+    height: 60px;
+}
+
+/* ul{
+    display: flex;
+    grid-gap: 15px;
+} */

@@ -30,6 +30,7 @@ p{
 button {
   border : none;
   cursor: pointer;
+  /* background-color: white; */
 }
 
 body {
@@ -37,9 +38,13 @@ body {
   
 }
 
-main{
-  width: 1232px;
-  margin: auto;
+@media (min-width: 1500px) {
+  main{
+    max-width: 60vw;
+    min-height: 70vh;
+    margin: auto;
+  }
+  
 }
 
 /* main, article, section, div{
