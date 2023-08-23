@@ -12,3 +12,9 @@
 .list :active{
     color: var(--pink);
 }
+
+@media(max-width: 1200px){
+    .list{
+        display: none;
+    }
+}
