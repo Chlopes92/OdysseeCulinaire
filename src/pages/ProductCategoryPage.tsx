@@ -9,6 +9,7 @@ import Carousel from "components/Carousel/Carousel";
 import ProductItem from "components/ProductItem/ProductItem";
 import style from './ProductsPage.module.css'
 import { useState } from "react";
+import NavBar from "components/NavBar/NavBar";
 
 
 const tagValues: TagType[] = ["vegan", "vegetarien", "viande", "sans-gluten", "avec-alcool", "sans-alcool"];
@@ -183,6 +184,7 @@ const ProductCategoryPage = () =>{
         <main>
             <Carousel />
             <FilterSection />
+            <NavBar customClass={style.customNav} />
             <ul className={style.menu}>
                 {product_displayed.map((product) => (
                     <li key={product.id}>
@@ -190,6 +192,7 @@ const ProductCategoryPage = () =>{
                     </li>
                 ))}
             </ul>
+            <img src="/image/icons/athena.png" alt="" />
         </main>
     );
 }
