@@ -13,9 +13,14 @@
     color: var(--pink);
 }
 
+
 @media (max-width: 414px) {
     /*  414px pour cibler la largeur de l'iPhone */
-    .list {
+  .list {}
+}
+
+@media(max-width: 900px){
+    .list{
         display: none;
     }
 }

@@ -38,9 +38,9 @@ body {
   
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1430px) {
   main{
-    max-width: 60vw;
+    max-width: 80vw;
     min-height: 70vh;
     margin: auto;
   }
