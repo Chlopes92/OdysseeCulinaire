@@ -5,12 +5,18 @@
     gap: clamp(10px, 2vw, 63px); 
     font-size: clamp(5px, 2vw, 30px);
     font-weight: 466;
-    padding-top: 46px;
+   margin-top: 4vw;
     
 }
 
 .list :active{
     color: var(--pink);
+}
+
+
+@media (max-width: 414px) {
+    /*  414px pour cibler la largeur de l'iPhone */
+  .list {}
 }
 
 @media(max-width: 900px){

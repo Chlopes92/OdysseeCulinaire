@@ -4,7 +4,7 @@
   --pink: #DF0071;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,7 +32,7 @@ button {
   cursor: pointer;
   /* background-color: white; */
 }
-
+/* --- 
 body {
   overflow-x : hidden;
   
@@ -47,6 +47,6 @@ body {
   
 }
 
-/* main, article, section, div{
+ main, article, section, div{
   border: solid 2px black;
 } */

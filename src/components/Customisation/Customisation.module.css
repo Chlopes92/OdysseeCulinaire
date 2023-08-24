@@ -1,19 +1,23 @@
 .container {
-    width: 100%;
+    width: 100%; 
     height: auto;
-    max-width: 100vh;
-    max-height: 70vh;
+    max-width: 66vh;
     background-color: rgb(220, 219, 219);
-
-  
     margin-top: 100px;
+    overflow-x: visible;
 }
 
+h2 {
+   font-size: 3rem;
+   font-weight: 300;
+}
 
 .customHr {
-    width: 70vw; 
+    width: 50vw; 
     height: 3px;
     background-color:  var(--gold);
     border: none;
     margin: 16px auto; 
   }
+
+  
