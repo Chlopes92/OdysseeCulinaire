@@ -1,9 +1,8 @@
 .menu {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 30px;
     justify-content: center;
-    grid-template-columns: repeat(3, 1fr); /* Utilisation d'auto-fit */
-    grid-column-gap: 15px;
-    grid-row-gap: 70px;
 }
 
 .selected{
@@ -33,3 +32,13 @@
     display: flex;
     grid-gap: 15px;
 } */
+
+.customNav{
+    display: block;
+}
+
+@media(max-width: 900px){
+    .customNav{
+        display: flex;
+    }
+}

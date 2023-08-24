@@ -197,10 +197,11 @@ const ProductsPage = () => {
     <main>
       <Carousel />
       <FilterSection />
-      <NavBar />
+      <NavBar customClass={style.customNav} />
       <section>
         <ul className={style.menu}>{product_displayed}</ul>
       </section>
+      <img src="/image/icons/athena.png" alt="" />
     </main>
   );
 };
