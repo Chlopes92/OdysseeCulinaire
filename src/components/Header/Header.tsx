@@ -15,7 +15,7 @@ const Header = () => {
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
       <NavBar />
-      {location.pathname != "/order" && 
+      {location.pathname !== "/order" && 
       (<Link to="/cart">
         <div className={style.flex}>
         <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
