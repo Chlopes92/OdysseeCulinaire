@@ -33,7 +33,7 @@ const NavBar = ({ customClass= "" }) => {
 
     return (
         <nav>
-            <ul className={`${style.list}  ${customClass}`}>
+            <ul className={`${style.list} ${customClass}`}>
                 {navLinks.map((link) => (
                     <li key={link.id}>
                          <NavLink to={link.url}>{link.text}</NavLink>
