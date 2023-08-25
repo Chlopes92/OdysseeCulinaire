@@ -1,21 +1,27 @@
 import Customisation from 'components/Customisation/Customisation';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { PRODUCTS } from 'mocks/products';
-import { useState } from 'react';
+import {  useState } from 'react';
 import Counter from 'components/Counter/Counter';
 import style from '../pages/ProductDetailPage.module.css'
 import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
-
+import { useParams} from 'react-router-dom';
+import { useCartContext } from 'contexts/Cart.context';
 
 
 
 const ProductDetailPage = () => {
-  const AphroditeImage = '/image/icons/aphrodite.png';
- 
+  
   const [quantity, setQuantity] = useState(1);
-
-  const add = () => {
+  const { id } = useParams(); 
+  const { addOne } = useCartContext();
+ 
+ 
+const AphroditeImage = '/image/icons/aphrodite.png';
+ 
+  
+const add = () => {
     setQuantity(quantity+1);
   }
   const remove = () => {
@@ -23,7 +29,7 @@ const ProductDetailPage = () => {
     setQuantity(quantity-1);
   }
  
-  const { id } = useParams();
+  
   
   // Gérer le cas où l'ID n'est pas un nombre valide
   if (!id) {
@@ -39,8 +45,9 @@ const ProductDetailPage = () => {
   if (!product) {
     return <div>Produit introuvable</div>;
   }
+  const totalPrice = (product.price * quantity).toFixed(2); 
   
-  
+
 
  return (
     <section>
@@ -61,14 +68,17 @@ const ProductDetailPage = () => {
       </div>
       
       <div className={style.containeurBas}>
-     
+      
       <Counter quantity= {quantity}
       add = {() => add()}
       remove = {() => remove()}
        />
        <div className={style.buttonAdd}>
       <NavLink to="/cart">
-        <Button title="Ajouter au Panie - €" />
+      <Button 
+    title={`Ajouter au Panier - ${totalPrice} €`}
+    onClick={() => addOne(product, quantity)}
+  />
       </NavLink>
       </div>
     </div>
