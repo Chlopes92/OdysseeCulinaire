@@ -69,7 +69,12 @@ const TagList = () => {
     <ul>
       {tagValues.map((tag) => (
         <li key={tag}>
-          <button className={`${tagArray.includes(tag) ? style.selected : ""}`} onClick={() => toggleTag(tag)}>{tag}</button>
+          <button
+            className={`${tagArray.includes(tag) ? style.selected : ""}`}
+            onClick={() => toggleTag(tag)}
+          >
+            {tag}
+          </button>
         </li>
       ))}
     </ul>
@@ -129,30 +134,34 @@ const AllergyList = () => {
 };
 
 const FilterSection = () => {
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
-  
-    const toggleFilter = () => {
-      setIsFilterOpen(prevState => !prevState);
-    };
-  
-    return (
-      <section>
-        <button className={style.filterButton} onClick={toggleFilter}>
-          {isFilterOpen ? (
-            <img src="/image/icons/close.png" alt="Close" />
-          ) : (
-            <img src="/image/icons/filter.png" alt="Filter" />
-          )}
-        </button>
-        <div className={`${style.filterContent} ${isFilterOpen ? style.open : style.closed}`}>
-          <h2>Filtrage :</h2>
-          <TagList />
-          <h2>Allergènes :</h2>
-          <AllergyList />
-        </div>
-      </section>
-    );
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const toggleFilter = () => {
+    setIsFilterOpen((prevState) => !prevState);
   };
+
+  return (
+    <section>
+      <button className={style.filterButton} onClick={toggleFilter}>
+        {isFilterOpen ? (
+          <img src="/image/icons/close.png" alt="Close" />
+        ) : (
+          <img src="/image/icons/filter.png" alt="Filter" />
+        )}
+      </button>
+      <div
+        className={`${style.filterContent} ${
+          isFilterOpen ? style.open : style.closed
+        }`}
+      >
+        <h2>Filtrage :</h2>
+        <TagList />
+        <h2>Allergènes :</h2>
+        <AllergyList />
+      </div>
+    </section>
+  );
+};
 
 const ProductsPage = () => {
   let product_filtered = PRODUCTS;
@@ -197,11 +206,13 @@ const ProductsPage = () => {
     <main>
       <Carousel />
       <FilterSection />
-      <NavBar customClass={style.customNav} />
-      <section>
+      <div className={style.flex}>
+        <NavBar customClass={style.customNav} />
+      <section className={style.flex}>
         <ul className={style.menu}>{product_displayed}</ul>
       </section>
-      <img src="/image/icons/athena.png" alt="" />
+      </div>
+      <img className={style.athena} src="/image/icons/athena.png" alt="" />
     </main>
   );
 };
