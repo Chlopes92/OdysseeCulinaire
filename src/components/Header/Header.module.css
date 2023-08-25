@@ -14,7 +14,7 @@
 .panier{
     margin-top: 1vh;
     width: 1vw;
-    min-width: 4vw; 
+    min-width: 3.5vw; 
     height: auto;
 }
 .flex{
@@ -41,6 +41,7 @@
     
 }
 
+
 .quantity{
     height: 100%;
     font-size: clamp(10px, 2vw, 20px);
@@ -50,8 +51,63 @@
     margin: 0;
 }
   
+.customBurger{
+    display: none;        
+}
+
+.navBurger{
+    display: none;
+}
+
 @media(max-width: 900px){
-    .panier, .borderQuantity{
+    .panier{
         display: none;
     }
+
+    .customBurger{
+        display: block;
+        background: none;
+    }
+
+    .menuBurger img{
+        height: 50px;
+    }
+
+    .burgerIcon{
+        display: block;
+        cursor: pointer;
+        margin: 0px 16px 0 0;
+        position: absolute;
+        right: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .line{
+        display: block;
+        width: 40px;
+        height: 6px;
+        border-radius: 61px;
+        margin: 5px;
+        background-color: var(--pink);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navBar{
+        display: none;
+    }
+
+    .open {
+        display: block;
+    }
+    
+    .closed {
+        display: none;
+    }
+
+    .navBurger{
+        display: block;
+    }
+
 }

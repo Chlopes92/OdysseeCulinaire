@@ -46,8 +46,8 @@ const ProductItem = (props: ProductItemProps) => {
         <img className={style.size} src={img.src} alt={img.alt} />
       </Link>
       <article>
-        <p>{title}</p>
-        <p>{price}€</p>
+        <p className={style.text}>{title}</p>
+        <p className={style.text}>{price}€</p>
       </article>
       <ButtonCart product={product} />
     </div>

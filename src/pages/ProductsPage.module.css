@@ -36,6 +36,8 @@
 
 .customNav{
     display: block;
+    gap: clamp(10px, 5vw, 63px);
+    font-size: clamp(2px, 3vw, 31px);
 }
 
 .athena{
