@@ -1,8 +1,9 @@
 .menu {
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 30px;
+    grid-gap: 80px;
     justify-content: center;
+    width: 83vw;
 }
 
 .selected{
@@ -37,8 +38,26 @@
     display: block;
 }
 
+.athena{
+    position: absolute;
+    margin-top: -93rem;
+    max-width: 21vw;
+}
+
+@media(min-width: 1400px){
+    .flex{
+        display: flex;
+    }
+
+}
+
+
 @media(max-width: 1400px){
     .customNav{
         display: flex;
+    }
+
+    .menu{
+        width: auto;
     }
 }

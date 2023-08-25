@@ -12,8 +12,8 @@
 }
 
 .panier{
-    margin-top: 3vh;
-    width: 4vw;
+    margin-top: 1vh;
+    width: 1vw;
     min-width: 4vw; 
     height: auto;
 }
@@ -35,6 +35,9 @@
     border-radius: 50%;
     box-sizing: border-box; 
     margin-left:20px;
+    position: absolute;
+    margin-top: 4rem;
+    margin-left: 2rem;
     
 }
 
