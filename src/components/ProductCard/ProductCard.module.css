@@ -62,7 +62,7 @@
 
 .borderQuantity{
     border: var(--pink) 3px solid;
-    border-radius:6px;
+    /* border-radius:6px; */
     text-align: center;
     margin-top: 1vh;
     width: 4vw;

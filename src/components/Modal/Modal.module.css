@@ -1,6 +1,5 @@
  .overlay{
     background-color : rgba(0,27,180,0.5);
-    width:100vw;
     height:100vh;
     position: fixed;
     bottom:0;
@@ -10,17 +9,30 @@
 }
 
 .modalContent{
-    width: 30vw;
-    height: 70vh;
+    max-width: 40vw;
+    height: 75vh;
     border: var(--gold) solid 5px;
     text-align: center;
     margin: auto;
     background-color: white;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 3vh;
     position: fixed;
     top: 15vh;
     right:0;
     left:0;
+}
+
+@media(max-width : 1500px){
+    .modalContent{
+        max-width: 60vw;
+    }
+}
+
+@media(max-width : 1000px){
+    .modalContent{
+        max-width: 70%;
+    }
 }
