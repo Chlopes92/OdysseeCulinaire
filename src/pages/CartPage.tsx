@@ -12,6 +12,7 @@ const CartPage = () => {
   const reset = () => resetCart();
 
   return (
+    <main>
       <section className={style.cartPage}>
         <h1 className={style.title}>L'Odyssée Culinaire</h1>
 
@@ -38,6 +39,7 @@ const CartPage = () => {
           </div>
         )}
       </section>
+      </main>
   );
 };
 

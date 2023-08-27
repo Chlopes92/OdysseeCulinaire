@@ -51,12 +51,8 @@
     margin: 0;
 }
   
-.customBurger{
+.burger{
     display: none;        
-}
-
-.navBurger{
-    display: none;
 }
 
 @media(max-width: 900px){
@@ -64,7 +60,7 @@
         display: none;
     }
 
-    .customBurger{
+    .burger,.customBurger{
         display: block;
         background: none;
     }
@@ -94,20 +90,12 @@
         transition: all 0.3s ease-in-out;
     }
 
-    .navBar{
-        display: none;
-    }
-
     .open {
         display: block;
     }
     
     .closed {
         display: none;
-    }
-
-    .navBurger{
-        display: block;
     }
 
 }

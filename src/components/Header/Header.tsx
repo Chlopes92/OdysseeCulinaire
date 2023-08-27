@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
-import style from "./Header.module.css";
 import NavBar from "components/NavBar/NavBar";
+import style from "./Header.module.css";
 import { useCartContext } from "contexts/Cart.context";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -13,7 +13,7 @@ const MenuBurger = ({ burgerClass = "" }) => {
   };
 
   return (
-    <section>
+    <section className={`${style.burger}`}>
       <button className={`${style.menuBurger} ${burgerClass}`} onClick={toggleMenu}>
         {isMenuOpen ? (
           <img src="/image/icons/close.png" alt="Close" />
@@ -30,7 +30,7 @@ const MenuBurger = ({ burgerClass = "" }) => {
           isMenuOpen ? style.open : style.closed
         }`}
       >
-        <NavBar customClass={`${style.navBurger}`} />
+        {/* <NavBurger  /> */}
       </div>
     </section>
   );
@@ -47,7 +47,7 @@ const Header = () => {
       <Link to="/">
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
-      <NavBar customClass={style.navBar} />
+      <NavBar />
       {location.pathname !== "/order" && 
       (<Link to="/cart">
         <div className={style.flex}>

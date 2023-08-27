@@ -55,7 +55,7 @@ if(allergyArray === undefined){
     return (
         <ul>
             {tagValues.map(tag => (
-                <li key={tag} className={`${tagArray.includes(tag)? 'selected' : ""}`}>
+                <li key={tag} className={`${tagArray.includes(tag) ? style.selected : ""}`}>
                     <button onClick={() => toggleTag(tag)}>
                         {tag}
                     </button>
@@ -105,7 +105,7 @@ const AllergyList = () => {
     return (
         <ul>
             {allergyValues.map((allergy) => (
-                <li key={allergy} className={`${allergyArray.includes(allergy)? 'selected' : ""}`}>
+                <li key={allergy} className={`${allergyArray.includes(allergy)? style.selected : ""}`}>
                     <button onClick={() => toggleAllergy(allergy)}>
                         {allergy}
                     </button>
@@ -192,7 +192,7 @@ const ProductCategoryPage = () =>{
                     </li>
                 ))}
             </ul>
-            <img src="/image/icons/athena.png" alt="" />
+            <img className={style.athena} src="/image/icons/athena.png" alt="" />
         </main>
     );
 }
