@@ -47,3 +47,10 @@
 .emptyCart{
     margin-bottom: 5vh;
 }
+
+@media(max-width: 900px){
+    .cartPage{
+        width: auto;
+    }
+    
+}

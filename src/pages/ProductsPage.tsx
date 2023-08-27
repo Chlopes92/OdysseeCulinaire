@@ -124,7 +124,7 @@ const AllergyList = () => {
       {allergyValues.map((allergy) => (
         <li
           key={allergy}
-          className={`${allergyArray.includes(allergy) ? "selected" : ""}`}
+          className={`${allergyArray.includes(allergy) ? style.selected : ""}`}
         >
           <button onClick={() => toggleAllergy(allergy)}>{allergy}</button>
         </li>
