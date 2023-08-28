@@ -72,3 +72,10 @@
 .ingredient{
     display: flex;
 }
+
+@media (max-width: 900px) {
+    /*  414px pour cibler la largeur de l'iPhone */
+  .pickerFlex {
+   flex-wrap: wrap;
+}
+}
