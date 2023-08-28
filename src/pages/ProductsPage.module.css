@@ -73,6 +73,13 @@
     max-width: 21vw;
 }
 
+.titre{
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    margin-top: 72px;
+}
+
 @media(min-width: 1400px){
     .flex{
         display: flex;

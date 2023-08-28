@@ -205,6 +205,7 @@ const ProductsPage = () => {
   return (
     <main>
       <Carousel />
+      <h2 className={style.titre}>L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois, temporel et gustative” </h2>
       <FilterSection />
       <div className={style.flex}>
         <NavBar customClass={style.customNav} />
