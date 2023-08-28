@@ -12,11 +12,13 @@ const ProductCard = () => {
         <ul className={style.sizecard}>
           {products.map((p) => (
             <li className={style.flex} key={p.id}>
+              {/* Image du produit */}
               <img
                 className={style.img}
                 src={p.product.img.src}
                 alt={p.product.title}
               />
+              {/* Section affiche le nom du produit, inclus et extras */}
               <section>
                 <div className={style.title}>
                   <h3>{p.product.title}</h3>
@@ -48,8 +50,8 @@ const ProductCard = () => {
                   </div>
                 </div>
               </section>
-              <div>
                 {/* condition ternaire pour affiche du quantity picker selon la page */}
+              <div className={style.pickerFlex}>
                 {location.pathname == "/cart" ? (
                   <div className={style.icons}>
                     <Counter
@@ -58,7 +60,7 @@ const ProductCard = () => {
                       remove={() => removeOne(p.product)}
                     />
                     <div>
-                      <Link to="/product/{p.id}">
+                      <Link to={`/products/${p.id}`}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="72"

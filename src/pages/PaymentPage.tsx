@@ -44,7 +44,7 @@ const PaymentPage = () => {
                     <div className={style.link}>
                         <button onClick={toggleDeliveryModal}><img src="image\icons\emporter.png" alt="emporter" />Emporté</button>
                         <button onClick={toggleDeliveryModal}><img src="image\icons\sur-place.png" alt="sur-place" />Sur place</button>
-                        <button><img src="image\icons\livraison.png" alt="livraison" /><NavLink to='/form'>Livraison</NavLink></button>
+                        <NavLink to='/form'><button><img src="image\icons\livraison.png" alt="livraison" />Livraison</button></NavLink>
                     </div>
                 </Modal>
             }
