@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 /* Interface article dans le Panier */
 interface ICartProduct {
-    id: string;
+    id: number;
     product: IProduct;
     quantity: number;
 }
@@ -47,7 +47,8 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function add product(s) to cart */
     const addOne = (product: IProduct, quantity: number) => {
         const newProduct = {
-            id: uuidv4(),
+            // id: uuidv4(),
+            id: product.id,
             product,
             quantity
         }
@@ -112,6 +113,17 @@ export const CartProvider = (props: CartProviderProps) => {
         return totalPrice;
 
     }
+
+        /* Function to get the total price with extra of the cart */
+        const getTotalPriceWithExtra = () => {
+
+            cartProducts.map((p)=> {
+                if (p.product.extras[0].isSelected) {
+                   ( p.product.extras[0].additionalPrice + p.product.price ) * p.quantity
+                }
+            })
+           return getTotalPriceWithExtra  
+        }
 
     /* Function to reset the cart */
     const resetCart = () => {
