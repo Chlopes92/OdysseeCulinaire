@@ -51,6 +51,7 @@
 @media(max-width: 900px){
     .cartPage{
         width: auto;
+        width: 90%;
     }
     
 }

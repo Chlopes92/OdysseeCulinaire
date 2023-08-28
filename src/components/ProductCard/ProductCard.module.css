@@ -45,7 +45,8 @@
 }
 
 .img {
-    width: 20vw;
+    width: 21vw;
+    height: 27vh;
     margin : 0 4vw 0 2vw;
     box-shadow: .3vw .3vw .5vw 0px rgba(0, 27, 180, 0.47);
 }
