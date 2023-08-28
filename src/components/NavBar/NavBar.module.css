@@ -21,11 +21,11 @@
 
 @media (max-width: 900px) {
     /*  414px pour cibler la largeur de l'iPhone */
-  .list {}
+    .list {}
 
   .navBar{
     display: none;
-}
+    }
 }
 
 /* @media(max-width: 900px){

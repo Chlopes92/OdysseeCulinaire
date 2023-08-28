@@ -8,6 +8,7 @@ import style from "./ProductItem.module.css";
 import { useCartContext } from "contexts/Cart.context";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { link } from "fs";
 
 interface ProductItemProps {
   product: IProduct;
@@ -20,11 +21,13 @@ const { products, addOne } = useCartContext();
     return p.product === product
   })) {
     return (
+      <Link to={`/products/${product.id}`}>
       <button
         className={`${style.buttonAddToCart} ${style.position_button}`}
-        onClick={() => addOne(product, 1)}>
+        /* onClick={() => addOne(product, 1)}*/>
         <img src="/image/icons/plus.png" alt="ajouter un produit au panier" />
       </button>
+      </Link>
     );
   } else {
     return (

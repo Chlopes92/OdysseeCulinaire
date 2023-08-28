@@ -3,7 +3,7 @@ import NavBar from "components/NavBar/NavBar";
 import style from "./Header.module.css";
 import { useCartContext } from "contexts/Cart.context";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const MenuBurger = ({ burgerClass = "" }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +31,11 @@ const MenuBurger = ({ burgerClass = "" }) => {
         }`}
       >
         {/* <NavBurger  /> */}
+        <NavLink to="/products">La Carte</NavLink>
+        <NavLink to="/products/category/entrees">Entrées</NavLink>
+        <NavLink to="/products/category/plats">Plats</NavLink>
+        <NavLink to="/products">Desserts</NavLink>
+        <NavLink to="/products/category/desserts">Boissons</NavLink>
       </div>
     </section>
   );
