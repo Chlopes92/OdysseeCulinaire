@@ -10,12 +10,12 @@ import { useParams} from 'react-router-dom';
 import { useCartContext } from 'contexts/Cart.context';
 
 
-
 const ProductDetailPage = () => {
   
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams(); 
   const { addOne } = useCartContext();
+  //const [priceExtra, setTotalPriceExtra] = useState(0)
  
  
 const AphroditeImage = '/image/icons/aphrodite.png';
@@ -41,14 +41,34 @@ const add = () => {
 
   // Trouver le produit correspondant par son ID
   const product = PRODUCTS.find(product => product.id === productId);
+
+  let extraPrice = 0;
+  product?.extras.forEach((extra)=> {
+    if (extra.isSelected) {
+     extraPrice += extra.additionalPrice
+     console.log("extraPrice", extraPrice)
+    }
+  })
   
   if (!product) {
     return <div>Produit introuvable</div>;
   }
-  const totalPrice = (product.price * quantity).toFixed(2); 
+
+
+  const getTotalPriceWithExtra = () => {
+    let extraPrice = 0;
+    product?.extras.forEach((extra)=> {
+      if (extra.isSelected) {
+       extraPrice += extra.additionalPrice
+       console.log("extraPrice", extraPrice)
+      }
+    })
+  }
+
+    const totalPriceWithExtra = ((product.price + extraPrice) * quantity).toFixed(2); 
+
+
   
-
-
  return (
     <section>
       <div className={style.containerText}>
@@ -76,8 +96,13 @@ const add = () => {
        <div className={style.buttonAdd}>
       <NavLink to="/cart">
       <Button 
-    title={`Ajouter au Panier - ${totalPrice} €`}
+    title={`Ajouter au Panier - ${totalPriceWithExtra} €`}
     onClick={() => addOne(product, quantity)}
+  />
+
+<Button 
+    title={`ExtraPrice - ${totalPriceWithExtra} €`}
+    onClick={() => {getTotalPriceWithExtra()}}
   />
       </NavLink>
       </div>

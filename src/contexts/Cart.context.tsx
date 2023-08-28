@@ -115,15 +115,7 @@ export const CartProvider = (props: CartProviderProps) => {
     }
 
         /* Function to get the total price with extra of the cart */
-        const getTotalPriceWithExtra = () => {
-
-            cartProducts.map((p)=> {
-                if (p.product.extras[0].isSelected) {
-                   ( p.product.extras[0].additionalPrice + p.product.price ) * p.quantity
-                }
-            })
-           return getTotalPriceWithExtra  
-        }
+   
 
     /* Function to reset the cart */
     const resetCart = () => {
