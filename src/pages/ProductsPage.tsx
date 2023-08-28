@@ -66,11 +66,11 @@ const TagList = () => {
   };
 
   return (
-    <ul>
+    <ul className={`${style.flexFilter}`}>
       {tagValues.map((tag) => (
         <li key={tag}>
           <button
-            className={`${tagArray.includes(tag) ? style.selected : ""}`}
+            className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter} `}
             onClick={() => toggleTag(tag)}
           >
             {tag}
@@ -120,13 +120,13 @@ const AllergyList = () => {
     });
   };
   return (
-    <ul>
+    <ul className={`${style.flexFilter}`}>
       {allergyValues.map((allergy) => (
-        <li
+        <li 
           key={allergy}
-          className={`${allergyArray.includes(allergy) ? style.selected : ""}`}
+          
         >
-          <button onClick={() => toggleAllergy(allergy)}>{allergy}</button>
+          <button onClick={() => toggleAllergy(allergy)} className={`${allergyArray.includes(allergy) ? style.selected : ""} ${style.filter}`}>{allergy}</button>
         </li>
       ))}
     </ul>
@@ -141,7 +141,7 @@ const FilterSection = () => {
   };
 
   return (
-    <section>
+    <section className={style.filterSection}>
       <button className={style.filterButton} onClick={toggleFilter}>
         {isFilterOpen ? (
           <img src="/image/icons/close.png" alt="Close" />

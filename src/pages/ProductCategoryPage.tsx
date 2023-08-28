@@ -53,10 +53,10 @@ if(allergyArray === undefined){
     }
 
     return (
-        <ul>
+        <ul className={`${style.flexFilter}`}>
             {tagValues.map(tag => (
-                <li key={tag} className={`${tagArray.includes(tag) ? style.selected : ""}`}>
-                    <button onClick={() => toggleTag(tag)}>
+                <li key={tag} >
+                    <button onClick={() => toggleTag(tag)} className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter}`}>
                         {tag}
                     </button>
                 </li>
@@ -103,10 +103,10 @@ const AllergyList = () => {
             })
         }
     return (
-        <ul>
+        <ul className={`${style.flexFilter}`}>
             {allergyValues.map((allergy) => (
-                <li key={allergy} className={`${allergyArray.includes(allergy)? style.selected : ""}`}>
-                    <button onClick={() => toggleAllergy(allergy)}>
+                <li key={allergy}>
+                    <button onClick={() => toggleAllergy(allergy)} className={`${allergyArray.includes(allergy)? style.selected : ""} ${style.filter}`}>
                         {allergy}
                     </button>
                 </li>
@@ -123,7 +123,7 @@ const FilterSection = () => {
     };
   
     return (
-      <section>
+      <section className={style.filterSection}>
         <button className={style.filterButton} onClick={toggleFilter}>
           {isFilterOpen ? (
             <img src="/image/icons/close.png" alt="Close" />
@@ -181,10 +181,12 @@ const ProductCategoryPage = () =>{
 
 
     return (
-        <main>
+        <section>
             <Carousel />
             <FilterSection />
+            <div className={style.flex}>
             <NavBar customClass={style.customNav} />
+            <section className={style.flex}>
             <ul className={style.menu}>
                 {product_displayed.map((product) => (
                     <li key={product.id}>
@@ -192,8 +194,10 @@ const ProductCategoryPage = () =>{
                     </li>
                 ))}
             </ul>
+            </section>
+            </div>
             <img className={style.athena} src="/image/icons/athena.png" alt="" />
-        </main>
+        </section>
     );
 }
 

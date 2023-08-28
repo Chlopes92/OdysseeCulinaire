@@ -31,11 +31,13 @@ const MenuBurger = ({ burgerClass = "" }) => {
         }`}
       >
         {/* <NavBurger  /> */}
-        <NavLink to="/products">La Carte</NavLink>
-        <NavLink to="/products/category/entrees">Entrées</NavLink>
-        <NavLink to="/products/category/plats">Plats</NavLink>
-        <NavLink to="/products">Desserts</NavLink>
-        <NavLink to="/products/category/desserts">Boissons</NavLink>
+        <ul>
+        <li><NavLink to="/products">La Carte</NavLink></li>
+        <li><NavLink to="/products/category/entrees">Entrées</NavLink></li>
+        <li><NavLink to="/products/category/plats">Plats</NavLink></li>
+        <li><NavLink to="/products">Desserts</NavLink></li>
+        <li><NavLink to="/products/category/desserts">Boissons</NavLink></li>
+        </ul>
       </div>
     </section>
   );
