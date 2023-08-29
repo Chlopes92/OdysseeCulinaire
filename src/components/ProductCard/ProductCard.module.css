@@ -42,8 +42,8 @@
 }
 
 .img {
-    width: 21vw;
-    /* height: 27vh; */
+    width: 26vw;
+    height: 30vh;
     margin : 0 4vw 0 2vw;
     box-shadow: .3vw .3vw .5vw 0px rgba(0, 27, 180, 0.47);
 }
@@ -71,6 +71,13 @@
     display: flex;
 }
 
+.sizeImage{
+    width: 60%;
+    /* height: 100%; */
+    object-fit: cover;
+    
+}
+
 @media (max-width: 900px) {
     /*  414px pour cibler la largeur de l'iPhone */
   .pickerFlex {
@@ -83,6 +90,7 @@
 
     .img {
         width: 33vw;
+        height: 22vh;
     }
 
     .icons {

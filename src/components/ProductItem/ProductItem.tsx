@@ -48,7 +48,7 @@ const ProductItem = (props: ProductItemProps) => {
       <Link to={`/products/${product.id}`}>
         <img className={style.size} src={img.src} alt={img.alt} />
       </Link>
-      <article>
+      <article className={style.article}>
         <p className={style.text}>{title}</p>
         <p className={style.text}>{price}€</p>
       </article>
