@@ -75,7 +75,7 @@ export const PRODUCTS: IProduct[] = [
                     title: "Légumes crus",
                 },
                 additionalPrice: 1.5,
-                isSelected: true,
+                isSelected: false,
             }
 
         ],

@@ -1,5 +1,5 @@
 import { IProduct } from "mocks/products";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 /* Interface article dans le Panier */
@@ -44,6 +44,20 @@ export const CartProvider = (props: CartProviderProps) => {
     const { children } = props;
     const [cartProducts, setCartProducts] = useState<ICartProduct[]>([]);
 
+// Load cart data from local storage on component mount
+useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+        if (storedCart) {
+            setCartProducts(JSON.parse(storedCart));
+        }
+    }, []);
+
+// Store cart data in local storage whenever it changes
+useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cartProducts));
+    }, [cartProducts]);
+
+
     /* Function add product(s) to cart */
     const addOne = (product: IProduct, quantity: number) => {
         const newProduct = {
@@ -68,8 +82,8 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove quantity from a product */
     const removeOne = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => p.product.id === product.id);
-         // pour le produit customisé ?
-       // const foundProductCustom = cartProducts.find((p) => p.product === product);
+        // pour le produit customisé ?
+        // const foundProductCustom = cartProducts.find((p) => p.product === product);
 
         if (!foundProduct) {
             return;
@@ -77,17 +91,17 @@ export const CartProvider = (props: CartProviderProps) => {
             if (foundProduct.quantity > 1) {
                 foundProduct.quantity -= 1;
                 setCartProducts([...cartProducts]);
-             }
+            }
 
         }
-       // const index = cartProducts.indexOf(foundProduct);
+        // const index = cartProducts.indexOf(foundProduct);
     }
 
     /*  Function to remove a product from the cart */
     const removeProduct = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => p.product.id === product.id);
         // pour le produit customisé ?
-       // const foundProductCustom = cartProducts.find((p) => p.product === product);
+        // const foundProductCustom = cartProducts.find((p) => p.product === product);
         if (foundProduct) {
             const index = cartProducts.indexOf(foundProduct);
             cartProducts.splice(index, 1);
@@ -108,19 +122,6 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to get the total price of the cart */
     const getTotalPrice = () => {
 
-        // if extra 
-        const totalPriceWithExtra = cartProducts.forEach((p)=> {
-            let totalExtra = 0;
-            p.product.extras.forEach((extra)=> {
-                if (extra.isSelected) {
-                    totalExtra += extra.additionalPrice
-                }
-            })
-             const fullExtraPrice = totalExtra * p.quantity
-            const totalPricewithExtra = fullExtraPrice 
-
-        })
-
         const totalPrice = cartProducts.reduce((accumulator: number, currentValue: ICartProduct) => {
             return accumulator += (currentValue.product.price * currentValue.quantity);
         }, 0);
@@ -129,12 +130,13 @@ export const CartProvider = (props: CartProviderProps) => {
     }
 
     /* Function to get the total price with extra of the cart */
-   
-   
+
+
 
     /* Function to reset the cart */
     const resetCart = () => {
         setCartProducts([]);
+        localStorage.clear();
     }
 
 
