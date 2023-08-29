@@ -30,13 +30,14 @@ const ProductDetailPage = () => {
     const product = PRODUCTS.find(product => product.id === productId);
     console.log(product)
     if (!product) {
-      redirect("/404");
+      redirect("/*");
     } else {
       setP(product);
     }
   }, [])
 
 
+  // on peut exporter cette fonction dans un fichier pour pouvoir l'utiliser partout 
   const getTotalPriceWithExtra = (product: IProduct) => {
     const total = product.extras.reduce((acc, curr) => {
       return !curr.isSelected ? acc : acc += curr.additionalPrice
@@ -59,7 +60,7 @@ const ProductDetailPage = () => {
     setQuantity(quantity + 1);
   }
   const remove = () => {
-    if (quantity > 0)
+    if (quantity > 1)
       setQuantity(quantity - 1);
   }
 
@@ -99,7 +100,7 @@ const ProductDetailPage = () => {
             <div className={style.buttonAdd}>
               <NavLink to="/cart">
                 <Button
-                  title={`Ajouter au Panier - ${totalPrice}`}
+                  title={`Ajouter au Panier - ${totalPrice * quantity} €`}
                   onClick={() => addOne(p!, quantity)}
                 />
               </NavLink>
