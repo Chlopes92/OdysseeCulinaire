@@ -2,7 +2,7 @@ import Carousel from "components/Carousel/Carousel";
 import style from "./HomePage.module.css"
 import { Link } from "react-router-dom";
 
-const HomePage = () =>{
+const HomePage = () => {
     return (
         <main>
             <Carousel />

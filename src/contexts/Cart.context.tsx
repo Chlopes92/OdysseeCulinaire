@@ -129,10 +129,6 @@ useEffect(() => {
 
     }
 
-    /* Function to get the total price with extra of the cart */
-
-
-
     /* Function to reset the cart */
     const resetCart = () => {
         setCartProducts([]);

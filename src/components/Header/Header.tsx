@@ -26,17 +26,16 @@ const MenuBurger = ({ burgerClass = "" }) => {
         )}
       </button>
       <div
-        className={`${style.menuContent} ${
-          isMenuOpen ? style.open : style.closed
-        }`}
+        className={`${style.menuContent} ${isMenuOpen ? style.open : style.closed
+          }`}
       >
         {/* <NavBurger  /> */}
         <ul>
-        <li><NavLink to="/products">La Carte</NavLink></li>
-        <li><NavLink to="/products/category/entrees">Entrées</NavLink></li>
-        <li><NavLink to="/products/category/plats">Plats</NavLink></li>
-        <li><NavLink to="/products">Desserts</NavLink></li>
-        <li><NavLink to="/products/category/desserts">Boissons</NavLink></li>
+          <li><NavLink to="/products">La Carte</NavLink></li>
+          <li><NavLink to="/products/category/entrees">Entrées</NavLink></li>
+          <li><NavLink to="/products/category/plats">Plats</NavLink></li>
+          <li><NavLink to="/products">Desserts</NavLink></li>
+          <li><NavLink to="/products/category/desserts">Boissons</NavLink></li>
         </ul>
       </div>
     </section>
@@ -55,16 +54,16 @@ const Header = () => {
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
       <NavBar />
-      {location.pathname !== "/order" && 
-      (<Link to="/cart">
-        <div className={style.flex}>
-        <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
-        <div className={style.borderQuantity} >
-          <p className={style.quantity}>{totalQuantity}</p>
+      {location.pathname !== "/order" &&
+        (<Link to="/cart">
+          <div className={style.flex}>
+            <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
+            <div className={style.borderQuantity} >
+              <p className={style.quantity}>{totalQuantity}</p>
+            </div>
           </div>
-        </div>
-      </Link>)}
-      <MenuBurger burgerClass={style.customBurger}/>
+        </Link>)}
+      <MenuBurger burgerClass={style.customBurger} />
     </section>
   );
 };
