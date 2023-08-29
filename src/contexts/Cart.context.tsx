@@ -107,6 +107,20 @@ export const CartProvider = (props: CartProviderProps) => {
 
     /* Function to get the total price of the cart */
     const getTotalPrice = () => {
+
+        // if extra 
+        const totalPriceWithExtra = cartProducts.forEach((p)=> {
+            let totalExtra = 0;
+            p.product.extras.forEach((extra)=> {
+                if (extra.isSelected) {
+                    totalExtra += extra.additionalPrice
+                }
+            })
+             const fullExtraPrice = totalExtra * p.quantity
+            const totalPricewithExtra = fullExtraPrice 
+
+        })
+
         const totalPrice = cartProducts.reduce((accumulator: number, currentValue: ICartProduct) => {
             return accumulator += (currentValue.product.price * currentValue.quantity);
         }, 0);
@@ -114,7 +128,8 @@ export const CartProvider = (props: CartProviderProps) => {
 
     }
 
-        /* Function to get the total price with extra of the cart */
+    /* Function to get the total price with extra of the cart */
+   
    
 
     /* Function to reset the cart */
@@ -122,22 +137,7 @@ export const CartProvider = (props: CartProviderProps) => {
         setCartProducts([]);
     }
 
-    // /* Function to get the included ingredients */
 
-    // const getIncludedIngredients = (product: IProduct) => {
-    //     const isIncluded = cartProducts.map((p) => p.product.includedIngredients.filter((inclus)=> inclus.isSelected === true));
-    //     if (isIncluded) return isIncluded;
-    // }
-
-    // const getExtrasIngredients = (product: IProduct) => {
-    //     const isExtra = cartProducts
-    //     .map((p) => p.product.extras
-    //     .map((extra)=> extra.isSelected === true)
-    
-        
-    //     );
-        
-    // }
 
     const cart: ICart = {
         products: cartProducts,

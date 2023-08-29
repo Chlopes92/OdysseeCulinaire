@@ -5,35 +5,30 @@ import style from "./Customisation.module.css";
 import SelectedProduct from "components/SelectedProduct/SelectedProduct";
 
 interface CustomisationProps {
-  product: IProduct
+  p: IProduct,
+  setP: (p: IProduct) => void;
 }
 
 
 const Customisation = (props: CustomisationProps) => {
 
-  const { product } = props;
-
-  // useState pour passer de true a false
- const [inclus, setInclus] = useState(true)
- const [extra, setExtra] = useState(false)
-
+  const { p, setP } = props;
   
 
 const setInclusIsSelected = (id : number) => {
- const foundInclus = product.includedIngredients.find((inclus) => inclus.ingredient.id === id)
+ const foundInclus = p.includedIngredients.find((inclus) => inclus.ingredient.id === id)
  if (foundInclus) {
    foundInclus.isSelected = !foundInclus.isSelected
-   console.log("foundInclus", foundInclus)
-   setInclus(!inclus);
+   // spread operator permet de déconstruire l'objet pour voir le changement des éléments
+   setP({...p});
 }
 }
 
 const setExtraIsSelected = (id : number) => {
-  const foundExtra = product.extras.find((extra) => extra.ingredient.id === id)
+  const foundExtra = p.extras.find((extra) => extra.ingredient.id === id)
   if (foundExtra) {
     foundExtra.isSelected = !foundExtra.isSelected
-    console.log("foundExtra", foundExtra)
-    setExtra(!extra);
+    setP({...p});
  }
  }
 
@@ -44,16 +39,16 @@ const setExtraIsSelected = (id : number) => {
   return (
     <div>
       <div className={style.container}>
-        <h2 className={style.title}>{product.title} *</h2>
-        <p>{product.description}</p>
-        <p>{product.price} €</p>
-        <p>{product.mythologie}</p>
+        <h2 className={style.title}>{p.title} *</h2>
+        <p>{p.description}</p>
+        <p>{p.price} €</p>
+        <p>{p.mythologie}</p>
         <hr className={style.customHr} />
         <p className={style.inclus}>Inclus :</p>
         <div className={style.select}></div>
         <div>
           <ul>
-            {product.includedIngredients.map((item) => (
+            {p.includedIngredients.map((item) => (
               <li key={item.ingredient.id}
               onClick={() =>(setInclusIsSelected(item.ingredient.id))} >
                 
@@ -75,7 +70,7 @@ const setExtraIsSelected = (id : number) => {
       <div>
         <p>Extras:</p>
         <ul>
-          {product.extras.map((item) => (
+          {p.extras.map((item) => (
             <li key={item.ingredient.id}
             onClick={() =>(setExtraIsSelected(item.ingredient.id))} >
                           
