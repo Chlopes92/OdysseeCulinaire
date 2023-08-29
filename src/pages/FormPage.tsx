@@ -55,6 +55,73 @@ const FormPage = () => {
 
             <div className={style.page} >
 
+                {/* Section recap et prix total */}
+                < section className={style.recap} >
+
+                    <article className={style.cart}>
+                        <h3>Votre commande</h3>
+
+                        {/* Affiche les articles du panier */}
+                        <div className={style.productCard}>
+                            {products.map((p) =>
+                                <article>
+                                    <img src={p.product.img.src} alt={p.product.img.alt} width="150px" />
+                                    <div className={style.infosProductCard} >
+                                        <h4>{p.product.title}</h4>
+                                        <div>
+
+                                            <p>{p.product.price}€</p>
+                                            <p>QTE: {p.quantity}</p>
+                                        </div>
+
+                                    </div>
+                                    <button onClick={() => removeProduct(p.product)}>SUPPRIMER</button>
+                                </article>
+                            )}
+                        </div>
+                    </article>
+
+                    <article className={style.totalPrice}>
+                        <div className={style.total}>
+
+                            {/* Total correspond au prix du panier + livraison */}
+                            <h4>Total</h4>
+                            <p><strong>{total + 3}  €</strong></p>
+                        </div>
+                        <hr />
+
+                        {/* Sous-total correspond au prix du panier */}
+                        <div className={style.total}>
+                            <p>Sous-total</p>
+                            <p>{total} €</p>
+                        </div>
+                        <hr />
+
+                        {/* Livraison 2€ */}
+                        <div className={style.total}>
+                            <p>Livraison</p>
+                            <p>3 €</p>
+                        </div>
+                        <hr />
+
+                        {/* Taxes 1,20€ */}
+                        <div className={style.total}>
+                            <p>Taxes incluses</p>
+                            <p>1.50 €</p>
+                        </div>
+
+                        {/* Bouton ne fonctionne que si tout le formulaire est valide */}
+                        {(isValid && deliveryValid) || !statusChecked
+                            ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
+                            : <Button title="Payer et passer votre commande" />
+                        }
+
+                        <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
+                        </p>
+
+                    </article>
+                </section >
+
                 <section className={style.formulaire}>
 
                     {/* Partie Coordonnées */}
@@ -67,7 +134,7 @@ const FormPage = () => {
                         console.log("data", data)
                     })}>
                         <div>
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="email">*Email:</label>
                                 {/* {required : "Ce champ est obligatoire"} permet d'avoir le focus sur l'input et rend le champ obligatoire */}
                                 <input {...register("email", {
@@ -103,13 +170,13 @@ const FormPage = () => {
                     })}>
 
 
-                        <div>
+                        <div className={style.flexMobile}>
 
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
 
                                 {/* Nom */}
 
-                                <label htmlFor="nom">* Nom:</label>
+                                <label htmlFor="nom" >* Nom:</label>
                                 <input {...register("nom", { required: "Le Nom est obligatoire" })} id="nom" />
 
                                 {/* Prenom */}
@@ -121,14 +188,14 @@ const FormPage = () => {
 
 
                             {/* Pays */}
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="pays">* Pays / Région :</label>
                                 <input {...register("pays", { required: "Le Pays est obligatoire" })} id="pays" />
                             </div>
                             {errors.pays && <p className={style.errorMessage}>{errors.pays.message}</p>}
 
                             {/* Adresse */}
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="adresse">* Adresse :</label>
                                 <input {...register("adresse", { required: "L'Adresse est obligatoire" })} id="adresse" />
                             </div>
@@ -136,12 +203,12 @@ const FormPage = () => {
 
 
                             {/* Compléments d'adresse */}
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="etage">Etage,esc,bat :</label>
                                 <input {...register("etage")} id="etage" />
                             </div>
 
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 {/* Code Postal */}
                                 <label htmlFor="codePostal">* Code postal:</label>
                                 <input {...register("codePostal", { required: "Le Code Postal est obligatoire", minLength: { value: 5, message: "Vous avez renseigné moins de 5 caractères pour le code postal" } })} id="codePostal" />
@@ -157,7 +224,7 @@ const FormPage = () => {
 
 
                             {/* Téléphone */}
-                            <div className={style.flex}>
+                            <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="telephone">* Téléphone :</label>
                                 <input {...register("telephone", { required: "Le Téléphone est obligatoire" })} id="telephone" />
                             </div>
@@ -216,162 +283,95 @@ const FormPage = () => {
 
                             </div>
 
-                            { statusChecked && 
-                             <div>
-                            <hr className={style.trait} /> 
-
-                            <div className={style.iconsCard}>
-                                <img src="image\icons\visa.png" alt="visa" />
-                                <img src="image\icons\mastercard.png" alt="mastercard" />
-                                <img src="image\icons\amex.png" alt="amex" />
-                            </div>
-
-
-                            {/* Formulaire de Facturation et paiement */}
-                            <PaymentForm onSubmit={handleSubmit((data) => {
-                                console.log("data", data)
-                            })}>
+                            {statusChecked &&
                                 <div>
+                                    <hr className={style.trait} />
 
-                                    {/* Numéro de carte */}
-                                    <div className={style.flex}>
-                                        <label htmlFor="cartNumber">* Numéro de la carte:</label>
-                                        <input {...register("cartNumber", {
-                                            required: "Le Numéro de carte est obligatoire", pattern: {
-                                                value: /^[0-9]{16}$/,
-                                                message: "Veuillez renseigner les 16 chiffres figurant au recto de votre carte",
-                                            }
-                                        })} id="cartNumber" />
+                                    <div className={style.iconsCard}>
+                                        <img src="image\icons\visa.png" alt="visa" />
+                                        <img src="image\icons\mastercard.png" alt="mastercard" />
+                                        <img src="image\icons\amex.png" alt="amex" />
                                     </div>
-                                    {errors.cartNumber && <p className={style.errorMessage}>{errors.cartNumber.message}</p>}
-
-                                    {/* Titulaire de la carte */}
-                                    <div className={style.flex}>
-                                        <label htmlFor="titulaire">* Titulaire de la carte:</label>
-                                        <input {...register("titulaire", { required: "Le Nom Prénom du titulaire de la carte est obligatoire" })} id="titulaire" />
-                                    </div>
-                                    {errors.titulaire && <p className={style.errorMessage}>{errors.titulaire.message}</p>}
 
 
+                                    {/* Formulaire de Facturation et paiement */}
+                                    <PaymentForm onSubmit={handleSubmit((data) => {
+                                        console.log("data", data)
+                                    })}>
+                                        <div>
 
-                                    <div className={style.flex}>
+                                            {/* Numéro de carte */}
+                                            <div className={`${style.flex} ${style.displayContent}`}>
+                                                <label htmlFor="cartNumber">* Numéro de la carte:</label>
+                                                <input {...register("cartNumber", {
+                                                    required: "Le Numéro de carte est obligatoire", pattern: {
+                                                        value: /^[0-9]{16}$/,
+                                                        message: "Veuillez renseigner les 16 chiffres figurant au recto de votre carte",
+                                                    }
+                                                })} id="cartNumber" />
+                                            </div>
+                                            {errors.cartNumber && <p className={style.errorMessage}>{errors.cartNumber.message}</p>}
 
-                                        {/* Date d'expiration de la carte */}
-                                        <label htmlFor="expirationDate">* Date d'expiration:</label>
-                                        <input {...register("expirationDate", {
-                                            required: "La date d'expiration est obligatoire",
-                                            pattern: {
-                                                value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
-                                                message: "Veuillez renseigner une date au format 01/01"
-                                            }
-                                        })} id="expirationDate" />
-
-                                        {/* Cryptogramme */}
-                                        <label htmlFor="cryptogramme">* Cryptogramme:</label>
-                                        <input {...register("cryptogramme", {
-                                            required: "Le Cryptogramme est obligatoire", pattern: {
-                                                value: /^[0-9]{3,4}$/,
-                                                message: "Veuillez renseigner les 3 ou 4 chiffres figurant au verso de votre carte",
-                                            }
-                                        })} id="cryptogramme" />
-
-
-                                    </div>
-                                    {errors.expirationDate && <p className={style.errorMessage}>{errors.expirationDate.message}</p>}
-                                    {errors.cryptogramme && <p className={style.errorMessage}>{errors.cryptogramme.message}</p>}
-
-                                </div>
-
-                                
-                                {isValid
-                                    ? (<NavLink to="/order"><button type="submit">Payer et passer commande</button></NavLink>)
-                                    : <button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button>
-                                }
+                                            {/* Titulaire de la carte */}
+                                            <div className={`${style.flex} ${style.displayContent}`}>
+                                                <label htmlFor="titulaire">* Titulaire de la carte:</label>
+                                                <input {...register("titulaire", { required: "Le Nom Prénom du titulaire de la carte est obligatoire" })} id="titulaire" />
+                                            </div>
+                                            {errors.titulaire && <p className={style.errorMessage}>{errors.titulaire.message}</p>}
 
 
-                            </PaymentForm>
 
-                            </div>}
+                                            <div className={`${style.flex} ${style.displayContent}`}>
 
-                            { !statusChecked && (<NavLink to="/order"><button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button></NavLink>) }
+                                                {/* Date d'expiration de la carte */}
+                                                <label htmlFor="expirationDate">* Date d'expiration:</label>
+                                                <input {...register("expirationDate", {
+                                                    required: "La date d'expiration est obligatoire",
+                                                    pattern: {
+                                                        value: /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
+                                                        message: "Veuillez renseigner une date au format 01/01"
+                                                    }
+                                                })} id="expirationDate" />
+
+                                                {/* Cryptogramme */}
+                                                <label htmlFor="cryptogramme">* Cryptogramme:</label>
+                                                <input {...register("cryptogramme", {
+                                                    required: "Le Cryptogramme est obligatoire", pattern: {
+                                                        value: /^[0-9]{3,4}$/,
+                                                        message: "Veuillez renseigner les 3 ou 4 chiffres figurant au verso de votre carte",
+                                                    }
+                                                })} id="cryptogramme" />
+
+
+                                            </div>
+                                            {errors.expirationDate && <p className={style.errorMessage}>{errors.expirationDate.message}</p>}
+                                            {errors.cryptogramme && <p className={style.errorMessage}>{errors.cryptogramme.message}</p>}
+
+                                        </div>
+
+
+                                        {isValid
+                                            ? (<NavLink to="/order"><button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button></NavLink>)
+                                            : <button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button>
+                                        }
+
+
+                                    </PaymentForm>
+
+                                </div>}
+
+                            {!statusChecked && (<NavLink to="/order"><button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button></NavLink>)}
                             <br />
                             <p className={style.small}>En cliquant sur «Payer», je confirme avoir lu et accepté les conditions générales de vente et j'accepte le traitement de mes données personnelles par LOdyssée Culinaire dans les thermes énoncés des conditions générales de vente, dans les objectifs détaillés de votre Déclaration de Confidentialité et dans la gestion de ma commande. Si j'ai moins de 16 ans, je confirme avoir le consentement parental pour divulguer mes données personnelles. Conformément aux lois et réglementations en vigueur, vous avez le droit d'accéder, de corriger et de supprimer toutes les données qui peuvent vous concerner. Vous pouvez également nous demander de ne pas vous envoyer de communications personnalisées sur nos produits et services. Ce droit peut être exercé à tout moment en nous envoyant un avis à notre section Contact dans notre Déclaration de Confidentialité.
                             </p>
-                        
+
                         </div>
                     }
+                <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
 
-        </section >
-
-
-            {/* Section recap et prix total */ }
-            < section className = { style.recap } >
-
-                    <article className={style.cart}>
-                        <h3>Votre commande</h3>
-
-                        {/* Affiche les articles du panier */}
-                        <div className={style.productCard}>
-                            {products.map((p) =>
-                                <article>
-                                    <img src={p.product.img.src} alt={p.product.img.alt} width="150px" />
-                                    <div className={style.infosProductCard} >
-                                        <h4>{p.product.title}</h4>
-                                        <div>
-
-                                            <p>{p.product.price}€</p>
-                                            <p>QTE : {p.quantity}</p>
-                                        </div>
-
-                                    </div>
-                                    <button onClick={() => removeProduct(p.product)}>SUPPRIMER</button>
-                                </article>
-                            )}
-                        </div>
-                    </article>
-
-                    <article className={style.totalPrice}>
-                        <div className={style.total}>
-
-                            {/* Total correspond au prix du panier + livraison */}
-                            <h4>Total</h4>
-                            <p><strong>{total + 3}  €</strong></p>
-                        </div>
-                        <hr />
-
-                        {/* Sous-total correspond au prix du panier */}
-                        <div className={style.total}>
-                            <p>Sous-total</p>
-                            <p>{total} €</p>
-                        </div>
-                        <hr />
-
-                        {/* Livraison 2€ */}
-                        <div className={style.total}>
-                            <p>Livraison</p>
-                            <p>3 €</p>
-                        </div>
-                        <hr />
-
-                        {/* Taxes 1,20€ */}
-                        <div className={style.total}>
-                            <p>Taxes incluses</p>
-                            <p>1.50 €</p>
-                        </div>
-
-                        {/* Bouton ne fonctionne que si tout le formulaire est valide */}
-                        {(isValid && deliveryValid) || !statusChecked
-                            ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
-                            : <Button title="Payer et passer votre commande" />
-                        }
-
-                        <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
-                        </p>
-
-                    </article>
-                    <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
                 </section >
             </div >
+
 
 
         </>

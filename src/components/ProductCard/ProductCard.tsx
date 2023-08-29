@@ -13,11 +13,14 @@ const ProductCard = () => {
         {products.map((p) => (
           <li className={`${style.flex} `} key={p.id}>
             {/* Image du produit */}
-            <img
+            <div className={style.sizeImage}>
+              <img
               className={style.img}
               src={p.product.img.src}
               alt={p.product.title}
             />
+            </div>
+
             {/* Section affiche le nom du produit, inclus et extras */}
             <section>
               <div className={style.title}>
