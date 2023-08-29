@@ -65,6 +65,27 @@ export const PRODUCTS: IProduct[] = [
                     title: "Pita"
                 },
                 isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "L'huile d'olive"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Jus de citron"
+                },
+                isSelected: true,
             }
         ],
 
@@ -72,7 +93,39 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Légumes crus",
+                    title: "Légumes vapeur mixt",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Concombres",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Ail",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Aneth",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Olives",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -99,17 +152,32 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Oignons"
+                    title: "Pita"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Tomates"
+                    title: "L'huile d'olive"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Mie de pain"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Jus de citron"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -120,6 +188,30 @@ export const PRODUCTS: IProduct[] = [
                     title: "Viande hachée",
                 },
                 additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Oignons",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Tomates",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Olives noires",
+                },
+                additionalPrice: 2.5,
                 isSelected: false,
             }
 
@@ -145,7 +237,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Feta"
+                    title: "Vinaigre de Xérès"
                 },
                 isSelected: true,
             },
@@ -170,18 +262,65 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
-
+            {
+                ingredient: {
+                    id: 4,
+                    title: "L'huile d'olive"
+                },
+                isSelected: true,
+            },
+            
         ],
 
         extras: [
             {
                 ingredient: {
                     id: 1,
-                    title: "Feta",
+                    title: "Tomates",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Poivrons  jaunes",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Olives noires",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },{
+                ingredient: {
+                    id: 2,
+                    title: "Basilic frais",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Feta",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Cibulette",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
             }
+
 
         ],
         isAddToCart: false,
@@ -208,7 +347,28 @@ export const PRODUCTS: IProduct[] = [
                     title: "Pain grillé"
                 },
                 isSelected: true,
-            }
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Pita"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Beurre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "L'huile d'olive"
+                },
+                isSelected: true,
+            },
         ],
 
         extras: [
@@ -222,10 +382,34 @@ export const PRODUCTS: IProduct[] = [
             },
             {
                 ingredient: {
-                    id: 1,
-                    title: "Pain grillé",
+                    id: 2,
+                    title: "Tomates",
                 },
-                additionalPrice: 1,
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Ail ",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Fromage râpé",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Olives noires",
+                },
+                additionalPrice: 2.5,
                 isSelected: false,
             }
 
@@ -250,7 +434,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Huile d'olive"
+                    title: "Huile d'olive extra-vierge"
                 },
                 isSelected: true,
             },
@@ -258,6 +442,20 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 2,
                     title: "Jus de citron"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Persil plat"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Sel, poivre"
                 },
                 isSelected: true,
             },
@@ -269,6 +467,38 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 1,
                     title: "Feta",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Citrons confits",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Oignons",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Cibulette",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Câpres ",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -303,10 +533,17 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Carottes"
+                    title: "L'huile d'olive"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sel et Poivre"
+                },
+                isSelected: true,
+            }
 
         ],
 
@@ -316,17 +553,41 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "Pommes de terres",
                 },
-                additionalPrice: 1,
+                additionalPrice: 1.0,
                 isSelected: false,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Carottes",
+                    title: "Persil",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Crevettes",
+                },
+                additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Tomattes",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
-            }
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Crème fraîche",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
 
         ],
         isAddToCart: false,
@@ -349,24 +610,60 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Tomates"
+                    title: "Pita"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Poivrons"
+                    title: "Jus de citrons"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 3,
-                    title: "Oignons"
+                    title: "Menthe séchée"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Ail"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "L'huile d'olive"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Paprika doux"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Piment en paillettes"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -374,13 +671,37 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Epices",
+                    title: "Tomates",
                 },
-                additionalPrice: 1,
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Poivrons",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Persil",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Ognions",
+                },
+                additionalPrice: 1.5,
                 isSelected: false,
             }
 
-        ],
+      ],
         isAddToCart: false,
     },
     {
@@ -400,28 +721,35 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Olives noires"
+                    title: "Pita"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Olives vertes"
+                    title: "L'huile d’olive"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 3,
-                    title: "Tzatziki"
+                    title: "Graines de sésame "
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 4,
-                    title: "Salade feta"
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Aneth"
                 },
                 isSelected: true,
             },
@@ -434,7 +762,63 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "salade verte",
                 },
-                additionalPrice: 1,
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Tzatziki",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Olives noires",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Olives verte",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Olives mixt",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "Concombre",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 7,
+                    title: "Menthe ciselée",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 8,
+                    title: "Champignons de paris",
+                },
+                additionalPrice: 2.5,
                 isSelected: false,
             }
 
@@ -467,10 +851,32 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Tzatziki"
+                    title: "Pita"
                 },
                 isSelected: true,
             },
+             {
+                ingredient: {
+                    id: 3,
+                    title: "Chips de pain"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Jus de citron"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -480,7 +886,39 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "Frites",
                 },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Champignons à la greque",
+                },
                 additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Tomates",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Viande grillée",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Laitue",
+                },
+                additionalPrice: 1.5,
                 isSelected: false,
             }
 
@@ -506,7 +944,21 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Sauce Tzatziki"
+                    title: "Pita"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "L'huile d'olive"
                 },
                 isSelected: true,
             }
@@ -517,6 +969,38 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 1,
                     title: "Salade verte",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Tzatziki",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Parmesan râpé",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Tomate",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Olives mixt",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -555,6 +1039,34 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Ail"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Sel et poivres"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Pita"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "L'huile d'olives"
+                },
+                isSelected: true,
+            },
 
         ],
 
@@ -564,7 +1076,47 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "Béchamel",
                 },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Cibulette",
+                },
+                additionalPrice: 0.75,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Fromage râpé",
+                },
                 additionalPrice: 1.25,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Tomates",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Viande de boeuf hachée",
+                },
+                additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "Ognions",
+                },
+                additionalPrice: 0.25,
                 isSelected: false,
             }
 
@@ -601,6 +1153,21 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Piment de la Jamaïque"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -611,6 +1178,46 @@ export const PRODUCTS: IProduct[] = [
                     title: "Béchamel",
                 },
                 additionalPrice: 1.25,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Salade",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Agneau haché",
+                },
+                additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Parmesan râpé",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Tomates",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Menthe fraîche hachée",
+                },
+                additionalPrice: 1.5,
                 isSelected: false,
             }
 
@@ -636,14 +1243,14 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Sauce Tzatiki"
+                    title: "Herbes"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Olives noires"
+                    title: "Pain grillé"
                 },
                 isSelected: true,
             },
@@ -651,6 +1258,20 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 3,
                     title: "Pain pita"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Jus de citron"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "JSel et poivre"
                 },
                 isSelected: true,
             },
@@ -672,6 +1293,38 @@ export const PRODUCTS: IProduct[] = [
                     title: "Sauce Tzatiki",
                 },
                 additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Tomates",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Persil",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Salade ",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "Olives marinés",
+                },
+                additionalPrice: 2.0,
                 isSelected: false,
             }
 
@@ -697,24 +1350,46 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Frites"
+                    title: "Pains feuilletés"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Salade verte"
+                    title: "Pain pita"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 3,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
                     title: "Galette de blé"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Vinegrette"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "L'huile d'olive"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -730,17 +1405,25 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Salade",
+                    title: "Salade verte",
                 },
-                additionalPrice: 1.25,
+                additionalPrice: 1.0,
                 isSelected: false,
             },
             {
                 ingredient: {
                     id: 3,
-                    title: "Sauce",
+                    title: "Feta",
                 },
-                additionalPrice: 1.5,
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Crème fraîche",
+                },
+                additionalPrice: 1.0,
                 isSelected: false,
             },
 
@@ -766,31 +1449,46 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Boeuf"
+                    title: "Pain pita"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Agneaux"
+                    title: "L'huile d'olive"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 3,
-                    title: "Poulet"
+                    title: "Persil"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 4,
-                    title: "Légumes grillés"
+                    title: "Herbes de provins"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Sel et poivre"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "Piment d’Espelette"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -802,7 +1500,65 @@ export const PRODUCTS: IProduct[] = [
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Boeuf",
+                },
+                additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Agneaux",
+                },
+                additionalPrice: 3.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Poulet",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Fromage frais ail & fines herbes à 0% de MG",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 6,
+                    title: "Olives noires",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 7,
+                    title: "Champignon",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 8,
+                    title: "Persil",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
             }
+
+
 
         ],
         isAddToCart: false,
@@ -826,14 +1582,28 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Miel"
+                    title: "Graine de sesame"
                 },
                 isSelected: true,
             },
             {
                 ingredient: {
                     id: 2,
-                    title: "Noix"
+                    title: "Noix concassé"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Miel de thym de Crète"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Cannelle"
                 },
                 isSelected: true,
             }
@@ -844,9 +1614,41 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Noix",
+                    title: "Tranche de citron BIO",
                 },
-                additionalPrice: 2,
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Nappage chocolat",
+                },
+                additionalPrice: 1.25,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Nappage caramel",
+                },
+                additionalPrice: 1.25,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Confiture fraise",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Chantilly bio",
+                },
+                additionalPrice: 2.5,
                 isSelected: false,
             }
         ],
@@ -882,6 +1684,20 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Canelle"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Amandes en poudre"
+                },
+                isSelected: true,
+            },
 
         ],
 
@@ -889,9 +1705,47 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Noix",
+                    title: "Yogourt grec",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            }, 
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Noix mixt",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Tranches d'oranges confites",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            }, {
+                ingredient: {
+                    id: 4,
+                    title: "Chantilly",
                 },
                 additionalPrice: 2,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Salade de fruits",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            }, {
+                ingredient: {
+                    id: 6,
+                    title: "Confiture aux agrumes",
+                },
+                additionalPrice: 1.5,
                 isSelected: false,
             }
 
@@ -917,17 +1771,63 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Noix"
+                    title: "Miel d'acacia"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Cannelle"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Amandes effilées "
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Poudre d’amandes "
                 },
                 isSelected: true,
             }
+        
         ],
 
         extras: [
             {
                 ingredient: {
                     id: 1,
-                    title: "Sirop",
+                    title: "Sirop de fleur d'oranger",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Pistache"
+                    },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Amandes entières",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "citron vert confit",
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
@@ -962,7 +1862,21 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Noix"
+                    title: "noix hachées"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Clous de girofle moulus"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Amandes en poudre"
                 },
                 isSelected: true,
             },
@@ -975,9 +1889,43 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "Crème de noix",
                 },
+                additionalPrice: 1.0,
+                isSelected: false,
+            }, 
+            
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Noix hachées",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Crème fouettée bio",
+                },
+                additionalPrice: 2.5,
+                isSelected: false,
+            }, 
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Citron confit",
+                },
                 additionalPrice: 1.5,
                 isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Vanille",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
             }
+
 
         ],
         isAddToCart: false,
@@ -1008,10 +1956,18 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Noix"
+                    title: "Miel d'acacia"
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Copeaux au chocolat noir"
+                },
+                isSelected: true,
+            },
+            
 
         ],
 
@@ -1019,11 +1975,43 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Sirop de chocolat",
+                    title: "Fruits confits",
                 },
-                additionalPrice: 1,
+                additionalPrice: 3.0,
                 isSelected: false,
-            }
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Pâtes de fruits",
+                },
+                additionalPrice: 4.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Confiture aux lait",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Dragées en chocolat",
+                },
+                additionalPrice: 4.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Citron confit",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
 
         ],
         isAddToCart: false,
@@ -1050,6 +2038,27 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Sucre de canne"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Crème fraîche liquide "
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: " zeste râpé d'un citron vert "
+                },
+                isSelected: true,
+            },
 
         ],
 
@@ -1059,9 +2068,42 @@ export const PRODUCTS: IProduct[] = [
                     id: 1,
                     title: "Chantilly",
                 },
-                additionalPrice: 0.5,
+                additionalPrice: 1.5,
                 isSelected: false,
-            }
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Lait sucré",
+                },
+                additionalPrice: 1.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Crème au chocolat",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "1 boule de glace à la vanille",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 5,
+                    title: "Des petits bâtonnets au chocolat",
+                },
+                additionalPrice: 2.0,
+                isSelected: false,
+            },
+            
 
         ],
         isAddToCart: false,
@@ -1095,6 +2137,13 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sucre de canne"
+                },
+                isSelected: true,
+            },
 
         ],
 
@@ -1105,6 +2154,30 @@ export const PRODUCTS: IProduct[] = [
                     title: "Glaçons",
                 },
                 additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Citron",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sirop de myrtilles ",
+                },
+                additionalPrice: 0.7,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Sirop de grenadine.",
+                },
+                additionalPrice: 0.7,
                 isSelected: false,
             }
 
@@ -1132,6 +2205,13 @@ export const PRODUCTS: IProduct[] = [
                     title: "Feuilles de menthe"
                 },
                 isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Sirop de menthe"
+                },
+                isSelected: true,
             }
         ],
 
@@ -1143,7 +2223,25 @@ export const PRODUCTS: IProduct[] = [
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
-            }
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Citron vert",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Tranche de pamplemousse",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            
+            
 
         ],
         isAddToCart: false,
@@ -1166,7 +2264,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Basilic"
+                    title: "Feuilles de menthe"
                 },
                 isSelected: true,
             },
@@ -1174,6 +2272,20 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 2,
                     title: "Citron"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sucre de canne"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Cannelle"
                 },
                 isSelected: true,
             },
@@ -1187,6 +2299,22 @@ export const PRODUCTS: IProduct[] = [
                     title: "Glaçons",
                 },
                 additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Pastèque",
+                },
+                additionalPrice: 1.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Jus de Cranberry",
+                },
+                additionalPrice: 1.0,
                 isSelected: false,
             }
 
@@ -1211,7 +2339,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Romarin"
+                    title: "Sucre cristallisé"
                 },
                 isSelected: true,
             },
@@ -1236,9 +2364,9 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Romarin",
+                    title: "Baies de cassis",
                 },
-                additionalPrice: 0.5,
+                additionalPrice: 1.0,
                 isSelected: false,
             },
             {
@@ -1278,7 +2406,14 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Romarin"
+                    title: "Menthe"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Sucre cristallisé"
                 },
                 isSelected: true,
             },
@@ -1290,6 +2425,14 @@ export const PRODUCTS: IProduct[] = [
                 ingredient: {
                     id: 1,
                     title: "Graines de grenade",
+                },
+                additionalPrice: 1.25,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 2,
+                    title: "Crème de cassis",
                 },
                 additionalPrice: 1.25,
                 isSelected: false,
@@ -1327,6 +2470,21 @@ export const PRODUCTS: IProduct[] = [
                 },
                 isSelected: true,
             },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Limonade"
+                },
+                isSelected: true,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Celerie"
+                },
+                isSelected: true,
+            },
+
 
         ],
 
@@ -1342,11 +2500,28 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Tabasco",
+                    title: "Orange",
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
-            }
+            },
+            {
+                ingredient: {
+                    id: 3,
+                    title: "Citron",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            {
+                ingredient: {
+                    id: 4,
+                    title: "Crème de cassis",
+                },
+                additionalPrice: 0.5,
+                isSelected: false,
+            },
+            
 
         ],
         isAddToCart: false,
