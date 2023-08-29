@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.css";
 
-const NavBar = ({ customClass= "" }) => {
+const NavBar = ({ customClass = "" }) => {
 
     const navLinks = [
         {
@@ -36,7 +36,7 @@ const NavBar = ({ customClass= "" }) => {
             <ul className={`${style.list} ${style.navBar} ${customClass}`}>
                 {navLinks.map((link) => (
                     <li key={link.id}>
-                         <NavLink to={link.url}>{link.text}</NavLink>
+                        <NavLink to={link.url}>{link.text}</NavLink>
                     </li>
                 ))}
             </ul>

@@ -70,7 +70,8 @@ const TagList = () => {
       {tagValues.map((tag) => (
         <li key={tag}>
           <button
-            className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter} `}
+            className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter
+              } `}
             onClick={() => toggleTag(tag)}
           >
             {tag}
@@ -122,11 +123,14 @@ const AllergyList = () => {
   return (
     <ul className={`${style.flexFilter}`}>
       {allergyValues.map((allergy) => (
-        <li 
-          key={allergy}
-          
-        >
-          <button onClick={() => toggleAllergy(allergy)} className={`${allergyArray.includes(allergy) ? style.selected : ""} ${style.filter}`}>{allergy}</button>
+        <li key={allergy}>
+          <button
+            onClick={() => toggleAllergy(allergy)}
+            className={`${allergyArray.includes(allergy) ? style.selected : ""
+              } ${style.filter}`}
+          >
+            {allergy}
+          </button>
         </li>
       ))}
     </ul>
@@ -150,9 +154,8 @@ const FilterSection = () => {
         )}
       </button>
       <div
-        className={`${style.filterContent} ${
-          isFilterOpen ? style.open : style.closed
-        }`}
+        className={`${style.filterContent} ${isFilterOpen ? style.open : style.closed
+          }`}
       >
         <h2>Filtrage :</h2>
         <TagList />
@@ -205,13 +208,16 @@ const ProductsPage = () => {
   return (
     <main>
       <Carousel />
-      <h2 className={style.titre}>L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois, temporel et gustative” </h2>
+      <h2 className={style.titre}>
+        L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois,
+        temporel et gustative”{" "}
+      </h2>
       <FilterSection />
       <div className={style.flex}>
         <NavBar customClass={style.customNav} />
-      <section className={style.flex}>
-        <ul className={style.menu}>{product_displayed}</ul>
-      </section>
+        <section className={style.flex}>
+          <ul className={style.menu}>{product_displayed}</ul>
+        </section>
       </div>
       <img className={style.athena} src="/image/icons/athena.png" alt="" />
     </main>

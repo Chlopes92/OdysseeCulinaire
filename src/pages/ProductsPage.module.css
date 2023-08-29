@@ -76,8 +76,8 @@
 .titre{
     text-align: center;
     font-weight: 500;
-    font-size: 32px;
     margin-top: 72px;
+    font-size: clamp(18px, 3vw, 32px);
 }
 
 @media(min-width: 1400px){

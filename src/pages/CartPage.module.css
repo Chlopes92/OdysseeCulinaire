@@ -7,7 +7,6 @@
 .title {
     text-align: center;
     margin: 11vh 0 5vh;
-    font-weight: normal;
 
 }
 
@@ -40,7 +39,7 @@
 .total{
     font-weight: bold;
     text-align: right;
-    margin:1vh 0 5vh;
+    margin:15vh 0 5vh;
     font-size: clamp(10px, 2vw, 20px);
 }
 
@@ -48,10 +47,12 @@
     margin-bottom: 5vh;
 }
 
+
 @media(max-width: 900px){
     .cartPage{
         width: auto;
         width: 90%;
     }
+    
     
 }

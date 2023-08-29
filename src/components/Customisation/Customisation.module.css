@@ -7,11 +7,6 @@
     overflow-x: visible;
 }
 
-h2 {
-   font-size: 3rem;
-   font-weight: 300;
-}
-
 .customHr {
     width: 50vw; 
     height: 3px;
