@@ -6,6 +6,10 @@
     justify-content: space-around;
 }
 
+.isActive{
+    color: var(--pink);
+}
+
 .logo{
     margin-top: 10px;
     width: 10vw; 
@@ -56,9 +60,9 @@
 }
 
 @media(max-width: 900px){
-    .panier{
+    /* .panier{
         display: none;
-    }
+    } */
 
     .burger,.customBurger{
         display: block;

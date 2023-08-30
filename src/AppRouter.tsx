@@ -7,6 +7,7 @@ import OrderPage from "pages/OrderPage"
 import PaymentPage from "pages/PaymentPage"
 import ProductCategoryPage from "pages/ProductCategoryPage"
 import ProductDetailPage from "pages/ProductDetailPage"
+import ProductDetailPageCustom from "pages/ProductDetailPageCustom"
 import ProductsPage from "pages/ProductsPage"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
@@ -28,6 +29,10 @@ const AppRouter = () => {
                 {
                     path: "/products/:id",
                     element: <ProductDetailPage />,
+                },
+                {
+                    path: "/products/custom/:id",
+                    element: <ProductDetailPageCustom />,
                 },
                 {
                     path: "/products/category/:category",

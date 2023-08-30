@@ -32,21 +32,20 @@ const ProductCard = () => {
                 <div className={style.ingredient}>
                   <p>
                     <strong>Inclus :</strong>{" "}
-                    {p.product.includedIngredients.map(
-                      (ii) =>
-                        ii.isSelected && <span>{ii.ingredient.title} / </span>
-                    )}
+                    {p.product.includedIngredients.filter(
+                      (ii) => ii.isSelected)
+                    .map((ii)=> ii.ingredient.title)
+                    .join(" / ")}
                   </p>
                 </div>
                 {/* Affiche les extras choisis */}
                 <div className={style.ingredient}>
                   <p>
                     <strong>Extras :</strong>
-                    {p.product.extras.map(
-                      (extra) =>
-                        extra.isSelected &&
-                        `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`
-                    )}
+                    {p.product.extras.filter(
+                      (extra) => extra.isSelected)
+                      .map((extra)=> `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`)
+                      .join(" / ")}
                   </p>
                 </div>
               </div>
@@ -61,7 +60,7 @@ const ProductCard = () => {
                     remove={() => removeOne(p.product)}
                   />
                   {/* <div className={style.svg}> */}
-                  <Link to={`/products/${p.id}`}>
+                  <Link to={`/products/custom/${p.idP}`}>
                     <svg
                       className={style.pen}
                       xmlns="http://www.w3.org/2000/svg"

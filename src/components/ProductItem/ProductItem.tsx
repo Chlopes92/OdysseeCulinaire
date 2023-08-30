@@ -18,7 +18,7 @@ const ButtonCart = (props: ProductItemProps) => {
 const { product } = props;
 const { products, addOne } = useCartContext();
   if (! products.some(p => {
-    return p.product === product
+    return p.product.id === product.id
   })) {
     return (
       <Link to={`/products/${product.id}`}>
@@ -44,7 +44,7 @@ const ProductItem = (props: ProductItemProps) => {
 
   return (
     // <main>
-    <div>
+    <div style={{position: "relative"}}>
       <Link to={`/products/${product.id}`}>
         <img className={style.size} src={img.src} alt={img.alt} />
       </Link>

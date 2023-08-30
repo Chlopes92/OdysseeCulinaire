@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import style from "./NavBar.module.css";
 
-const NavBar = ({ customClass = "" }) => {
+const NavBar = ({ customClass = "", customActiveClass = "" }) => {
+
+    const location = useLocation();
+    console.log(location.pathname);
 
     const navLinks = [
         {
@@ -35,8 +38,8 @@ const NavBar = ({ customClass = "" }) => {
         <nav>
             <ul className={`${style.list} ${style.navBar} ${customClass}`}>
                 {navLinks.map((link) => (
-                    <li key={link.id}>
-                        <NavLink to={link.url}>{link.text}</NavLink>
+                    <li key={link.id}  className={ location.pathname === link.url ? customActiveClass : ""}>
+                        <NavLink to={link.url} className={style.link}>{link.text}</NavLink>
                     </li>
                 ))}
             </ul>

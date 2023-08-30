@@ -9,7 +9,7 @@ import Button from 'components/Button/Button';
 import { useParams } from 'react-router-dom';
 import { useCartContext } from 'contexts/Cart.context';
 import { redirect } from "react-router-dom";
-import {getTotalPriceWithExtra} from "../../src/contexts/TotalExtraPrice";
+import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 
 const ProductDetailPage = () => {
 
@@ -21,10 +21,9 @@ const [totalPrice, setTotalPrice] = useState(0);
 
 // utiliser useState pour pouvoir accéder à la modification d'un élément d'un objet
 const [p, setP] = useState<IProduct | undefined>();
-const [isAdded, setAdded] = useState(false);
 
 useEffect(() => {
-// // Convertir l'ID de string à number
+// Convertir l'ID de string à number
 const productId = parseInt(id!);
 
 // // Trouver le produit correspondant par son ID
