@@ -93,58 +93,58 @@ const FormPage = () => {
                         </div>
                     </article>
 
-                    { quantityCart > 0 && 
-                    <article className={style.totalPrice}>
-                        <div className={style.total}>
+                    {quantityCart > 0 &&
+                        <article className={style.totalPrice}>
+                            <div className={style.total}>
 
-                            {/* Total correspond au prix du panier + livraison */}
-                            <h4>Total</h4>
-                            {quantityCart > 0 ?
-                                <p><strong>{total() + 3}  €</strong></p>
-                                : <p><strong>{total()}  €</strong></p>}
-                        </div>
-                        <hr />
+                                {/* Total correspond au prix du panier + livraison */}
+                                <h4>Total</h4>
+                                {quantityCart > 0 ?
+                                    <p><strong>{total() + 3}  €</strong></p>
+                                    : <p><strong>{total()}  €</strong></p>}
+                            </div>
+                            <hr />
 
-                        {/* Sous-total correspond au prix du panier */}
-                        <div className={style.total}>
-                            <p>Sous-total</p>
-                            <p>{total()} €</p>
-                        </div>
-                        <hr />
+                            {/* Sous-total correspond au prix du panier */}
+                            <div className={style.total}>
+                                <p>Sous-total</p>
+                                <p>{total()} €</p>
+                            </div>
+                            <hr />
 
-                        {/* Livraison 2€ */}
-                        <div className={style.total}>
-                            <p>Livraison</p>
-                            {quantityCart > 0 ?
-                                <p>3 €</p>
-                                : <p>0 €</p>}
-                        </div>
-                        <hr />
+                            {/* Livraison 2€ */}
+                            <div className={style.total}>
+                                <p>Livraison</p>
+                                {quantityCart > 0 ?
+                                    <p>3 €</p>
+                                    : <p>0 €</p>}
+                            </div>
+                            <hr />
 
-                        {/* Taxes 1,20€ */}
-                        <div className={style.total}>
-                            <p>Taxes incluses</p>
-                            {quantityCart > 0 ?
-                                <p>1,50 €</p>
-                                : <p>0 €</p>}
-                        </div>
+                            {/* Taxes 1,20€ */}
+                            <div className={style.total}>
+                                <p>Taxes incluses</p>
+                                {quantityCart > 0 ?
+                                    <p>1,50 €</p>
+                                    : <p>0 €</p>}
+                            </div>
 
-                        {/* Bouton ne fonctionne que si tout le formulaire est valide */}
-                       
-                        {(isValid && deliveryValid) || !statusChecked
-                            ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
-                            : <Button title="Payer et passer votre commande" />
-                        } 
-    
+                            {/* Bouton ne fonctionne que si tout le formulaire est valide */}
 
-                        <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
-                        </p>
+                            {(isValid && deliveryValid) || !statusChecked
+                                ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
+                                : <Button title="Payer et passer votre commande" />
+                            }
 
-                    </article>
+
+                            <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
+                            </p>
+
+                        </article>
                     }
                 </section >
 
-                
+
                 <section className={style.formulaire}>
 
                     {/* Partie Coordonnées */}
@@ -153,6 +153,7 @@ const FormPage = () => {
                     <p className={style.small}> Veuillez saisir votre adresse e-mail pour continuer en tant que nouveau client ou vous connecter à votre compte personnel.</p>
 
                     {/* Formulaire Coordonnées */}
+                    { quantityCart > 0 &&
                     <PaymentForm onSubmit={handleSubmit((data) => {
                         console.log("data", data)
                     })}>
@@ -179,7 +180,7 @@ const FormPage = () => {
                         }
 
 
-                    </PaymentForm>
+                    </PaymentForm> }
 
 
                     {/* Partie Expedition et Livraison */}
@@ -188,7 +189,7 @@ const FormPage = () => {
                     <p className={style.small}> Tous les champs (*) sont obligatoires.</p>
 
                     {/* Formulaire Expedition et Livraison */}
-                    {(emailValid) && <PaymentForm onSubmit={handleSubmit((data) => {
+                    {(emailValid && quantityCart > 0) && <PaymentForm onSubmit={handleSubmit((data) => {
                         console.log("data", data)
                     })}>
 
@@ -249,7 +250,12 @@ const FormPage = () => {
                             {/* Téléphone */}
                             <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="telephone">* Téléphone :</label>
-                                <input {...register("telephone", { required: "Le Téléphone est obligatoire" })} id="telephone" />
+                                <input {...register("telephone", { required: "Le Téléphone est obligatoire", pattern: {
+                                                        value: /^(\+\d{1,3}[- ]?)?\d{10}$/,
+                                                        message: "Veuillez renseigner le bon format attendu",
+                                                    }
+                                                })}
+                             id="telephone" />
                             </div>
                             {errors.telephone && <p className={style.errorMessage}>{errors.telephone.message}</p>}
                         </div>
@@ -274,7 +280,7 @@ const FormPage = () => {
                     <h2>3.Facturation et Paiement</h2>
                     <hr />
 
-                    {(deliveryValid) &&
+                    {(deliveryValid && quantityCart > 0) &&
                         <div>
                             <div className={style.infosPayment}>
                                 <p>MODE DE PAIEMENT</p>
