@@ -61,7 +61,7 @@ const ProductCard = () => {
                     remove={() => removeOne(p.product)}
                   />
                   {/* <div className={style.svg}> */}
-                  <Link to={`/products/${p.id}`}>
+                  <Link to={`/products/custom/${p.id}`}>
                     <svg
                       className={style.pen}
                       xmlns="http://www.w3.org/2000/svg"

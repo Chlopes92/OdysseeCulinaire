@@ -50,8 +50,11 @@ const Header = () => {
 
   return (
     <section className={style.header}>
-      <Link to="/">
+      {location.pathname === "/order"
+      ? <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
+     : <Link to="/">
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
+
       </Link>
       <NavBar customActiveClass={style.isActive} />
       {/* <div> */}
@@ -59,9 +62,9 @@ const Header = () => {
         (<Link to="/cart">
           <div className={style.flex}>
             <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
-            <div className={style.borderQuantity} >
-              <p className={style.quantity}>{totalQuantity}</p>
-            </div>
+            {totalQuantity > 0 && <div className={style.borderQuantity} >
+                <p className={style.quantity}>{totalQuantity}</p> 
+            </div> }
           </div>
         </Link>)}
       <MenuBurger burgerClass={style.customBurger} />
