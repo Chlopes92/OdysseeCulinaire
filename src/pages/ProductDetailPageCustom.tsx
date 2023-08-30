@@ -1,26 +1,18 @@
-import Customisation from 'components/Customisation/Customisation';
-import { NavLink } from 'react-router-dom';
-import { IProduct, PRODUCTS } from 'mocks/products';
-import { useEffect, useState } from 'react';
-import Counter from 'components/Counter/Counter';
-import style from '../pages/ProductDetailPage.module.css'
-import { Link } from 'react-router-dom';
-import Button from 'components/Button/Button';
-import { useParams } from 'react-router-dom';
-import { useCartContext } from 'contexts/Cart.context';
-import { redirect } from "react-router-dom";
+import Customisation from "components/Customisation/Customisation";
+import { Link, NavLink, redirect, useParams } from "react-router-dom";
+import style from "./ProductDetailPageCustom.module.css"
+import { useEffect, useState } from "react";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
+import { IProduct, PRODUCTS } from "mocks/products";
+import Button from "components/Button/Button";
 
-const ProductDetailPage = () => {
 
-    const [quantity, setQuantity] = useState(1);
+const ProductDetailPageCustom = () => {
     const { id } = useParams();
-    const { addOne } = useCartContext();
-
-    const [totalPrice, setTotalPrice] = useState(0);
-
+    
     // utiliser useState pour pouvoir accéder à la modification d'un élément d'un objet
     const [p, setP] = useState<IProduct | undefined>();
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         // Convertir l'ID de string à number
@@ -47,19 +39,7 @@ const ProductDetailPage = () => {
     // Image de la page
     const AphroditeImage = '/image/icons/aphrodite.png';
 
-    const add = () => {
-        setQuantity(quantity + 1);
-    }
-    const remove = () => {
-        if (quantity > 1)
-            setQuantity(quantity - 1);
-    }
-
-    const addToBasket = () => {
-        p!.isAddToCart = true;
-        addOne(p!, quantity)
-        console.log("produit", p!)
-    }
+   
 
 
     return (
@@ -83,24 +63,21 @@ const ProductDetailPage = () => {
                     </div>
 
                     <div className={style.containeurBas}>
-
-                        <Counter quantity={quantity}
-                            add={() => add()}
-                            remove={() => remove()}
-                        />
-                        <div className={style.buttonAdd}>
+                    <div className={style.buttonAdd}>
                             <NavLink to="/cart">
                                 <Button
-                                    title={`Ajouter au Panier - ${totalPrice * quantity} €`}
-                                    onClick={() => addToBasket()}
+                                    title={`Modifier le produit - ${totalPrice } €`}
+                                    
                                 />
                             </NavLink>
                         </div>
-                    </div>
+
+                        </div>
                 </>
             )}
         </section>
     );
 };
 
-export default ProductDetailPage;
+
+export default ProductDetailPageCustom;

@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 /* Interface article dans le Panier */
 interface ICartProduct {
 id: number;
+idP: string;
 product: IProduct;
 quantity: number;
 }
@@ -60,6 +61,7 @@ localStorage.setItem("cart", JSON.stringify(cartProducts));
 const addOne = (product: IProduct, quantity: number) => {
 const newProduct = {
 id: product.id,
+idP: uuidv4(),
 product,
 quantity
 }
