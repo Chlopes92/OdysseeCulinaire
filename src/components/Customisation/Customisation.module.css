@@ -1,16 +1,65 @@
   .container {
     width: 100%; 
-    height: auto;
-    max-width: 66vh;
-    background-color: rgb(220, 219, 219);
-    margin-top: 100px;
-    overflow-x: visible;
+    height: 550px;
+    max-width:650px;
+    padding-bottom: 20%;
+    overflow-y: auto; 
+   
 }
 
 .customHr {
-    width: 50vw; 
-    height: 3px;
+   
+    height: 8px;
     background-color:  var(--gold);
     border: none;
-    margin: 16px auto; 
+    margin-bottom:7%;
+    margin-top:7%;
+   
   }
+
+.title {
+font-weight: 200;
+font-size: clamp(2em, 1.5em, 1em); 
+}
+
+.description {
+  padding-top:7%;
+  font-size: clamp(1rem, 2.5em, 1em);
+}
+.prix {
+  padding-top:7%;
+  padding-bottom: 5%;
+  font-size: clamp(1rem, 1.875em, 1.875em); 
+  
+}
+.mythologie {
+  font-style: italic; 
+  padding-bottom: 5%;
+
+}
+.category {
+  font-size:25px;
+  font-weight: 500;
+  padding-bottom: 5%;
+}
+
+
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  
+}
+
+
+.checkboxContainer,
+.ingredientTitle {
+  display: inline-block;
+  font-family: Roboto;
+  padding-bottom: 5%;
+  
+}
+
+  
+  

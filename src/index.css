@@ -37,12 +37,12 @@ button {
   cursor: pointer;
   /* background-color: white; */
 }
---- 
+/*
 body {
   overflow-x : hidden;
   
 }
-
+*/
 img{
   object-fit: cover;
 }

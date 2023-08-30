@@ -64,44 +64,42 @@ console.log("produit", p!)
 
 
 return (
-<section>
+<section >
 {p && (
 <>
-<div className={style.containerText}>
-<Link to="/products">
-<p>&lt; Revenir à la carte</p>
-</Link>
-<div className={style.container}>
-<div className={style.containerImg}>
-<img className={style.imageResponsive} src={p!.img.src} alt={p!.img.alt} />
-
-<img className={style.aphroditeImage} src={AphroditeImage} alt={AphroditeImage} />
-</div>
-
-<Customisation p={p!} setP={setP} />
-
-</div>
-</div>
-
-<div className={style.containeurBas}>
-
-<Counter quantity={quantity}
-add={() => add()}
-remove={() => remove()}
-/>
-<div className={style.buttonAdd}>
-<NavLink to="/cart">
-<Button
-title={`Ajouter au Panier - ${totalPrice * quantity} €`}
-onClick={() => addToBasket()}
-/>
-</NavLink>
-</div>
-</div>
-</>
-)}
-</section>
-);
+<div className={style.containeur}>
+  <Link to="/products">
+    <p>&lt; Revenir à la carte</p>
+  </Link>
+<div className={style.container2}>
+  
+    <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
+        <img className={style.aphroditeImage} 
+              src={AphroditeImage} 
+              alt={AphroditeImage} />  
+   
+    <Customisation  p={p!} setP={setP} />
+  </div>
+  </div>  
+  <div className={style.containeurBas}>
+            <div className={style.counterContainer}>
+              <Counter
+                quantity={quantity}
+                add={() => add()}
+                remove={() => remove()}
+              />
+            </div>
+            <div className={style.buttonContainer}>
+              <Button
+                title={`Ajouter au Panier - ${totalPrice * quantity} €`}
+                onClick={() => addToBasket()}
+              />
+            </div>
+          </div>
+        </>
+      )}
+    </section>
+  );
 };
 
 export default ProductDetailPage;

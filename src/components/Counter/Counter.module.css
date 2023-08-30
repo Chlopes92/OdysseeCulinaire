@@ -6,9 +6,14 @@
     width:25px;
 }
 
-.flex p {
+
+.quantity {
     font-family: "Cinzel", sans-serif;
-    font-weight: bold;
+    font-size: clamp(16px, 4vw, 19px); 
+    font-weight: 600;
     margin: 0 1vw;
 }
 
+@madia {
+
+}
