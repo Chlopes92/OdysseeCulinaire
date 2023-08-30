@@ -38,10 +38,10 @@ button {
   /* background-color: white; */
 }
 --- 
-body {
+/* body {
   overflow-x : hidden;
   
-}
+} */
 
 img{
   object-fit: cover;

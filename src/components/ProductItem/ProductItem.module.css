@@ -20,8 +20,8 @@
 
 .position_button{
     position: absolute;
-    margin-top: -52px;
-    margin-left: 279px;
+    bottom: -15px;
+    right: -5px;
 }
 
 .buttonAddToCart{

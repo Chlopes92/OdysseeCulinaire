@@ -1,5 +1,6 @@
 import { PRODUCTS, ProductAllergyType, TagType } from "mocks/products";
 import {
+    useLocation,
     useNavigate,
     useParams,
     useSearchParams,
@@ -14,6 +15,36 @@ import NavBar from "components/NavBar/NavBar";
 
 const tagValues: TagType[] = ["vegan", "vegetarien", "viande", "sans-gluten", "avec-alcool", "sans-alcool"];
 const allergyValues: ProductAllergyType[] = ["produits-laitiers", "allium", "poisson", "arachide"];
+
+const navLinks = [
+    {
+        id: 1,
+        text: "La Carte",
+        url: "/products"
+    },
+    {
+        id: 2,
+        text: "Entrées",
+        url: "/products/category/entrees"
+    },
+    {
+        id: 3,
+        text: "Plats",
+        url: "/products/category/plats"
+    },
+    {
+        id: 4,
+        text: "Desserts",
+        url: "/products/category/desserts"
+    },
+    {
+        id: 5,
+        text: "Boissons",
+        url: "/products/category/boissons"
+    },
+  ];
+  
+  
 
 const TagList = () => {
     const navigate = useNavigate();
@@ -143,6 +174,10 @@ const FilterSection = () => {
 
 
 const ProductCategoryPage = () => {
+    const location = useLocation();
+    console.log(location.pathname);
+    const title = navLinks.find((link) => { return link.url === location.pathname})
+
     // If si pas category envoi page error 
     // const navigate = useNavigate();
     // navigate("/error");
@@ -182,13 +217,16 @@ const ProductCategoryPage = () => {
 
 
     return (
-        <section>
+        <section className={style.positionRelative}>
             <Carousel />
-            <h2 className={style.titre}>L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois, temporel et gustative” </h2>
+            <h2 className={`${style.titre} ${style.none}`}>L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois, temporel et gustative” </h2>
             <FilterSection />
+            {/* <h2 className={`${style.none}`}>{title?.text}</h2> */}
             <div className={style.flex}>
-                <NavBar customClass={style.customNav} />
-                <section className={style.flex}>
+                <NavBar customClass={style.customNav} customActiveClass={style.isActive}/>
+                
+                <section className={`${style.flex} ${style.titleCenter}`}>
+                {product_displayed.length ? 
                     <ul className={style.menu}>
                         {product_displayed.map((product) => (
                             <li key={product.id}>
@@ -196,9 +234,13 @@ const ProductCategoryPage = () => {
                             </li>
                         ))}
                     </ul>
+                :
+                <h2 className={style.titleWidth}>Pas de produits correspondant à votre recherche</h2>
+                }
                 </section>
+                
             </div>
-            <img className={style.athena} src="/image/icons/athena.png" alt="" />
+            <img className={product_displayed.length > 8 ? style.athena : style.imgNone} src="/image/icons/athena.png" alt="" />
         </section>
     );
 }
