@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+img{
+    object-fit: cover;
+}
+
 /* h1 */
 .title {
     text-align: center;

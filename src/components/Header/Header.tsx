@@ -53,7 +53,8 @@ const Header = () => {
       <Link to="/">
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
       </Link>
-      <NavBar />
+      <NavBar customActiveClass={style.isActive} />
+      {/* <div> */}
       {location.pathname !== "/order" &&
         (<Link to="/cart">
           <div className={style.flex}>
@@ -64,6 +65,7 @@ const Header = () => {
           </div>
         </Link>)}
       <MenuBurger burgerClass={style.customBurger} />
+      {/* </div> */}
     </section>
   );
 };

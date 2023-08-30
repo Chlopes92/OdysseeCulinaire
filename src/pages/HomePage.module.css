@@ -19,7 +19,7 @@
   }
     .btn {
      position: relative;
-     margin-top: -70px;   
+     margin-top: -11vh;  
      border: none;
      background: var(--pink);
      background: linear-gradient(0deg, var(--pink) 0%, var(--pink) 100%);

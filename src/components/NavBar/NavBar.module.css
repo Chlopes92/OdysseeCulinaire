@@ -14,14 +14,14 @@
     
 }
 
-.list :active{
-    color: var(--pink);
+.link{
+    color : inherit;
 }
 
 
 @media (max-width: 900px) {
     /*  414px pour cibler la largeur de l'iPhone */
-    .list {}
+    /* .list {} */
 
   .navBar{
     display: none;

@@ -44,7 +44,7 @@ const ProductItem = (props: ProductItemProps) => {
 
   return (
     // <main>
-    <div>
+    <div style={{position: "relative"}}>
       <Link to={`/products/${product.id}`}>
         <img className={style.size} src={img.src} alt={img.alt} />
       </Link>

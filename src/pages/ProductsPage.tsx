@@ -8,7 +8,7 @@ import {
 } from "mocks/products";
 import style from "./ProductsPage.module.css";
 // import { useEffect, useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import NavBar from "components/NavBar/NavBar";
 import { useState } from "react";
 
@@ -25,6 +25,34 @@ const allergyValues: ProductAllergyType[] = [
   "allium",
   "poisson",
   "arachide",
+];
+
+const navLinks = [
+  {
+    id: 1,
+    text: "La Carte",
+    url: "/products",
+  },
+  {
+    id: 2,
+    text: "Entrées",
+    url: "/products/category/entrees",
+  },
+  {
+    id: 3,
+    text: "Plats",
+    url: "/products/category/plats",
+  },
+  {
+    id: 4,
+    text: "Desserts",
+    url: "/products/category/desserts",
+  },
+  {
+    id: 5,
+    text: "Boissons",
+    url: "/products/category/boissons",
+  },
 ];
 
 const TagList = () => {
@@ -70,8 +98,9 @@ const TagList = () => {
       {tagValues.map((tag) => (
         <li key={tag}>
           <button
-            className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter
-              } `}
+            className={`${tagArray.includes(tag) ? style.selected : ""} ${
+              style.filter
+            } `}
             onClick={() => toggleTag(tag)}
           >
             {tag}
@@ -126,8 +155,9 @@ const AllergyList = () => {
         <li key={allergy}>
           <button
             onClick={() => toggleAllergy(allergy)}
-            className={`${allergyArray.includes(allergy) ? style.selected : ""
-              } ${style.filter}`}
+            className={`${
+              allergyArray.includes(allergy) ? style.selected : ""
+            } ${style.filter}`}
           >
             {allergy}
           </button>
@@ -154,8 +184,9 @@ const FilterSection = () => {
         )}
       </button>
       <div
-        className={`${style.filterContent} ${isFilterOpen ? style.open : style.closed
-          }`}
+        className={`${style.filterContent} ${
+          isFilterOpen ? style.open : style.closed
+        }`}
       >
         <h2>Filtrage :</h2>
         <TagList />
@@ -167,6 +198,12 @@ const FilterSection = () => {
 };
 
 const ProductsPage = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+  const title = navLinks.find((link) => {
+    return link.url === location.pathname;
+  });
+
   let product_filtered = PRODUCTS;
   const [query] = useSearchParams();
   const tagArray = query.get("filter")?.split(",") as TagType[];
@@ -206,21 +243,30 @@ const ProductsPage = () => {
   ));
 
   return (
-    <main>
+    <section className={style.positionRelative}>
       <Carousel />
-      <h2 className={style.titre}>
+      <h2 className={`${style.titre} ${style.none}`}>
         L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois,
         temporel et gustative”{" "}
       </h2>
       <FilterSection />
+      {/* <h2 className={`${style.none}`}>{title?.text}</h2> */}
       <div className={style.flex}>
-        <NavBar customClass={style.customNav} />
-        <section className={style.flex}>
-          <ul className={style.menu}>{product_displayed}</ul>
+        <NavBar
+          customClass={style.customNav}
+          customActiveClass={style.isActive}
+        />
+        
+        <section className={`${style.flex} ${style.titleCenter}`}>
+          {product_displayed.length ? (
+            <ul className={style.menu}>{product_displayed}</ul>
+          ) : (
+            <h2 className={style.titleWidth}>Pas de produits correspondant à votre recherche</h2>
+          )}
         </section>
       </div>
-      <img className={style.athena} src="/image/icons/athena.png" alt="" />
-    </main>
+      <img className={product_displayed.length > 8 ? style.athena : style.imgNone} src="/image/icons/athena.png" alt="" />
+    </section>
   );
 };
 

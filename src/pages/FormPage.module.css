@@ -177,7 +177,7 @@ border: var(--gold) solid 0.2px;
 .modePaiement label{
     color: var(--pink);
     font-weight: bold;
-    margin: 1.5vh 1vw 0;
+    margin: 2.5vh 1vw 0;
     /* border: var(--blue) solid 2px; */
 }
 
@@ -192,7 +192,7 @@ border: var(--gold) solid 0.2px;
 .modePaiement .paypal img{
    width: 6vw;
    position: absolute;
-   bottom: 1.2vh;
+   bottom: 1.6vh;
 }
 
 .trait{
@@ -264,7 +264,7 @@ border: var(--gold) solid 0.2px;
     margin: 1vh 1vh 3vh;
     width: 5vw;
     height: 4vh;
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 /* Dyonisos */
