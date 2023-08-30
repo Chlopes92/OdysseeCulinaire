@@ -55,7 +55,7 @@ const Header = () => {
      : <Link to="/">
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
 
-      </Link>
+      </Link>}
       <NavBar customActiveClass={style.isActive} />
       {/* <div> */}
       {location.pathname !== "/order" &&
