@@ -49,6 +49,9 @@ En plus de l'expérience culinaire, les clients reçoivent un livre inspiré de 
 
 # Compétences évaluées :
 ✅ Développer une interface utilisateur web dynamique
+
 ✅ Réaliser une interface utilisateur web statique et adaptable
+
 ✅ Contribuer au pilotage de l’organisation du travail individuel et collectif afin de faciliter la communication, la collaboration et la gestion des imprévus au sein de l’équipe
+
 ✅ Présenter un travail réalisé en synthétisant ses résultats, sa démarche et en répondant aux questions afin de le restituer au commanditaire
