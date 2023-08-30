@@ -10,9 +10,9 @@ const CartPage = () => {
     const reset = () => resetCart();
 
     const total = () => {
-        let totalPrice = 0; 
+        let totalPrice = 0;
         products.forEach((p) => {
-        totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity)
+            totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity)
         })
         return totalPrice
     }

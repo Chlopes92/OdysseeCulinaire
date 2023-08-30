@@ -31,7 +31,7 @@ const defaultCart: ICart = {
     getTotalProduct: () => 0,
     getTotalPrice: () => 0,
     resetCart: () => { },
-    modify: () => {}
+    modify: () => { }
 }
 
 /* Initialisation d'un contexte */
@@ -67,11 +67,11 @@ export const CartProvider = (props: CartProviderProps) => {
             product: JSON.parse(JSON.stringify(product)),
             quantity
         }
-        /* check if product exist in the cart */
+        /* check if product exist in the cart en comparaison deux JSON Stringify */
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(newProduct.product));
-        console.log("found product in cart", foundProduct);
+        // console.log("found product in cart", foundProduct);
         if (!foundProduct) {
-            console.log("test",[...cartProducts, newProduct])
+            // console.log("test",[...cartProducts, newProduct])
             setCartProducts([...cartProducts, newProduct]);
         } else {
             /* add quantity */
@@ -85,8 +85,6 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove quantity from a product */
     const removeOne = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(product));
-        // pour le produit customisé ?
-        // const foundProductCustom = cartProducts.find((p) => p.product === product);
 
         if (!foundProduct) {
             return;
@@ -99,12 +97,12 @@ export const CartProvider = (props: CartProviderProps) => {
         // const index = cartProducts.indexOf(foundProduct);
     }
 
-    const modify = (product : ICartProduct) => {
+    const modify = (product: ICartProduct) => {
         setCartProducts(cartProducts.map((p) => {
-            if(p.idP === product.idP){
+            if (p.idP === product.idP) {
                 return product
             }
-            return  p;
+            return p;
         }))
     }
 
@@ -112,8 +110,7 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove a product from the cart */
     const removeProduct = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(product));
-        // pour le produit customisé ?
-        // const foundProductCustom = cartProducts.find((p) => p.product === product);
+
         if (foundProduct) {
             const index = cartProducts.indexOf(foundProduct);
             cartProducts.splice(index, 1);

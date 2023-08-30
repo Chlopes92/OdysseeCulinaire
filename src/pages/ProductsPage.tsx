@@ -1,13 +1,11 @@
 import Carousel from "components/Carousel/Carousel";
 import ProductItem from "components/ProductItem/ProductItem";
 import {
-  IProduct,
   PRODUCTS,
   ProductAllergyType,
   TagType,
 } from "mocks/products";
 import style from "./ProductsPage.module.css";
-// import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import NavBar from "components/NavBar/NavBar";
 import { useState } from "react";
@@ -73,7 +71,6 @@ const TagList = () => {
   } else if (allergyArray.length && allergyArray[0].length === 0) {
     allergyArray.pop();
   }
-  // console.log("test", test.getAll('filter') )
   const toggleTag = (tag: TagType) => {
     if (tagArray.includes(tag)) {
       tagArray = tagArray.filter((tagValue) => {
@@ -85,7 +82,6 @@ const TagList = () => {
       });
     } else {
       tagArray.push(tag);
-      // console.log(tagArray);
     }
     navigate({
       pathname: "/products",
@@ -98,9 +94,8 @@ const TagList = () => {
       {tagValues.map((tag) => (
         <li key={tag}>
           <button
-            className={`${tagArray.includes(tag) ? style.selected : ""} ${
-              style.filter
-            } `}
+            className={`${tagArray.includes(tag) ? style.selected : ""} ${style.filter
+              } `}
             onClick={() => toggleTag(tag)}
           >
             {tag}
@@ -118,7 +113,6 @@ const AllergyList = () => {
     .get("excludeAllergy")
     ?.split(",") as ProductAllergyType[];
   let filterArray = query.get("filter")?.split(",") as TagType[];
-  // console.log(allergyArray)
   if (allergyArray === undefined) {
     allergyArray = [];
   } else if (allergyArray.length && allergyArray[0].length === 0) {
@@ -131,7 +125,6 @@ const AllergyList = () => {
   }
 
   const toggleAllergy = (allergy: ProductAllergyType) => {
-    // console.log(allergy)
     if (allergyArray.includes(allergy)) {
       allergyArray = allergyArray.filter((allergyValue) => {
         if (allergy === allergyValue) {
@@ -155,9 +148,8 @@ const AllergyList = () => {
         <li key={allergy}>
           <button
             onClick={() => toggleAllergy(allergy)}
-            className={`${
-              allergyArray.includes(allergy) ? style.selected : ""
-            } ${style.filter}`}
+            className={`${allergyArray.includes(allergy) ? style.selected : ""
+              } ${style.filter}`}
           >
             {allergy}
           </button>
@@ -184,9 +176,8 @@ const FilterSection = () => {
         )}
       </button>
       <div
-        className={`${style.filterContent} ${
-          isFilterOpen ? style.open : style.closed
-        }`}
+        className={`${style.filterContent} ${isFilterOpen ? style.open : style.closed
+          }`}
       >
         <h2>Filtrage :</h2>
         <TagList />
@@ -211,7 +202,6 @@ const ProductsPage = () => {
   let allergyArray = query
     .get("excludeAllergy")
     ?.split(",") as ProductAllergyType[];
-  // console.log("Allergy Array: ", allergyArray);
   if (tagArray?.length && tagArray[0].length) {
     product_filtered = PRODUCTS.filter((product) => {
       let tmp = true;
@@ -219,7 +209,6 @@ const ProductsPage = () => {
         if (!product.tags?.includes(tag ?? "")) tmp = false;
       });
       return tmp;
-      // return product.tags?.includes(tagValues ?? '')
     });
   }
   if (allergyArray?.length && allergyArray[0].length) {
@@ -235,7 +224,6 @@ const ProductsPage = () => {
     });
   }
 
-  // let product_excluded = PRODUCTS.filter(product => !product.allergy?.includes(allergyValues ?? ''));
   const product_displayed = product_filtered.map((product) => (
     <li key={product.id}>
       <ProductItem product={product} />
@@ -250,13 +238,13 @@ const ProductsPage = () => {
         temporel et gustative”{" "}
       </h2>
       <FilterSection />
-      {/* <h2 className={`${style.none}`}>{title?.text}</h2> */}
+
       <div className={style.flex}>
         <NavBar
           customClass={style.customNav}
           customActiveClass={style.isActive}
         />
-        
+
         <section className={`${style.flex} ${style.titleCenter}`}>
           {product_displayed.length ? (
             <ul className={style.menu}>{product_displayed}</ul>

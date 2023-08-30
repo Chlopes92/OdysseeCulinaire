@@ -12,13 +12,14 @@ const ProductCard = () => {
       <ul className={style.sizecard}>
         {products.map((p) => (
           <li className={`${style.flex} `} key={p.id}>
+            
             {/* Image du produit */}
             <div className={style.sizeImage}>
               <img
-              className={style.img}
-              src={p.product.img.src}
-              alt={p.product.title}
-            />
+                className={style.img}
+                src={p.product.img.src}
+                alt={p.product.title}
+              />
             </div>
 
             {/* Section affiche le nom du produit, inclus et extras */}
@@ -28,28 +29,31 @@ const ProductCard = () => {
                 <p>{p.product.price}€</p>
               </div>
               <div className={style.custom}>
+
                 {/* Affiche les ingrédients inclus */}
                 <div className={style.ingredient}>
                   <p>
                     <strong>Inclus :</strong>{" "}
                     {p.product.includedIngredients.filter(
                       (ii) => ii.isSelected)
-                    .map((ii)=> ii.ingredient.title)
-                    .join(" / ")}
+                      .map((ii) => ii.ingredient.title)
+                      .join(" / ")}
                   </p>
                 </div>
+
                 {/* Affiche les extras choisis */}
                 <div className={style.ingredient}>
                   <p>
                     <strong>Extras :</strong>
                     {p.product.extras.filter(
                       (extra) => extra.isSelected)
-                      .map((extra)=> `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`)
+                      .map((extra) => `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`)
                       .join(" / ")}
                   </p>
                 </div>
               </div>
             </section>
+
             {/* condition ternaire pour affiche du quantity picker selon la page */}
             <div className={`${style.pickerFlex}`}>
               {location.pathname == "/cart" ? (
@@ -59,7 +63,6 @@ const ProductCard = () => {
                     add={() => addOne(p.product, p.quantity)}
                     remove={() => removeOne(p.product)}
                   />
-                  {/* <div className={style.svg}> */}
                   <Link to={`/products/custom/${p.idP}`}>
                     <svg
                       className={style.pen}
@@ -75,7 +78,6 @@ const ProductCard = () => {
                       />
                     </svg>
                   </Link>
-                  {/* <button onClick={() => removeProduct(p.product)}><img src="image/icons/Delete.svg" alt="supprimer le produit" /></button> */}
                   <button onClick={() => removeProduct(p.product)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +94,6 @@ const ProductCard = () => {
                   </button>
                 </div>
               ) : (
-                // </div>
                 <div>
                   <p> Quantité:</p>{" "}
                   <p className={style.borderQuantity}>{p.quantity}</p>
