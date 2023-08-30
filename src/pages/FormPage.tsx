@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "contexts/Cart.context";
 import Button from "components/Button/Button";
 import { useState } from "react";
+import {getTotalPriceWithExtra} from "../../src/contexts/TotalExtraPrice";
 
 
 
@@ -27,8 +28,16 @@ type FormValues = {
 const FormPage = () => {
 
     const { register, handleSubmit, trigger, formState: { errors, isValid, isDirty } } = useForm<FormValues>();
-    const { products, removeProduct, getTotalPrice } = useCartContext();
-    const total = getTotalPrice();
+    const { products, removeProduct } = useCartContext();
+
+    const total = () => { 
+        let totalPrice = 0; products.forEach((p)=> {
+        totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity) }) 
+        console.log(totalPrice); 
+        return totalPrice 
+        }
+        
+
 
     /* Condition pour afficher le formulaire Expedition et Livraison */
     const [emailValid, setEmail] = useState(false);
@@ -86,14 +95,14 @@ const FormPage = () => {
 
                             {/* Total correspond au prix du panier + livraison */}
                             <h4>Total</h4>
-                            <p><strong>{total + 3}  €</strong></p>
+                            <p><strong>{total() + 3}  €</strong></p>
                         </div>
                         <hr />
 
                         {/* Sous-total correspond au prix du panier */}
                         <div className={style.total}>
                             <p>Sous-total</p>
-                            <p>{total} €</p>
+                            <p>{total()} €</p>
                         </div>
                         <hr />
 

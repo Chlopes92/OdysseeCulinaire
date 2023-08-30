@@ -7,7 +7,6 @@ import {getTotalPriceWithExtra} from "../../src/contexts/TotalExtraPrice";
 
 const CartPage = () => {
 const { resetCart, products } = useCartContext();
-// const totalPrice = getTotalPrice();
 const reset = () => resetCart();
 
 const total = () => { 
