@@ -70,7 +70,7 @@ if (!foundProduct) {
 setCartProducts([...cartProducts, newProduct]);
 } else {
 /* add quantity */
-foundProduct.quantity += quantity;
+foundProduct.quantity += 1;
 setCartProducts([...cartProducts]);
 }
 console.log(cartProducts);
