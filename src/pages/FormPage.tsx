@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "contexts/Cart.context";
 import Button from "components/Button/Button";
 import { useState } from "react";
-import {getTotalPriceWithExtra} from "../../src/contexts/TotalExtraPrice";
+import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 
 
 
@@ -28,15 +28,16 @@ type FormValues = {
 const FormPage = () => {
 
     const { register, handleSubmit, trigger, formState: { errors, isValid, isDirty } } = useForm<FormValues>();
-    const { products, removeProduct } = useCartContext();
+    const { products, removeProduct, getTotalProduct } = useCartContext();
 
-    const total = () => { 
-        let totalPrice = 0; products.forEach((p)=> {
-        totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity) }) 
-        console.log(totalPrice); 
-        return totalPrice 
-        }
-        
+    const total = () => {
+        let totalPrice = 0; products.forEach((p) => {
+            totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity)
+        })
+        console.log(totalPrice);
+        return totalPrice
+    }
+    const quantityCart = getTotalProduct();
 
 
     /* Condition pour afficher le formulaire Expedition et Livraison */
@@ -59,6 +60,7 @@ const FormPage = () => {
 
     return (
 
+
         <>
             <a className={style.retour}><Link to='/products' > <span>&lsaquo;</span> Revenir à la carte </Link> </a>
 
@@ -68,8 +70,9 @@ const FormPage = () => {
                 < section className={style.recap} >
 
                     <article className={style.cart}>
-                        <h3>Votre commande</h3>
-
+                        {quantityCart > 0 ? <h3>Votre commande</h3>
+                            : <h3>Votre panier est vide</h3>
+                        }
                         {/* Affiche les articles du panier */}
                         <div className={style.productCard}>
                             {products.map((p) =>
@@ -90,12 +93,15 @@ const FormPage = () => {
                         </div>
                     </article>
 
+                    { quantityCart > 0 && 
                     <article className={style.totalPrice}>
                         <div className={style.total}>
 
                             {/* Total correspond au prix du panier + livraison */}
                             <h4>Total</h4>
-                            <p><strong>{total() + 3}  €</strong></p>
+                            {quantityCart > 0 ?
+                                <p><strong>{total() + 3}  €</strong></p>
+                                : <p><strong>{total()}  €</strong></p>}
                         </div>
                         <hr />
 
@@ -109,28 +115,36 @@ const FormPage = () => {
                         {/* Livraison 2€ */}
                         <div className={style.total}>
                             <p>Livraison</p>
-                            <p>3 €</p>
+                            {quantityCart > 0 ?
+                                <p>3 €</p>
+                                : <p>0 €</p>}
                         </div>
                         <hr />
 
                         {/* Taxes 1,20€ */}
                         <div className={style.total}>
                             <p>Taxes incluses</p>
-                            <p>1.50 €</p>
+                            {quantityCart > 0 ?
+                                <p>1,50 €</p>
+                                : <p>0 €</p>}
                         </div>
 
                         {/* Bouton ne fonctionne que si tout le formulaire est valide */}
+                       
                         {(isValid && deliveryValid) || !statusChecked
                             ? (<NavLink to="/order"><Button title="Payer et passer votre commande" /></NavLink>)
                             : <Button title="Payer et passer votre commande" />
-                        }
+                        } 
+    
 
                         <p className={style.small}>En passant votre commande, vous acceptez les conditions d'utilisation
                         </p>
 
                     </article>
+                    }
                 </section >
 
+                
                 <section className={style.formulaire}>
 
                     {/* Partie Coordonnées */}
@@ -159,7 +173,7 @@ const FormPage = () => {
                         {!emailValid
                             ? <button type="button" className={`${style.btn} ${style.custom_btn}`} onClick={async () => {
                                 const output = await trigger("email")
-                                if (output) emailIsValid()
+                                if (output && quantityCart > 0) emailIsValid()
                             }}>Envoyer</button>
                             : <button disabled type="button" className={`${style.custom_btn} ${style.buttonClicked}`}>Envoyer</button>
                         }
@@ -376,14 +390,13 @@ const FormPage = () => {
 
                         </div>
                     }
-                <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
+                    <img className={style.dyonisos} src="image\icons\dionysos.png" alt="Dyonisos" />
 
                 </section >
             </div >
-
-
-
         </>
+
     )
+
 }
 export default FormPage;
