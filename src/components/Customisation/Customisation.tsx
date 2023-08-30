@@ -1,6 +1,4 @@
-import { useCartContext } from "contexts/Cart.context";
 import { IProduct } from "mocks/products";
-import { useState } from "react";
 import style from "./Customisation.module.css";
 import SelectedProduct from "components/SelectedProduct/SelectedProduct";
 
@@ -34,63 +32,53 @@ const setExtraIsSelected = (id : number) => {
 
 
   // utiliser le context
-  const { addOne } = useCartContext();
+  //const { addOne } = useCartContext();
 
   return (
-    <div>
+    <section>
       <div className={style.container}>
-        <h2 className={style.title}>{p.title} *</h2>
-        <p>{p.description}</p>
-        <p>{p.price} €</p>
-        <p>{p.mythologie}</p>
-        <hr className={style.customHr} />
-        <p className={style.inclus}>Inclus :</p>
-        <div className={style.select}></div>
-        <div>
-          <ul>
-            {p.includedIngredients.map((item) => (
-              <li key={item.ingredient.id}
-              onClick={() =>(setInclusIsSelected(item.ingredient.id))} >
-                
-                { item.isSelected
-                ? 
-                <SelectedProduct />
-                :<img
-                    src="/image/icons/checkbox.png"
-                    alt="ajouter un produit au panier"
-                />
-              
-}
-                {item.ingredient.title}
-              </li>
-  ))}
-          </ul>
-      </div>
-      <hr className={style.customHr} />
+          <h2 className={style.title}>{p.title} *</h2>
+          <p className={style.description}>{p.description}</p>
+          <p className={style.prix}>{p.price} €</p>
+          <p className={style.mythologie} >{p.mythologie}</p>
+          <hr className={style.customHr} />
+          <p className={style.category}>Inclus :</p>
+          <div className={style.select}></div>
+           <div>
+           <ul>
+           {p.includedIngredients.map((item) => (
+           <li key={item.ingredient.id} 
+               onClick={() => setInclusIsSelected(item.ingredient.id)}>
+           <div className={style.itemContainer}>
+           <span className={style.ingredientTitle}>{item.ingredient.title}</span>
+           <div className={style.checkboxContainer}>
+           {item.isSelected ? <SelectedProduct /> 
+                            : <img src="/image/icons/checkbox.png" alt="ajouter un produit au panier" 
+                            />}
+                     </div>
+                </div>
+            </li>
+         ))}
+     </ul>
+  </div>
+    <hr className={style.customHr} />
       <div>
-        <p>Extras:</p>
+        <p className={style.category}>Extras:</p>
         <ul>
-          {p.extras.map((item) => (
-            <li key={item.ingredient.id}
-            onClick={() =>(setExtraIsSelected(item.ingredient.id))} >
-                          
-              {item.isSelected
-              ? (
-                <SelectedProduct />
-              ) 
-              : (
-                <img
-                  src="/image/icons/checkbox.png"
-                  alt="ajouter un produit au panier"
-                />
-              )}
-              {item.ingredient.title} (+ {item.additionalPrice} €)
-              </li>
-            ))}
-      </ul>
-    </div>
-  </div >
-</div >
+         {p.extras.map((item) => (
+          <li key={item.ingredient.id} onClick={() => setExtraIsSelected(item.ingredient.id)}>
+            <div className={style.itemContainer}>
+             <span className={style.ingredientTitle}>{item.ingredient.title} (+ {item.additionalPrice} €)</span>
+            <div className={style.checkboxContainer}>
+            {item.isSelected ? <SelectedProduct /> : <img src="/image/icons/checkbox.png" alt="ajouter un produit au panier" />}
+           </div>
+          </div>
+        </li>
+       ))}
+     </ul>
+   </div>
+ </div >
+</section >
 )
 }
 
