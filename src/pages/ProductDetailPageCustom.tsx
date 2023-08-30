@@ -5,26 +5,31 @@ import { useEffect, useState } from "react";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 import { IProduct, PRODUCTS } from "mocks/products";
 import Button from "components/Button/Button";
+import { ICartProduct, useCartContext } from "contexts/Cart.context";
 
 
 const ProductDetailPageCustom = () => {
     const { id } = useParams();
     
     // utiliser useState pour pouvoir accéder à la modification d'un élément d'un objet
-    const [p, setP] = useState<IProduct | undefined>();
+    const [p, setP] = useState< IProduct | undefined>();
     const [totalPrice, setTotalPrice] = useState(0);
+    const { modify, products} = useCartContext();
+
+    const product = products.find(product => product.idP === id);
+    const custom = () => modify(product!);
 
     useEffect(() => {
         // Convertir l'ID de string à number
-        const productId = parseInt(id!);
+       // const productId = parseInt(id!);
 
         // Trouver le produit correspondant par son ID
-        const product = PRODUCTS.find(product => product.id === productId);
-        console.log(product)
+        
+        //console.log(product)
         if (!product) {
             redirect("/*");
         } else {
-            setP(product);
+            setP(product.product);
         }
     }, [])
 
@@ -67,7 +72,7 @@ const ProductDetailPageCustom = () => {
                             <NavLink to="/cart">
                                 <Button
                                     title={`Modifier le produit - ${totalPrice } €`}
-                                    
+                                    onClick={() => custom()}     
                                 />
                             </NavLink>
                         </div>
