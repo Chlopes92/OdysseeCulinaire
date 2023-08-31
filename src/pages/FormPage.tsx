@@ -82,7 +82,7 @@ const FormPage = () => {
                                         <h4>{p.product.title}</h4>
                                         <div>
 
-                                            <p>{p.product.price}€</p>
+                                            <p>{getTotalPriceWithExtra(p.product)*p.quantity}€</p>
                                             <p>QTE: {p.quantity}</p>
                                         </div>
 
