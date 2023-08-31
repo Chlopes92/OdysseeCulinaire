@@ -3,8 +3,7 @@ import {
     useLocation,
     useNavigate,
     useParams,
-    useSearchParams,
-    // useNavigate 
+    useSearchParams
 } from "react-router-dom";
 import Carousel from "components/Carousel/Carousel";
 import ProductItem from "components/ProductItem/ProductItem";
@@ -42,9 +41,9 @@ const navLinks = [
         text: "Boissons",
         url: "/products/category/boissons"
     },
-  ];
-  
-  
+];
+
+
 
 const TagList = () => {
     const navigate = useNavigate();
@@ -63,7 +62,6 @@ const TagList = () => {
     } else if (allergyArray.length && allergyArray[0].length === 0) {
         allergyArray.pop()
     }
-    // console.log("test", test.getAll('filter') )
     const toggleTag = (tag: TagType) => {
         if (tagArray.includes(tag)) {
             tagArray = tagArray.filter(tagValue => {
@@ -75,7 +73,6 @@ const TagList = () => {
             })
         } else {
             tagArray.push(tag)
-            // console.log(tagArray);
         }
         navigate({
             pathname: `/products/category/${category}`,
@@ -102,7 +99,6 @@ const AllergyList = () => {
     let { category } = useParams();
     let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[];
     let filterArray = query.get('filter')?.split(",") as TagType[]
-    // console.log(allergyArray)
     if (allergyArray === undefined) {
         allergyArray = []
     } else if (allergyArray.length && allergyArray[0].length === 0) {
@@ -115,7 +111,6 @@ const AllergyList = () => {
     }
 
     const toggleAllergy = (allergy: ProductAllergyType) => {
-        // console.log(allergy)
         if (allergyArray.includes(allergy)) {
             allergyArray = allergyArray.filter(allergyValue => {
                 if (allergy === allergyValue) {
@@ -176,21 +171,14 @@ const FilterSection = () => {
 const ProductCategoryPage = () => {
     const location = useLocation();
     console.log(location.pathname);
-    const title = navLinks.find((link) => { return link.url === location.pathname})
-
-    // If si pas category envoi page error 
-    // const navigate = useNavigate();
-    // navigate("/error");
+    const title = navLinks.find((link) => { return link.url === location.pathname })
     let { category } = useParams();
     console.log(category)
     let product_displayed = PRODUCTS.filter(product => product.category.includes(category ?? ''));
-    // let product_displayed = PRODUCTS.filter(product => !product.category.includes(category ?? '')); //Exemple
-    //    let product_filtered = PRODUCTS
     const [query] = useSearchParams()
     const tagArray = query.get('filter')?.split(",") as TagType[]
     console.log("Tag Array: ", tagArray);
     let allergyArray = query.get('excludeAllergy')?.split(",") as ProductAllergyType[]
-    // console.log("Allergy Array: ", allergyArray);
     if (tagArray?.length && tagArray[0].length) {
         product_displayed = product_displayed.filter(product => {
             let tmp = true
@@ -199,7 +187,6 @@ const ProductCategoryPage = () => {
                     tmp = false
             })
             return tmp;
-            // return product.tags?.includes(tagValues ?? '')
         });
     }
     if (allergyArray?.length && allergyArray[0].length) {
@@ -221,24 +208,23 @@ const ProductCategoryPage = () => {
             <Carousel />
             <h2 className={`${style.titre} ${style.none}`}>L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois, temporel et gustative” </h2>
             <FilterSection />
-            {/* <h2 className={`${style.none}`}>{title?.text}</h2> */}
             <div className={style.flex}>
-                <NavBar customClass={style.customNav} customActiveClass={style.isActive}/>
-                
+                <NavBar customClass={style.customNav} customActiveClass={style.isActive} />
+
                 <section className={`${style.flex} ${style.titleCenter}`}>
-                {product_displayed.length ? 
-                    <ul className={style.menu}>
-                        {product_displayed.map((product) => (
-                            <li key={product.id}>
-                                <ProductItem product={product} />
-                            </li>
-                        ))}
-                    </ul>
-                :
-                <h2 className={style.titleWidth}>Pas de produits correspondant à votre recherche</h2>
-                }
+                    {product_displayed.length ?
+                        <ul className={style.menu}>
+                            {product_displayed.map((product) => (
+                                <li key={product.id}>
+                                    <ProductItem product={product} />
+                                </li>
+                            ))}
+                        </ul>
+                        :
+                        <h2 className={style.titleWidth}>Pas de produits correspondant à votre recherche</h2>
+                    }
                 </section>
-                
+
             </div>
             <img className={product_displayed.length > 8 ? style.athena : style.imgNone} src="/image/icons/athena.png" alt="" />
         </section>

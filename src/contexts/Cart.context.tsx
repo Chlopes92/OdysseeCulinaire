@@ -19,7 +19,9 @@ interface ICart {
     getTotalProduct: () => number;
     getTotalPrice: () => number;
     resetCart: () => void;
-    modify: (product: ICartProduct) => void
+    modify: (product: ICartProduct) => void,
+    setPlace:(choice:number) => void;
+    myChoice : number;
 }
 
 /* Initialisation d'un panier par défaut */
@@ -31,7 +33,9 @@ const defaultCart: ICart = {
     getTotalProduct: () => 0,
     getTotalPrice: () => 0,
     resetCart: () => { },
-    modify: () => {}
+    modify: () => { },
+    setPlace : () => { },
+    myChoice : 0
 }
 
 /* Initialisation d'un contexte */
@@ -45,8 +49,15 @@ interface CartProviderProps {
 export const CartProvider = (props: CartProviderProps) => {
     const { children } = props;
     const [cartProducts, setCartProducts] = useState<ICartProduct[]>([]);
+    const [myChoice, setMyChoice] = useState(0)
 
-    // Load cart data from local storage on component mount
+    // Function to get the choice to eat at the restaurant or to take away
+    const setPlace = (choice: number) => {
+       return setMyChoice(choice)
+    }
+
+
+      // Load cart data from local storage on component mount
     useEffect(() => {
         const storedCart = localStorage.getItem("cart");
         if (storedCart) {
@@ -67,11 +78,11 @@ export const CartProvider = (props: CartProviderProps) => {
             product: JSON.parse(JSON.stringify(product)),
             quantity
         }
-        /* check if product exist in the cart */
+        /* check if product exist in the cart en comparaison deux JSON Stringify */
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(newProduct.product));
-        console.log("found product in cart", foundProduct);
+        // console.log("found product in cart", foundProduct);
         if (!foundProduct) {
-            console.log("test",[...cartProducts, newProduct])
+            // console.log("test",[...cartProducts, newProduct])
             setCartProducts([...cartProducts, newProduct]);
         } else {
             /* add quantity */
@@ -85,8 +96,6 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove quantity from a product */
     const removeOne = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(product));
-        // pour le produit customisé ?
-        // const foundProductCustom = cartProducts.find((p) => p.product === product);
 
         if (!foundProduct) {
             return;
@@ -99,12 +108,12 @@ export const CartProvider = (props: CartProviderProps) => {
         // const index = cartProducts.indexOf(foundProduct);
     }
 
-    const modify = (product : ICartProduct) => {
+    const modify = (product: ICartProduct) => {
         setCartProducts(cartProducts.map((p) => {
-            if(p.idP === product.idP){
+            if (p.idP === product.idP) {
                 return product
             }
-            return  p;
+            return p;
         }))
     }
 
@@ -112,8 +121,7 @@ export const CartProvider = (props: CartProviderProps) => {
     /* Function to remove a product from the cart */
     const removeProduct = (product: IProduct) => {
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(product));
-        // pour le produit customisé ?
-        // const foundProductCustom = cartProducts.find((p) => p.product === product);
+
         if (foundProduct) {
             const index = cartProducts.indexOf(foundProduct);
             cartProducts.splice(index, 1);
@@ -156,7 +164,9 @@ export const CartProvider = (props: CartProviderProps) => {
         getTotalProduct,
         getTotalPrice,
         resetCart,
-        modify
+        modify,
+        setPlace,
+        myChoice
     }
 
     return <CartContext.Provider value={cart}>

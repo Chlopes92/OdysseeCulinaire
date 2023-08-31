@@ -3,31 +3,30 @@ import { useCartContext } from "contexts/Cart.context";
 import style from "./OrderPage.module.css";
 import Button from "components/Button/Button";
 import { NavLink } from "react-router-dom";
-import {getTotalPriceWithExtra} from "../../src/contexts/TotalExtraPrice";
+import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 
 const OrderPage = () => {
-    const { products, getTotalProduct, resetCart } = useCartContext();
+    const { products, getTotalProduct, resetCart, myChoice } = useCartContext();
     const totalQuantity = getTotalProduct();
     const reset = () => resetCart();
 
+    console.log("myyyyyyCHHHHHH", myChoice);
 
-    const total = () => { 
-        let totalPrice = 0; products.forEach((p)=> {
-        totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity) }) 
-        console.log(totalPrice); 
-        return totalPrice 
-        }
-        
+    const total = () => {
+        let totalPrice = 0; products.forEach((p) => {
+            totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity)
+        })
+        return totalPrice
+    }
+
     return (
-        <main className={style.orderPage}>
+        <div className={style.orderPage}>
             <h1 className={style.title}>Votre commande est en cours de préparation</h1>
 
             <div className={style.infos}>
-                <p>Table n°{totalQuantity + 2} </p>
+                {myChoice === 1 && <p>Table n°{totalQuantity + 2} </p>}
                 <p>Commande n°{totalQuantity * 3} </p>
             </div>
-
-
 
             <ProductCard />
 
@@ -40,7 +39,7 @@ const OrderPage = () => {
                 <Button title="Revenir à l'accueil" callBack={reset} />
             </NavLink>
 
-        </main>
+        </div>
     )
 }
 

@@ -2,17 +2,26 @@ import Modal from "components/Modal/Modal";
 import { useState } from "react";
 import style from './PaymentPage.module.css'
 import { NavLink, useNavigate } from "react-router-dom";
+import { useCartContext } from "contexts/Cart.context";
 
 const PaymentPage = () => {
 
     const [isOpen, setModal] = useState(true);
     const [paymentModal, setPaymentModal] = useState(false);
+    const { setPlace, myChoice } = useCartContext();
 
+    const toggleDeliveryModalTakeAway = () => {
+        setModal(!isOpen);
+        setPaymentModal(!paymentModal);
+        setPlace(0);
+    }
     const toggleDeliveryModal = () => {
         setModal(!isOpen);
         setPaymentModal(!paymentModal);
+        setPlace(1);
     }
 
+   // console.log("myyyyyy", myChoice)
     const navigate = useNavigate();
 
     const togglePaymentModal = () => {
@@ -42,7 +51,7 @@ const PaymentPage = () => {
                     </ul>
 
                     <div className={style.link}>
-                        <button onClick={toggleDeliveryModal}><img src="image\icons\emporter.png" alt="emporter" />Emporté</button>
+                        <button onClick={toggleDeliveryModalTakeAway}><img src="image\icons\emporter.png" alt="emporter" />Emporté</button>
                         <button onClick={toggleDeliveryModal}><img src="image\icons\sur-place.png" alt="sur-place" />Sur place</button>
                         <NavLink to='/form'><button><img src="image\icons\livraison.png" alt="livraison" />Livraison</button></NavLink>
                     </div>
