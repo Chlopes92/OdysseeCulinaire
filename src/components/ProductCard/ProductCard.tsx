@@ -2,11 +2,11 @@ import Counter from "components/Counter/Counter";
 import { useCartContext } from "contexts/Cart.context";
 import { Link, useLocation } from "react-router-dom";
 import style from "./ProductCard.module.css";
+import { getTotalPriceWithExtra } from "contexts/TotalExtraPrice";
 
 const ProductCard = () => {
   const { products, removeProduct, removeOne, addOne } = useCartContext();
   const location = useLocation();
-  
 
   return (
     <section className={style.productCard}>
@@ -27,7 +27,7 @@ const ProductCard = () => {
             <section>
               <div className={style.title}>
                 <h3>{p.product.title}</h3>
-                <p>{p.product.price}€</p>
+                <p>{getTotalPriceWithExtra(p.product)*p.quantity}€</p>
               </div>
               <div className={style.custom}>
 
@@ -61,7 +61,7 @@ const ProductCard = () => {
                 <div className={style.icons}>
                   <Counter
                     quantity={p.quantity}
-                    add={() => addOne(p.product, p.quantity)}
+                    add={() => addOne(p.product, 1)}
                     remove={() => removeOne(p.product)}
                   />
                   <Link to={`/products/custom/${p.idP}`}>

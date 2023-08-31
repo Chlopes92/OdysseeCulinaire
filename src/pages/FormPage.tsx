@@ -87,7 +87,7 @@ const FormPage = () => {
                                         </div>
 
                                     </div>
-                                    <button onClick={() => removeProduct(p.product)}>SUPPRIMER</button>
+                                    <button className={style.supprimer} onClick={() => removeProduct(p.product)}>SUPPRIMER</button>
                                 </article>
                             )}
                         </div>
@@ -153,34 +153,34 @@ const FormPage = () => {
                     <p className={style.small}> Veuillez saisir votre adresse e-mail pour continuer en tant que nouveau client ou vous connecter à votre compte personnel.</p>
 
                     {/* Formulaire Coordonnées */}
-                    {quantityCart > 0 &&
-                        <PaymentForm onSubmit={handleSubmit((data) => {
-                            console.log("data", data)
-                        })}>
-                            <div>
-                                <div className={`${style.flex} ${style.displayContent}`}>
-                                    <label htmlFor="email">*Email:</label>
-                                    {/* {required : "Ce champ est obligatoire"} permet d'avoir le focus sur l'input et rend le champ obligatoire */}
-                                    <input {...register("email", {
-                                        required: "L'email est obligatoire", pattern: {
-                                            value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                            message: 'Veuillez saisir une adresse mail valide',
-                                        }
-                                    })} id="email" />
-                                </div>
-                                {errors.email && <p className={style.errorMessage}>{errors.email.message}</p>}
+                    { quantityCart > 0 &&
+                    <PaymentForm onSubmit={handleSubmit((data) => {
+                        console.log("data", data)
+                    })}>
+                        <div>
+                            <div className={`${style.flex} ${style.displayContent}`}>
+                                <label htmlFor="email">*Email:</label>
+                                {/* {required : "Ce champ est obligatoire"} permet d'avoir le focus sur l'input et rend le champ obligatoire */}
+                                <input {...register("email", {
+                                    required: "L'email est obligatoire", pattern: {
+                                        value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                        message: 'Veuillez saisir une adresse mail valide',
+                                    }
+                                })} id="email" />
                             </div>
+                            {errors.email && <p className={style.errorMessage}>{errors.email.message}</p>}
+                        </div>
 
-                            {!emailValid
-                                ? <button type="button" className={`${style.btn} ${style.custom_btn}`} onClick={async () => {
-                                    const output = await trigger("email")
-                                    if (output && quantityCart > 0) emailIsValid()
-                                }}>Envoyer</button>
-                                : <button disabled type="button" className={`${style.custom_btn} ${style.buttonClicked}`}>Envoyer</button>
-                            }
+                        {!emailValid
+                            ? <button type="button" className={`${style.btn} ${style.custom_btn}`} onClick={async () => {
+                                const output = await trigger("email")
+                                if (output && quantityCart > 0) emailIsValid()
+                            }}>Envoyer</button>
+                            : <button disabled type="button" className={`${style.custom_btn} ${style.buttonClicked}`}>Envoyer</button>
+                        }
 
 
-                        </PaymentForm>}
+                    </PaymentForm> }
 
 
                     {/* Partie Expedition et Livraison */}
@@ -250,13 +250,12 @@ const FormPage = () => {
                             {/* Téléphone */}
                             <div className={`${style.flex} ${style.displayContent}`}>
                                 <label htmlFor="telephone">* Téléphone :</label>
-                                <input {...register("telephone", {
-                                    required: "Le Téléphone est obligatoire", pattern: {
-                                        value: /^(\+\d{1,3}[- ]?)?\d{10}$/,
-                                        message: "Veuillez renseigner le bon format attendu",
-                                    }
-                                })}
-                                    id="telephone" />
+                                <input {...register("telephone", { required: "Le Téléphone est obligatoire", pattern: {
+                                                        value: /^(\+\d{1,3}[- ]?)?\d{10}$/,
+                                                        message: "Veuillez renseigner le bon format attendu",
+                                                    }
+                                                })}
+                             id="telephone" />
                             </div>
                             {errors.telephone && <p className={style.errorMessage}>{errors.telephone.message}</p>}
                         </div>
@@ -379,10 +378,12 @@ const FormPage = () => {
 
                                         </div>
 
+
                                         {isValid
                                             ? (<NavLink to="/order"><button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button></NavLink>)
                                             : <button type="submit" className={`${style.btn} ${style.custom_btn}`}>Payer et passer commande</button>
                                         }
+
 
                                     </PaymentForm>
 
@@ -400,6 +401,8 @@ const FormPage = () => {
                 </section >
             </div >
         </>
+
     )
+
 }
 export default FormPage;

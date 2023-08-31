@@ -1,11 +1,15 @@
 .orderPage{
     width:80vw;
-    margin: 0 auto;
+    margin: 20vh auto 0;
 }
 
 .infos{
-    margin-bottom:5vh;
+    margin-bottom:3vh;
 }
+.infos p {
+    font-size: clamp(15px, 1vw, 10px);
+}
+
 /* h1 */
 .title {
     text-align: center;

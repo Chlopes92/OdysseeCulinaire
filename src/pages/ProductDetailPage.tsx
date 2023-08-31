@@ -11,6 +11,7 @@ import { useCartContext } from 'contexts/Cart.context';
 import { redirect } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 
+
 const ProductDetailPage = () => {
 
     const [quantity, setQuantity] = useState(1);
@@ -60,11 +61,12 @@ const ProductDetailPage = () => {
         p!.isAddToCart = true;
         addOne(p!, quantity)
         console.log("produit", p!)
+        console.log ("quantity a ajouter", quantity)
     }
 
 
     return (
-        <section >
+        <section className={style.general} >
             {p && (
                 <>
                     <div className={style.containeur}>
@@ -72,17 +74,18 @@ const ProductDetailPage = () => {
                             <p>&lt; Revenir à la carte</p>
                         </Link>
                         <div className={style.container2}>
-
-                            <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
-                            <img className={style.aphroditeImage}
-                                src={AphroditeImage}
-                                alt={AphroditeImage} />
-
+                           <div className={style.containerImage}>
+                              <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
+                              <img className={style.aphroditeImage}
+                                   src={AphroditeImage}
+                                   alt={AphroditeImage} />
+                           </div>
                             <Customisation p={p!} setP={setP} />
                         </div>
                     </div>
                     <div className={style.containeurBas}>
                         <div className={style.counterContainer}>
+
                             <Counter
                                 quantity={quantity}
                                 add={() => add()}

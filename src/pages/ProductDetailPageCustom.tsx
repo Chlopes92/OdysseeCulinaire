@@ -1,11 +1,18 @@
-import Customisation from "components/Customisation/Customisation";
-import { Link, NavLink, redirect, useParams } from "react-router-dom";
-import style from "./ProductDetailPageCustom.module.css"
-import { useEffect, useState } from "react";
+import Customisation from 'components/Customisation/Customisation';
+import { NavLink } from 'react-router-dom';
+
+import { useEffect, useState } from 'react';
+
+import style from '../pages/ProductDetailPage.module.css'
+import { Link } from 'react-router-dom';
+import Button from 'components/Button/Button';
+import { useParams } from 'react-router-dom';
+import { useCartContext } from 'contexts/Cart.context';
+import { redirect } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 import { IProduct } from "mocks/products";
-import Button from "components/Button/Button";
-import { useCartContext } from "contexts/Cart.context";
+
+
 
 
 const ProductDetailPageCustom = () => {
@@ -37,20 +44,20 @@ const ProductDetailPageCustom = () => {
     const AphroditeImage = '/image/icons/aphrodite.png';
 
     return (
-        <section>
+        <section className={style.general} >
             {p && (
                 <>
-                    <div className={style.containerText}>
+                 <div className={style.containeur}>
                         <Link to="/products">
                             <p>&lt; Revenir à la carte</p>
                         </Link>
-                        <div className={style.container}>
-                            <div className={style.containerImg}>
-                                <img className={style.imageResponsive} src={p!.img.src} alt={p!.img.alt} />
+                        <div className={style.container2}>
+                           <div className={style.containerImage}>
+                           <img className={style.image}  src={p!.img.src} alt={p!.img.alt} />
                                 <img className={style.aphroditeImage} src={AphroditeImage} alt={AphroditeImage} />
                             </div>
-                            <Customisation p={p!} setP={setP} />
-                        </div>
+                                <Customisation p={p!} setP={setP} />
+                         </div>
                     </div>
 
                     <div className={style.containeurBas}>
@@ -63,6 +70,7 @@ const ProductDetailPageCustom = () => {
                             </NavLink>
                         </div>
                     </div>
+               
                 </>
             )}
         </section>
