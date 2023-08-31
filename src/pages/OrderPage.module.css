@@ -15,7 +15,7 @@
     text-align: center;
     margin: 11vh 0 8vh;
     font-weight: normal;
-
+    font-size: clamp(13px, 2vw, 24px); 
 }
 /* total */
 .total{

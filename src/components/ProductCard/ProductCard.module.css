@@ -121,4 +121,7 @@
         border-left: var(--gold) solid 5px;
     
     }
+    .title{
+        font-size: clamp(14px, 4vw, 16px);
+    }
 }
