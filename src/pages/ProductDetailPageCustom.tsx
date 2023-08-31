@@ -1,11 +1,15 @@
-import Customisation from "components/Customisation/Customisation";
-import { Link, NavLink, redirect, useParams } from "react-router-dom";
-import style from "./ProductDetailPageCustom.module.css"
-import { useEffect, useState } from "react";
+import Customisation from 'components/Customisation/Customisation';
+import { NavLink } from 'react-router-dom';import { useEffect, useState } from 'react';
+import style from '../pages/ProductDetailPage.module.css'
+import { Link } from 'react-router-dom';
+import Button from 'components/Button/Button';
+import { useParams } from 'react-router-dom';
+import { useCartContext } from 'contexts/Cart.context';
+import { redirect } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 import { IProduct } from "mocks/products";
-import Button from "components/Button/Button";
-import { useCartContext } from "contexts/Cart.context";
+
+
 
 
 const ProductDetailPageCustom = () => {

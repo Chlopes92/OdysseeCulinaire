@@ -74,12 +74,12 @@ const ProductDetailPage = () => {
                             <p>&lt; Revenir à la carte</p>
                         </Link>
                         <div className={style.container2}>
-
-                            <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
-                            <img className={style.aphroditeImage}
-                                src={AphroditeImage}
-                                alt={AphroditeImage} />
-
+                           <div className={style.containerImage}>
+                              <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
+                              <img className={style.aphroditeImage}
+                                   src={AphroditeImage}
+                                   alt={AphroditeImage} />
+                           </div>
                             <Customisation p={p!} setP={setP} />
                         </div>
                     </div>
