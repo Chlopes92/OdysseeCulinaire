@@ -85,6 +85,7 @@ const ProductDetailPage = () => {
                     </div>
                     <div className={style.containeurBas}>
                         <div className={style.counterContainer}>
+
                             <Counter
                                 quantity={quantity}
                                 add={() => add()}
