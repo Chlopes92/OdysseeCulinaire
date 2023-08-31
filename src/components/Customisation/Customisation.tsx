@@ -1,6 +1,8 @@
 import { IProduct } from "mocks/products";
 import style from "./Customisation.module.css";
 import SelectedProduct from "components/SelectedProduct/SelectedProduct";
+import CustomScrollbar from '../Scroll/scroll'; 
+
 
 interface CustomisationProps {
   p: IProduct,
@@ -37,7 +39,9 @@ const setExtraIsSelected = (id : number) => {
   return (
     <section>
       <div className={style.container}>
+      <CustomScrollbar>
           <h2 className={style.title}>{p.title} *</h2>
+     
           <p className={style.description}>{p.description}</p>
           <p className={style.prix}>{p.price} €</p>
           <p className={style.mythologie} >{p.mythologie}</p>
@@ -45,6 +49,7 @@ const setExtraIsSelected = (id : number) => {
           <p className={style.category}>Inclus :</p>
           <div className={style.select}></div>
            <div>
+             
            <ul>
            {p.includedIngredients.map((item) => (
            <li key={item.ingredient.id} 
@@ -76,7 +81,8 @@ const setExtraIsSelected = (id : number) => {
         </li>
        ))}
      </ul>
-   </div>
+   </div> 
+   </CustomScrollbar>
  </div >
 </section >
 )
