@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 import { useCartContext } from 'contexts/Cart.context';
 import { redirect } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
-import { cp } from 'fs';
+
 
 const ProductDetailPage = () => {
 
