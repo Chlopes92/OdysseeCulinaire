@@ -62,7 +62,7 @@ const ProductDetailPageCustom = () => {
                         <div className={style.buttonAdd}>
                             <NavLink to="/cart">
                                 <Button
-                                    title={`Modifier le produit - ${totalPrice} €`}
+                                    title={`Modifier le produit : ${totalPrice} €`}
                                     onClick={() => custom()}
                                 />
                             </NavLink>
