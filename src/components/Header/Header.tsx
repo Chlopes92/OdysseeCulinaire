@@ -51,26 +51,28 @@ const Header = () => {
   return (
     <section className={style.header}>
       {location.pathname === "/order"
-      ? <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
-     : <Link to="/">
-        <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
+        ? <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
+        : <Link to="/products">
+          <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
+        </Link>}
 
-      </Link>}
       {/* <NavBar customActiveClass={style.isActive} /> */}
-      <h1 className={style.titlePrincipal}>L’Odyssée Culinaire</h1>
-      <div  className={style.containerPanier}>
+
       {location.pathname !== "/order" &&
-        (<Link to="/cart">
-          <div className={style.flex}>
-            <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
-            {totalQuantity > 0 && <div className={style.borderQuantity} >
-                <p className={style.quantity}>{totalQuantity}</p> 
-            </div> }
-          </div>
-        </Link>)}
+        <h1 className={style.titlePrincipal}>L’Odyssée Culinaire</h1>}
+      <div className={style.containerPanier}>
+        {location.pathname !== "/order" &&
+          (<Link to="/cart">
+            <div className={style.flex}>
+              <img className={style.panier} src="/image/icons/shopping-cart.png" alt="Panier" />
+              {totalQuantity > 0 && <div className={style.borderQuantity} >
+                <p className={style.quantity}>{totalQuantity}</p>
+              </div>}
+            </div>
+          </Link>)}
         <div>
-      <MenuBurger burgerClass={style.customBurger} />
-      </div>
+          <MenuBurger burgerClass={style.customBurger} />
+        </div>
       </div>
     </section>
   );

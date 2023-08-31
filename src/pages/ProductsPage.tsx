@@ -233,7 +233,7 @@ const ProductsPage = () => {
   ));
 
   return (
-    <section className={style.positionRelative}>
+    <section className={`${style.positionRelative} ${style.general}`}>
       <Carousel />
       <h2 className={`${style.titre} ${style.none}`}>
         L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois,

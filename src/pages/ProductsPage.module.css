@@ -9,6 +9,11 @@
     margin-bottom: 8vh;
 }
 
+.general {
+    margin-top: 15vh;
+    }
+  
+
 .selected{
     color: var(--pink);
     border: 1px solid var(--pink);

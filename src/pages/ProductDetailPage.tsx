@@ -66,7 +66,7 @@ const ProductDetailPage = () => {
 
 
     return (
-        <section >
+        <section className={style.general} >
             {p && (
                 <>
                     <div className={style.containeur}>
