@@ -2,10 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     grid-gap: 80px;
-    justify-content: center;
     width: 83vw;
     margin: auto;
     margin-top: 10vh;
+    margin-right: -7vh;
+    margin-bottom: 8vh;
 }
 
 .selected{
@@ -17,6 +18,8 @@
 
 .flexFilter{
     display: flex;
+    white-space: nowrap !important;
+    flex-wrap: wrap;
 }
 
 .open {
@@ -43,8 +46,8 @@
     font-size: 20px;
     margin:2vh;
     font-family: 'Roboto', sans-serif;
+    height: 46px;
     min-width: 12vw;
-    height: 40px;
     border-radius: 5px;
     background: transparent;
     cursor: pointer;
@@ -55,7 +58,10 @@
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    padding: 12px;
 }
+
+
 
 /* ul{
     display: flex;
@@ -106,6 +112,7 @@ order: -1;
 
 .positionRelative{
     position: relative; 
+    
 }
 
 .titre{
@@ -143,6 +150,7 @@ order: -1;
 
         border-bottom: 4px solid var(--gold);
         border-left: none;
-        
+        font-size: clamp(13px, 4vw, 30px);
     }
+
 }
