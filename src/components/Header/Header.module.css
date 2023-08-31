@@ -32,16 +32,16 @@
     justify-content: center;
     align-items: center;
     background-color: var(--pink);
-    width: 3vw;
-    height: 3vw;
-    min-width: 20px;
-    min-height: 20px;
+    width: 2vw;
+    height: 2vw;
+    min-width: 6px;
+    min-height: 14px;
     border-radius: 50%;
-    box-sizing: border-box; 
-    margin-left:20px;
+    box-sizing: border-box;
+    margin-left: 20px;
     position: absolute;
     margin-top: 4rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
     
 }
 

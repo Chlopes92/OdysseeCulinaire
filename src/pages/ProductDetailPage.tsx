@@ -89,10 +89,12 @@ return (
               />
             </div>
             <div className={style.buttonContainer}>
-              <Button
+              <Link to="/products">
+              <Button 
                 title={`Ajouter au Panier - ${totalPrice * quantity} €`}
                 onClick={() => addToBasket()}
               />
+              </Link>
             </div>
           </div>
         </>
