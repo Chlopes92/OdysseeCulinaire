@@ -1,8 +1,6 @@
 import Customisation from 'components/Customisation/Customisation';
 import { NavLink } from 'react-router-dom';
-
 import { useEffect, useState } from 'react';
-
 import style from '../pages/ProductDetailPage.module.css'
 import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
