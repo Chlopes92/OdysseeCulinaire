@@ -21,7 +21,7 @@ const PaymentPage = () => {
         setPlace(1);
     }
 
-    console.log("myyyyyy", myChoice)
+   // console.log("myyyyyy", myChoice)
     const navigate = useNavigate();
 
     const togglePaymentModal = () => {

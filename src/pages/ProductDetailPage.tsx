@@ -32,7 +32,8 @@ const ProductDetailPage = () => {
         if (!product) {
             redirect("/*");
         } else {
-            setP(product);
+            // ajout de structuredClone pour forcer la création d'une nouvelle référence aux produits sans toucher le mock
+            setP(structuredClone(product));
         }
     }, [])
 
