@@ -6,13 +6,13 @@ import { useCartContext } from "contexts/Cart.context";
 
 const HomePage = () => {
 
-    const {resetCart} = useCartContext();
-    useEffect(()=> {
-        resetCart()
-    }, [])
+    // const {resetCart} = useCartContext();
+    // useEffect(()=> {
+    //     resetCart()
+    // }, [])
 
     return (
-        <main>
+        <main className={style.general}>
             <Carousel />
             <Link to="/products"><button className={`${style.btn} ${style.custom_btn}`}>Découvrir</button></Link>
             <img className={`${style.image}`} src="/image/icons/zeus.png" alt="" />

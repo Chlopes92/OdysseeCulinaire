@@ -24,6 +24,8 @@
     justify-content: center; 
 }
 
+
+
 .panier{
     /* margin-top: 1vh; */
     width: 1vw;
@@ -63,6 +65,8 @@
     font-weight: 600;
     font-size: clamp(13px, 3vw, 40px);
 }
+
+
 
 .quantity{
     height: 100%;
