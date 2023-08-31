@@ -56,8 +56,9 @@ const Header = () => {
         <img className={style.logo} src="/image/icons/logo.png" alt="Retour accueil" />
 
       </Link>}
-      <NavBar customActiveClass={style.isActive} />
-      {/* <div> */}
+      {/* <NavBar customActiveClass={style.isActive} /> */}
+      <h1 className={style.titlePrincipal}>L’Odyssée Culinaire</h1>
+      <div  className={style.containerPanier}>
       {location.pathname !== "/order" &&
         (<Link to="/cart">
           <div className={style.flex}>
@@ -67,8 +68,10 @@ const Header = () => {
             </div> }
           </div>
         </Link>)}
+        <div>
       <MenuBurger burgerClass={style.customBurger} />
-      {/* </div> */}
+      </div>
+      </div>
     </section>
   );
 };
