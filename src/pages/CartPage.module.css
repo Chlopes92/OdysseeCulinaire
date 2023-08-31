@@ -17,7 +17,7 @@ img{
 .flex {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5vh;
+    margin: 5vh 0;
 }
 
 /* p => panier*/
@@ -30,6 +30,11 @@ img{
     line-height: normal;
 
 }
+
+.retour {
+    position: absolute;
+    margin: 2vw 0;
+ }
 
 /*Button vider le panier */
 .flex button {
