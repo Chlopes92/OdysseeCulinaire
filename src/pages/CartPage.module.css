@@ -1,6 +1,10 @@
+/* GENERAL*/
+
+
+
 .cartPage{
     width:80vw;
-    margin: 0 auto;
+    margin: 15vh auto 0;
 }
 
 img{
@@ -32,9 +36,8 @@ img{
 }
 
 .retour {
-    position: absolute;
-    margin: 2vw 0;
- }
+    font-size: 20px;
+}
 
 /*Button vider le panier */
 .flex button {

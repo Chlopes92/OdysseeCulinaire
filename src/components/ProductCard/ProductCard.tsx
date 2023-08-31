@@ -61,7 +61,7 @@ const ProductCard = () => {
                 <div className={style.icons}>
                   <Counter
                     quantity={p.quantity}
-                    add={() => addOne(p.product, p.quantity)}
+                    add={() => addOne(p.product, 1)}
                     remove={() => removeOne(p.product)}
                   />
                   <Link to={`/products/custom/${p.idP}`}>
