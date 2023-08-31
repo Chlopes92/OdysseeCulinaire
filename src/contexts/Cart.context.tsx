@@ -85,7 +85,7 @@ export const CartProvider = (props: CartProviderProps) => {
             setCartProducts([...cartProducts, newProduct]);
         } else {
             /* add quantity */
-            foundProduct.quantity += 1;
+            foundProduct.quantity += quantity;
             setCartProducts([...cartProducts]);
         }
         console.log(cartProducts);

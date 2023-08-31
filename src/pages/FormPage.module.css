@@ -3,7 +3,7 @@
 .page {
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 8vh;
+    margin: 15vh auto 0;
 }
 
 .page h3 {
@@ -12,6 +12,7 @@
 .retour {
    position: absolute;
    padding: 2vw;
+   font-size: 20px;
 }
 .retour span {
     font-size: 1.3em;
@@ -24,6 +25,9 @@
 .flex label {
     margin-bottom: 15px;
     min-width: fit-content;
+}
+.supprimer {
+    font-size: 10px;
 }
 
 /* Recap comprend cart et totalPrice*/
