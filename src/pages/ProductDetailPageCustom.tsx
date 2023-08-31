@@ -1,5 +1,8 @@
 import Customisation from 'components/Customisation/Customisation';
-import { NavLink } from 'react-router-dom';import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { useEffect, useState } from 'react';
+
 import style from '../pages/ProductDetailPage.module.css'
 import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
@@ -41,20 +44,20 @@ const ProductDetailPageCustom = () => {
     const AphroditeImage = '/image/icons/aphrodite.png';
 
     return (
-        <section>
+        <section className={style.general} >
             {p && (
                 <>
-                    <div className={style.containerText}>
+                 <div className={style.containeur}>
                         <Link to="/products">
                             <p>&lt; Revenir à la carte</p>
                         </Link>
-                        <div className={style.container}>
-                            <div className={style.containerImg}>
-                                <img className={style.imageResponsive} src={p!.img.src} alt={p!.img.alt} />
+                        <div className={style.container2}>
+                           <div className={style.containerImage}>
+                           <img className={style.image}  src={p!.img.src} alt={p!.img.alt} />
                                 <img className={style.aphroditeImage} src={AphroditeImage} alt={AphroditeImage} />
                             </div>
-                            <Customisation p={p!} setP={setP} />
-                        </div>
+                                <Customisation p={p!} setP={setP} />
+                         </div>
                     </div>
 
                     <div className={style.containeurBas}>
@@ -67,6 +70,7 @@ const ProductDetailPageCustom = () => {
                             </NavLink>
                         </div>
                     </div>
+               
                 </>
             )}
         </section>
