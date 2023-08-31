@@ -237,7 +237,7 @@ const ProductsPage = () => {
       <Carousel />
       <h2 className={`${style.titre} ${style.none}`}>
         L’Odyssée Culinaire <br></br>“Venez vivre une expérience à la fois,
-        temporel et gustative”{" "}
+        temporelle et gustative”{" "}
       </h2>
       <FilterSection />
 
