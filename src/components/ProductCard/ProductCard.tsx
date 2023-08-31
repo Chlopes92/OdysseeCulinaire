@@ -33,24 +33,26 @@ const ProductCard = () => {
 
                 {/* Affiche les ingrédients inclus */}
                 <div className={style.ingredient}>
+                { p.product.includedIngredients.filter((ii)=> ii.isSelected).length > 0 &&
                   <p>
                     <strong>Inclus :</strong>{" "}
                     {p.product.includedIngredients.filter(
                       (ii) => ii.isSelected)
                       .map((ii) => ii.ingredient.title)
                       .join(" / ")}
-                  </p>
+                  </p> }
                 </div>
 
                 {/* Affiche les extras choisis */}
                 <div className={style.ingredient}>
-                  <p>
+                { p.product.extras.filter((extra)=> extra.isSelected).length > 0 &&
+                <p>
                     <strong>Extras :</strong>
                     {p.product.extras.filter(
                       (extra) => extra.isSelected)
                       .map((extra) => `${extra.ingredient.title} (+ ${extra.additionalPrice}€)`)
                       .join(" / ")}
-                  </p>
+                  </p> }
                 </div>
               </div>
             </section>
