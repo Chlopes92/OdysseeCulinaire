@@ -23,10 +23,10 @@
     /*  414px pour cibler la largeur de l'iPhone */
     /* .list {} */
 
-  .navBar{
+  /* .navBar{
     display: none;
-    }
-}
+    }*/
+} 
 
 /* @media(max-width: 900px){
     .list{

@@ -126,6 +126,7 @@ order: -1;
     .flex{
         display: flex;
     }
+    
 
 }
 
@@ -140,6 +141,7 @@ order: -1;
 
     .menu{
         width: auto;
+        justify-content: center;
     }
 
     .none{
