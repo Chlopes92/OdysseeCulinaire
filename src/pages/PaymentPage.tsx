@@ -8,7 +8,7 @@ const PaymentPage = () => {
 
     const [isOpen, setModal] = useState(true);
     const [paymentModal, setPaymentModal] = useState(false);
-    const { setPlace, myChoice } = useCartContext();
+    const { setPlace } = useCartContext();
 
     const toggleDeliveryModalTakeAway = () => {
         setModal(!isOpen);
@@ -21,7 +21,6 @@ const PaymentPage = () => {
         setPlace(1);
     }
 
-   // console.log("myyyyyy", myChoice)
     const navigate = useNavigate();
 
     const togglePaymentModal = () => {
@@ -35,7 +34,7 @@ const PaymentPage = () => {
     }
 
     return (
-        <main>
+        <div>
        
             {/* Modale pour choisir le mode de commande */}
             {isOpen &&
@@ -74,7 +73,7 @@ const PaymentPage = () => {
                 </Modal>
             }
 
-        </main>
+        </div>
 
     );
 }

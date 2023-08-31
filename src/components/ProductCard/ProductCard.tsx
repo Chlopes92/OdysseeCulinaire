@@ -6,6 +6,7 @@ import style from "./ProductCard.module.css";
 const ProductCard = () => {
   const { products, removeProduct, removeOne, addOne } = useCartContext();
   const location = useLocation();
+  
 
   return (
     <section className={style.productCard}>

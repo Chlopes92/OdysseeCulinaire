@@ -21,7 +21,7 @@ const OrderPage = () => {
 
     return (
         <div className={style.orderPage}>
-            <h1 className={style.title}>Votre commande est en cours de préparation</h1>
+            <h1 className={style.title}>Votre commande est en cours de préparation !</h1>
 
             <div className={style.infos}>
                 {myChoice === 1 && <p>Table n°{totalQuantity + 2} </p>}

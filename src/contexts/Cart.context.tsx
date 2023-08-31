@@ -80,7 +80,6 @@ export const CartProvider = (props: CartProviderProps) => {
         }
         /* check if product exist in the cart en comparaison deux JSON Stringify */
         const foundProduct = cartProducts.find((p) => JSON.stringify(p.product) === JSON.stringify(newProduct.product));
-        // console.log("found product in cart", foundProduct);
         if (!foundProduct) {
             // console.log("test",[...cartProducts, newProduct])
             setCartProducts([...cartProducts, newProduct]);
@@ -105,7 +104,6 @@ export const CartProvider = (props: CartProviderProps) => {
                 setCartProducts([...cartProducts]);
             }
         }
-        // const index = cartProducts.indexOf(foundProduct);
     }
 
     const modify = (product: ICartProduct) => {
