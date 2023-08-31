@@ -1,73 +1,106 @@
-import Customisation from "components/Customisation/Customisation";
-import { Link, NavLink, redirect, useParams } from "react-router-dom";
-import style from "./ProductDetailPageCustom.module.css"
-import { useEffect, useState } from "react";
+import Customisation from 'components/Customisation/Customisation';
+import { NavLink } from 'react-router-dom';
+import { IProduct, PRODUCTS } from 'mocks/products';
+import { useEffect, useState } from 'react';
+import Counter from 'components/Counter/Counter';
+import style from '../pages/ProductDetailPage.module.css'
+import { Link } from 'react-router-dom';
+import Button from 'components/Button/Button';
+import { useParams } from 'react-router-dom';
+import { useCartContext } from 'contexts/Cart.context';
+import { redirect } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
-import { IProduct } from "mocks/products";
-import Button from "components/Button/Button";
-import { useCartContext } from "contexts/Cart.context";
+
+const ProductDetailPage = () => {
+
+const [quantity, setQuantity] = useState(1);
+const { id } = useParams();
+const { addOne } = useCartContext();
+
+const [totalPrice, setTotalPrice] = useState(0);
+
+// utiliser useState pour pouvoir accéder à la modification d'un élément d'un objet
+const [p, setP] = useState<IProduct | undefined>();
+
+useEffect(() => {
+// Convertir l'ID de string à number
+const productId = parseInt(id!);
+
+// // Trouver le produit correspondant par son ID
+const product = PRODUCTS.find(product => product.id === productId);
+console.log(product)
+if (!product) {
+redirect("/*");
+} else {
+setP(product);
+}
+}, [])
 
 
-const ProductDetailPageCustom = () => {
-    const { id } = useParams();
 
-    // utiliser useState pour pouvoir accéder à la modification d'un élément d'un objet
-    const [p, setP] = useState<IProduct | undefined>();
-    const [totalPrice, setTotalPrice] = useState(0);
-    const { modify, products } = useCartContext();
+useEffect(() => {
+if (p) {
+setTotalPrice(getTotalPriceWithExtra(p))
+}
+}, [p])
 
-    const product = products.find(product => product.idP === id);
-    const custom = () => modify(product!);
+// Image de la page
+const AphroditeImage = '/image/icons/aphrodite.png';
 
-    useEffect(() => {
-        if (!product) {
-            redirect("/*");
-        } else {
-            setP(product.product);
-        }
-    }, [])
+const add = () => {
+setQuantity(quantity + 1);
+}
+const remove = () => {
+if (quantity > 1)
+setQuantity(quantity - 1);
+}
 
-    useEffect(() => {
-        if (p) {
-            setTotalPrice(getTotalPriceWithExtra(p))
-        }
-    }, [p])
+const addToBasket = () => {
+p!.isAddToCart = true;
+addOne(p!, quantity)
+console.log("produit", p!)
+}
 
-    // Image de la page
-    const AphroditeImage = '/image/icons/aphrodite.png';
 
-    return (
-        <section>
-            {p && (
-                <>
-                    <div className={style.containerText}>
-                        <Link to="/products">
-                            <p>&lt; Revenir à la carte</p>
-                        </Link>
-                        <div className={style.container}>
-                            <div className={style.containerImg}>
-                                <img className={style.imageResponsive} src={p!.img.src} alt={p!.img.alt} />
-                                <img className={style.aphroditeImage} src={AphroditeImage} alt={AphroditeImage} />
-                            </div>
-                            <Customisation p={p!} setP={setP} />
-                        </div>
-                    </div>
+return (
+<section >
+{p && (
+<>
+<div className={style.containeur}>
+  <Link to="/products">
+    <p>&lt; Revenir à la carte</p>
+  </Link>
+<div className={style.container2}>
 
-                    <div className={style.containeurBas}>
-                        <div className={style.buttonAdd}>
-                            <NavLink to="/cart">
-                                <Button
-                                    title={`Modifier le produit - ${totalPrice} €`}
-                                    onClick={() => custom()}
-                                />
-                            </NavLink>
-                        </div>
-                    </div>
-                </>
-            )}
-        </section>
-    );
+    <img className={style.image} src={p!.img.src} alt={p!.img.alt} />
+        <img className={style.aphroditeImage} 
+              src={AphroditeImage} 
+              alt={AphroditeImage} />  
+  
+    <Customisation  p={p!} setP={setP} />
+  </div>
+  </div>  
+  <div className={style.containeurBas}>
+            <div className={style.counterContainer}>
+              <Counter
+                quantity={quantity}
+                add={() => add()}
+                remove={() => remove()}
+              />
+            </div>
+            <div className={style.buttonContainer}>
+              <Link to="/products">
+              <Button 
+                title={`Ajouter au Panier - ${totalPrice * quantity} €`}
+                onClick={() => addToBasket()}
+              />
+              </Link>
+            </div>
+          </div>
+        </>
+      )}
+    </section>
+  );
 };
 
-
-export default ProductDetailPageCustom;
+export default ProductDetailPage;
