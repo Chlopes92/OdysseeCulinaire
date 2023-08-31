@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--color);
+  white-space: nowrap;
 }
 
 a, ul{
@@ -36,6 +37,7 @@ button {
   border : none;
   cursor: pointer;
   /* background-color: white; */
+  font-size: clamp(5px, 2vw, 15px);
 }
 
 /*
