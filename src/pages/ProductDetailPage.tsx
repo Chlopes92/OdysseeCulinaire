@@ -92,7 +92,7 @@ const ProductDetailPage = () => {
                         <div className={style.buttonContainer}>
                             <NavLink to="/products">
                                 <Button
-                                    title={`Ajouter au Panier - ${totalPrice * quantity} €`}
+                                    title={`Ajouter au Panier : ${totalPrice * quantity} €`}
                                     onClick={() => addToBasket()}
                                 />
                             </NavLink>
