@@ -19,7 +19,9 @@ interface ICart {
     getTotalProduct: () => number;
     getTotalPrice: () => number;
     resetCart: () => void;
-    modify: (product: ICartProduct) => void
+    modify: (product: ICartProduct) => void,
+    setPlace:(choice:number) => void;
+    myChoice : number;
 }
 
 /* Initialisation d'un panier par défaut */
@@ -31,7 +33,9 @@ const defaultCart: ICart = {
     getTotalProduct: () => 0,
     getTotalPrice: () => 0,
     resetCart: () => { },
-    modify: () => { }
+    modify: () => { },
+    setPlace : () => { },
+    myChoice : 0
 }
 
 /* Initialisation d'un contexte */
@@ -45,8 +49,15 @@ interface CartProviderProps {
 export const CartProvider = (props: CartProviderProps) => {
     const { children } = props;
     const [cartProducts, setCartProducts] = useState<ICartProduct[]>([]);
+    const [myChoice, setMyChoice] = useState(0)
 
-    // Load cart data from local storage on component mount
+    // Function to get the choice to eat at the restaurant or to take away
+    const setPlace = (choice: number) => {
+       return setMyChoice(choice)
+    }
+
+
+      // Load cart data from local storage on component mount
     useEffect(() => {
         const storedCart = localStorage.getItem("cart");
         if (storedCart) {
@@ -153,7 +164,9 @@ export const CartProvider = (props: CartProviderProps) => {
         getTotalProduct,
         getTotalPrice,
         resetCart,
-        modify
+        modify,
+        setPlace,
+        myChoice
     }
 
     return <CartContext.Provider value={cart}>

@@ -6,16 +6,16 @@ import { NavLink } from "react-router-dom";
 import { getTotalPriceWithExtra } from "../../src/contexts/TotalExtraPrice";
 
 const OrderPage = () => {
-    const { products, getTotalProduct, resetCart } = useCartContext();
+    const { products, getTotalProduct, resetCart, myChoice } = useCartContext();
     const totalQuantity = getTotalProduct();
     const reset = () => resetCart();
 
+    console.log("myyyyyyCHHHHHH", myChoice);
 
     const total = () => {
         let totalPrice = 0; products.forEach((p) => {
             totalPrice += (getTotalPriceWithExtra(p.product) * p.quantity)
         })
-        console.log(totalPrice);
         return totalPrice
     }
 
@@ -24,7 +24,7 @@ const OrderPage = () => {
             <h1 className={style.title}>Votre commande est en cours de préparation</h1>
 
             <div className={style.infos}>
-                <p>Table n°{totalQuantity + 2} </p>
+                {myChoice === 1 && <p>Table n°{totalQuantity + 2} </p>}
                 <p>Commande n°{totalQuantity * 3} </p>
             </div>
 
