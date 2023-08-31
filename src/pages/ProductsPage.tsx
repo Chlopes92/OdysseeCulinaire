@@ -188,10 +188,12 @@ const FilterSection = () => {
           isFilterOpen ? style.open : style.closed
         }`}
       >
-        <h2>Filtrage :</h2>
-        <TagList />
-        <h2>Allergènes :</h2>
-        <AllergyList />
+        
+          <h2>Filtrage :</h2>
+          <TagList />
+          <h2>Allergènes :</h2>
+          <AllergyList />
+        
       </div>
     </section>
   );
