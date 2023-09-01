@@ -137,12 +137,17 @@ order: -1;
 
 
 @media(max-width: 1400px){
+     
+    .flex .customNav{
+        
+        font-size: clamp(14px, 3vw, 31px);
+    }
+    
     .customNav{
         display: flex;
         flex-direction: row;
         margin-bottom: 7vh;
-        font-size: clamp(2px, 2.5vw, 31px);
-    }
+    } 
 
     .menu{
         width: auto;
@@ -159,5 +164,32 @@ order: -1;
         border-left: none;
         font-size: clamp(13px, 4vw, 30px);
     }
+    .filterButton img{
+        width: 49%;
+        height: auto;
+    }
 
+    .filterSection {
+        width: 60%;
+    }
+
+   
+
+}
+
+@media(max-width: 900px){
+    .flexFilter{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        white-space: nowrap !important;
+        /* flex-wrap: wrap; */
+        /* margin: 0 auto; */
+    }
+
+    .filter{
+        font-size: 14px;
+        min-width: 38px;
+    }
 }
