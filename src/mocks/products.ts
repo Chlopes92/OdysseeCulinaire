@@ -93,7 +93,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Légumes vapeur mixt",
+                    title: "Légumes vapeur mixte",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -315,7 +315,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Cibulette",
+                    title: "Ciboulette",
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
@@ -490,7 +490,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Cibulette",
+                    title: "Ciboulette",
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
@@ -575,7 +575,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Tomattes",
+                    title: "Tomates",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -695,7 +695,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Ognions",
+                    title: "Oignons",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -760,7 +760,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "salade verte",
+                    title: "Salade verte",
                 },
                 additionalPrice: 1.0,
                 isSelected: false,
@@ -784,7 +784,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Olives verte",
+                    title: "Olives vertes",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -792,7 +792,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 5,
-                    title: "Olives mixt",
+                    title: "Olives mixte",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -800,7 +800,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 6,
-                    title: "Concombre",
+                    title: "Concombres",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -892,7 +892,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Champignons à la greque",
+                    title: "Champignons à la grecque",
                 },
                 additionalPrice: 2.5,
                 isSelected: false,
@@ -992,7 +992,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Tomate",
+                    title: "Tomates",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -1000,7 +1000,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 5,
-                    title: "Olives mixt",
+                    title: "Olives mixte",
                 },
                 additionalPrice: 1.5,
                 isSelected: false,
@@ -1049,7 +1049,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Sel et poivres"
+                    title: "Sel et poivre"
                 },
                 isSelected: true,
             },
@@ -1063,7 +1063,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 6,
-                    title: "L'huile d'olives"
+                    title: "L'huile d'olive"
                 },
                 isSelected: true,
             },
@@ -1082,7 +1082,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Cibulette",
+                    title: "Ciboulette",
                 },
                 additionalPrice: 0.75,
                 isSelected: false,
@@ -1114,7 +1114,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 6,
-                    title: "Ognions",
+                    title: "Oignons",
                 },
                 additionalPrice: 0.25,
                 isSelected: false,
@@ -1271,7 +1271,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 5,
-                    title: "JSel et poivre"
+                    title: "Sel et poivre"
                 },
                 isSelected: true,
             },
@@ -1378,7 +1378,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Vinegrette"
+                    title: "Vinaigrette"
                 },
                 isSelected: true,
             },
@@ -1470,7 +1470,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Herbes de provins"
+                    title: "Herbes de provence"
                 },
                 isSelected: true,
             },
@@ -1589,7 +1589,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Noix concassé"
+                    title: "Noix concassés"
                 },
                 isSelected: true,
             },
@@ -1705,7 +1705,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 1,
-                    title: "Yogourt grec",
+                    title: "Yaourt grec",
                 },
                 additionalPrice: 2.0,
                 isSelected: false,
@@ -1713,7 +1713,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "Noix mixt",
+                    title: "Noix mixte",
                 },
                 additionalPrice: 1.0,
                 isSelected: false,
@@ -1827,7 +1827,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "citron vert confit",
+                    title: "Citron vert confit",
                 },
                 additionalPrice: 0.5,
                 isSelected: false,
@@ -1862,7 +1862,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 2,
-                    title: "noix hachées"
+                    title: "Noix hachées"
                 },
                 isSelected: true,
             },
@@ -1963,7 +1963,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 3,
-                    title: "Copeaux au chocolat noir"
+                    title: "Copeaux de chocolat noir"
                 },
                 isSelected: true,
             },
@@ -2055,7 +2055,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: " zeste râpé d'un citron vert "
+                    title: "Zeste râpé d'un citron vert "
                 },
                 isSelected: true,
             },
@@ -2480,7 +2480,7 @@ export const PRODUCTS: IProduct[] = [
             {
                 ingredient: {
                     id: 4,
-                    title: "Celerie"
+                    title: "Céleri"
                 },
                 isSelected: true,
             },
